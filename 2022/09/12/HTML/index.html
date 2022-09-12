@@ -1,0 +1,347 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HTML | Cheyennee</title><meta name="keywords" content="blog"><meta name="author" content="Cheyennee,714851125@qq.com"><meta name="copyright" content="Cheyennee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录与HTML相关的内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML">
+<meta property="og:url" content="http://cheyennee.github.io/2022/09/12/HTML/index.html">
+<meta property="og:site_name" content="Cheyennee">
+<meta property="og:description" content="记录与HTML相关的内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://cheyennee.github.io/2022/09/12/HTML/pic3.jpg">
+<meta property="article:published_time" content="2022-09-12T11:02:07.000Z">
+<meta property="article:modified_time" content="2022-09-12T11:56:50.308Z">
+<meta property="article:author" content="Cheyennee">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://cheyennee.github.io/2022/09/12/HTML/pic3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://cheyennee.github.io/2022/09/12/HTML/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HTML',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-09-12 19:56:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Cheyennee</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">HTML</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-09-12T11:02:07.000Z" title="发表于 2022-09-12 19:02:07">2022-09-12</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-09-12T11:56:50.308Z" title="更新于 2022-09-12 19:56:50">2022-09-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/HTML/">HTML</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HTML"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h4 id="语义化相关"><a href="#语义化相关" class="headerlink" title="语义化相关"></a>语义化相关</h4><h5 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h5><ul>
+<li><p>HTML的语义化是指：通过使用包含语义的标签（如<code>h1</code>-<code>h6</code>）恰当地表示文档结构</p>
+</li>
+<li><p>CSS的语义化是指：为HTML标签添加有意义的class</p>
+</li>
+<li><p>为什么需要语义化：</p>
+<ul>
+<li><p>去掉样式后页面呈现清晰的结构</p>
+</li>
+<li><p>盲人使用读屏器更好地阅读</p>
+</li>
+<li><p>搜索引擎更好地理解页面，有利于收录</p>
+</li>
+<li><p>便团队项目的可持续运作及维护</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="对语义化的理解"><a href="#对语义化的理解" class="headerlink" title="对语义化的理解"></a>对语义化的理解</h5><ul>
+<li><p>用正确的标签做正确的事情。</p>
+</li>
+<li><p>HTML语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;</p>
+</li>
+<li><p>即使在没有样式CSS情况下也以一种文档格式显示，并且是容易阅读的;</p>
+</li>
+<li><p>搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，利于SEO;</p>
+</li>
+<li><p>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解</p>
+</li>
+</ul>
+<h4 id="HTML5特性"><a href="#HTML5特性" class="headerlink" title="HTML5特性"></a>HTML5特性</h4><h5 id="如何区分HTML和HTML5？"><a href="#如何区分HTML和HTML5？" class="headerlink" title="如何区分HTML和HTML5？"></a>如何区分HTML和HTML5？</h5><ul>
+<li>DOCTYPE声明</li>
+<li>新增的结构元素</li>
+<li>功能元素</li>
+</ul>
+<h5 id="HTML5的新特性"><a href="#HTML5的新特性" class="headerlink" title="HTML5的新特性"></a>HTML5的新特性</h5><ul>
+<li>新增选择器 document.querySelector、document.querySelectorAll</li>
+<li>拖拽释放(Drag and drop) API</li>
+<li>媒体播放的 video 和 audio</li>
+<li>本地存储 localStorage 和 sessionStorage</li>
+<li>离线应用 manifest</li>
+<li>桌面通知 Notifications</li>
+<li>语意化标签 article、footer、header、nav、section</li>
+<li>增强表单控件 calendar、date、time、email、url、search</li>
+<li>地理位置 Geolocation</li>
+<li>多任务 webworker</li>
+<li>全双工通信协议 websocket</li>
+<li>历史管理 history</li>
+<li>跨域资源共享(CORS) Access-Control-Allow-Origin</li>
+<li>页面可见性改变事件 visibilitychange</li>
+<li>跨窗口通信 PostMessage</li>
+<li>Form Data 对象</li>
+<li>绘画 canvas</li>
+</ul>
+<h5 id="HTML5移除了哪些元素？"><a href="#HTML5移除了哪些元素？" class="headerlink" title="HTML5移除了哪些元素？"></a>HTML5移除了哪些元素？</h5><ul>
+<li>纯表现的元素：basefont、big、center、font、s、strike、tt、u</li>
+<li>对可用性产生负面影响的元素：frame、frameset、noframes</li>
+</ul>
+<h5 id="如何处理HTML5新标签的浏览器兼容问题？"><a href="#如何处理HTML5新标签的浏览器兼容问题？" class="headerlink" title="如何处理HTML5新标签的浏览器兼容问题？"></a>如何处理HTML5新标签的浏览器兼容问题？</h5><ul>
+<li>通过 document.createElement 创建新标签</li>
+<li>使用垫片 html5shiv.js</li>
+</ul>
+<h5 id="HTML5为什么只需要写-lt-DOCTYPE-HTML-gt-？"><a href="#HTML5为什么只需要写-lt-DOCTYPE-HTML-gt-？" class="headerlink" title="HTML5为什么只需要写&lt;!DOCTYPE HTML&gt;？"></a>HTML5为什么只需要写<code>&lt;!DOCTYPE HTML&gt;</code>？</h5><ul>
+<li>HTML5 不基于 SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为（让浏览器按照它们应该的方式来运行）</li>
+<li>而HTML4.01基于SGML,所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型</li>
+</ul>
+<h5 id="Doctype的作用？标准模式与兼容模式有什么区别？"><a href="#Doctype的作用？标准模式与兼容模式有什么区别？" class="headerlink" title="Doctype的作用？标准模式与兼容模式有什么区别？"></a>Doctype的作用？标准模式与兼容模式有什么区别？</h5><ul>
+<li><code>&lt;!DOCTYPE&gt;</code>声明位于位<code>于HTML</code>文档中的第一行，处于 <code>&lt;html&gt;</code> 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。<code>DOCTYPE</code>不存在或格式不正确会导致文档以兼容模式呈现</li>
+<li>标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作</li>
+</ul>
+<p><strong>HTML5的form如何关闭自动完成功能？</strong></p>
+<ul>
+<li>给不想要提示的 form 或某个 input 设置为 autocomplete&#x3D;off。</li>
+</ul>
+<p><strong>网页验证码是干嘛的，是为了解决什么安全问题</strong></p>
+<ul>
+<li>区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水</li>
+<li>有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试</li>
+</ul>
+<h4 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h4><h5 id="简述浏览器内核"><a href="#简述浏览器内核" class="headerlink" title="简述浏览器内核"></a>简述浏览器内核</h5><ul>
+<li>主要分成两部分：渲染引擎(<code>layout engineer</code>或<code>Rendering Engine</code>)和<code>JS</code>引擎</li>
+<li>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核</li>
+<li>JS引擎：解析和执行javascript来实现网页的动态效果</li>
+<li>最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎</li>
+</ul>
+<h5 id="常用的浏览器内核有哪些？"><a href="#常用的浏览器内核有哪些？" class="headerlink" title="常用的浏览器内核有哪些？"></a>常用的浏览器内核有哪些？</h5><ul>
+<li><code>Trident</code>内核：<code>IE,MaxThon,TT,The World,360</code>,搜狗浏览器等。[又称MSHTML]</li>
+<li><code>Gecko</code>内核：<code>Netscape6</code>及以上版本，<code>FF,MozillaSuite/SeaMonkey</code>等</li>
+<li><code>Presto</code>内核：<code>Opera7</code>及以上。 [<code>Opera</code>内核原为：Presto，现为：<code>Blink</code>;]</li>
+<li><code>Webkit</code>内核：<code>Safari,Chrome</code>等。 [ <code>Chrome</code>的<code>Blink</code>（<code>WebKit</code>的分支）]</li>
+<li><code>Blink</code>内核：新版google、新版opera</li>
+</ul>
+<h5 id="如何实现浏览器内多个标签页之间的通信？"><a href="#如何实现浏览器内多个标签页之间的通信？" class="headerlink" title="如何实现浏览器内多个标签页之间的通信？"></a>如何实现浏览器内多个标签页之间的通信？</h5><ul>
+<li>localstorge、cookies等本地存储方式</li>
+<li>iframe + contentWindow</li>
+<li>postMessage</li>
+<li>SharedWorker(Web Worker API)</li>
+<li>WebSocket</li>
+</ul>
+<h5 id="websocket如何兼容低版本浏览器？"><a href="#websocket如何兼容低版本浏览器？" class="headerlink" title="websocket如何兼容低版本浏览器？"></a>websocket如何兼容低版本浏览器？</h5><ul>
+<li>Adobe Flash Socket 、</li>
+<li>ActiveX HTMLFile (IE) 、</li>
+<li>基于 multipart 编码发送 XHR 、</li>
+<li>基于长轮询的 XHR</li>
+</ul>
+<h4 id="离线存储"><a href="#离线存储" class="headerlink" title="离线存储"></a>离线存储</h4><h5 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h5><ul>
+<li>原理：用户在线时，保存更新用户机器上的缓存文件；当用户离线时，可以正常访离线储存问站点或应用内容。HTML5的离线存储是基于一个新建的.appcache文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示</li>
+<li>使用：<ul>
+<li>在文档的 html 标签设置 manifest 属性，如 manifest&#x3D;”&#x2F;offline.appcache”</li>
+<li>在项目中新建 manifest 文件，manifest 文件的命名建议：xxx.appcache。在manifest文件的编写离线存储的资源。</li>
+<li>在 web 服务器配置正确的 MIME-type，即 text&#x2F;cache-manifest</li>
+<li>在离线状态时，操作window.applicationCache进行需求实现</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line">    #v0.11</span><br><span class="line">    CACHE:</span><br><span class="line">    js/app.js</span><br><span class="line">    css/style.css</span><br><span class="line">    NETWORK:</span><br><span class="line">    resourse/logo.png</span><br><span class="line">    FALLBACK:</span><br><span class="line">    / /offline.html</span><br></pre></td></tr></table></figure>
+
+<h5 id="浏览器对HTML5离线存储资源进行管理和加载的过程"><a href="#浏览器对HTML5离线存储资源进行管理和加载的过程" class="headerlink" title="浏览器对HTML5离线存储资源进行管理和加载的过程"></a>浏览器对HTML5离线存储资源进行管理和加载的过程</h5><ul>
+<li>在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。</li>
+<li>离线的情况下，浏览器就直接使用离线存储的资源。</li>
+</ul>
+<h4 id="本地存储方式"><a href="#本地存储方式" class="headerlink" title="本地存储方式"></a>本地存储方式</h4><h5 id="cookies、sessionStorage和localStorage的区别？"><a href="#cookies、sessionStorage和localStorage的区别？" class="headerlink" title="cookies、sessionStorage和localStorage的区别？"></a>cookies、sessionStorage和localStorage的区别？</h5><ul>
+<li>cookie是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）</li>
+<li>cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递</li>
+<li><code>sessionStorage</code>和<code>localStorage</code>不会自动把数据发给服务器，仅在本地保存</li>
+<li>存储大小：<ul>
+<li><code>cookie</code>数据大小不能超过4k</li>
+<li><code>sessionStorage</code>和<code>localStorage</code>虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大</li>
+</ul>
+</li>
+<li>有期时间：<ul>
+<li><code>localStorage</code> 存储持久数据，浏览器关闭后数据不丢失除非主动删除数据</li>
+<li><code>sessionStorage</code> 数据在当前浏览器窗口关闭后自动删除</li>
+<li><code>cookie</code> 设置的<code>cookie</code>过期时间之前一直有效，即使窗口或浏览器关闭</li>
+</ul>
+</li>
+</ul>
+<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><h5 id="页面导入样式时，使用link和-import有什么区别？"><a href="#页面导入样式时，使用link和-import有什么区别？" class="headerlink" title="页面导入样式时，使用link和@import有什么区别？"></a><strong>页面导入样式时，使用link和@import有什么区别？</strong></h5><ul>
+<li><code>link</code>属于<code>XHTML</code>标签，除了加载<code>CSS</code>外，还能用于定义<code>RSS</code>,定义<code>rel</code>连接属性等作用；而<code>@import</code>是<code>CSS</code>提供的，只能用于加载<code>CSS</code></li>
+<li>页面被加载的时，<code>link</code>会同时被加载，而<code>@import</code>引用的<code>CSS</code>会等到页面被加载完再加载</li>
+<li><code>import</code>是<code>CSS2.1</code> 提出的，只在<code>IE5</code>以上才能被识别，而<code>link</code>是<code>XHTML</code>标签，无兼容问题</li>
+</ul>
+<h5 id="行内元素有哪些？块级元素有哪些？-空-void-元素有那些？"><a href="#行内元素有哪些？块级元素有哪些？-空-void-元素有那些？" class="headerlink" title="行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？"></a><strong>行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</strong></h5><ul>
+<li>行内元素有：<code>a b span img input select strong</code>（强调的语气）</li>
+<li>块级元素有：<code>div ul ol li dl dt dd h1 h2 h3 h4…p</code></li>
+<li>常见的空元素:<code> &lt;br&gt; &lt;hr&gt; &lt;img&gt; &lt;input&gt; &lt;link&gt; &lt;meta&gt;</code></li>
+</ul>
+<p><strong>Label的作用是什么？是怎么用的？</strong></p>
+<ul>
+<li>label标签来定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件</li>
+<li>使用方法1：<ul>
+<li><code>&lt;label for=&quot;mobile&quot;&gt;Number:&lt;/label&gt;</code></li>
+<li><code>&lt;input type=&quot;text&quot; id=&quot;mobile&quot;/&gt;</code></li>
+</ul>
+</li>
+<li>使用方法2：<ul>
+<li><code>&lt;label&gt;Date:&lt;input type=&quot;text&quot;/&gt;&lt;/label&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>title与h1的区别、b与strong的区别、i与em的区别？</strong></p>
+<ul>
+<li><code>title</code>属性没有明确意义只表示是个标题，<code>h1</code>则表示层次明确的标题，对页面信息的抓取也有很大的影响</li>
+<li><code>strong</code>是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：会重读，而是展示强调内容</li>
+<li><code>i</code>内容展示为斜体，<code>em</code>表示强调的文本</li>
+<li>自然样式标签：<code>b</code>, <code>i</code>, <code>u</code>, <code>s</code>, <code>pre</code></li>
+<li>语义样式标签：<code>strong</code>, <code>em</code>, <code>ins</code>, <code>del</code>, <code>code</code></li>
+<li>应该准确使用语义样式标签, 但不能滥用。如果不能确定时，首选使用自然样式标签</li>
+</ul>
+<h5 id="lt-img-gt-的title和alt有什么区别"><a href="#lt-img-gt-的title和alt有什么区别" class="headerlink" title="&lt;img&gt;的title和alt有什么区别"></a><code>&lt;img&gt;</code>的<code>title</code>和<code>alt</code>有什么区别</h5><ul>
+<li><code>title</code> 通常当鼠标滑动到元素上的时候显示</li>
+<li><code>alt</code>是<code>&lt;img&gt;</code>的特有属性，是图片内容的等价描述，用于图片无法加载时显示、读屏器阅读图片。可提图片高可访问性，除了纯装饰图片外都必须设置有意义的值，搜索引擎会重点分析。</li>
+</ul>
+<h4 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h4><h5 id="iframe的缺点？"><a href="#iframe的缺点？" class="headerlink" title="iframe的缺点？"></a><strong>iframe的缺点？</strong></h5><ul>
+<li>iframe会阻塞主页面的Onload事件</li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于SEO</li>
+<li>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载</li>
+<li>使用<code>iframe</code>之前需要考虑这两个缺点。如果需要使用<code>iframe</code>，最好是通过<code>javascript</code>动态给<code>iframe</code>添加<code>src</code>属性值，这样可以绕开以上两个问题</li>
+</ul>
+<h5 id="iframe的优点"><a href="#iframe的优点" class="headerlink" title="iframe的优点"></a>iframe的优点</h5><ul>
+<li>用来加载速度较慢的内容（如广告）</li>
+<li>可以使脚本可以并行下载</li>
+<li>可以实现跨子域通信</li>
+</ul>
+<h4 id="页面"><a href="#页面" class="headerlink" title="页面"></a>页面</h4><p><strong>页面可见性（Page Visibility API） 可以有哪些用途？</strong></p>
+<ul>
+<li>通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;</li>
+<li>在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放</li>
+<li>当用户浏览其他页面，暂停网站首页幻灯自动播放</li>
+<li>完成登陆后，无刷新自动同步其他页面的登录状态</li>
+</ul>
+<p><strong>如何在页面上实现一个圆形的可点击区域？</strong></p>
+<ul>
+<li>map+area或者svg</li>
+<li>border-radius</li>
+<li>纯js实现 需要求一个点在不在圆上简单算法、获取鼠标坐标等等</li>
+</ul>
+<p><strong>实现不使用 border 画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;height:1px;overflow:hidden;background:red&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id><a href="#" class="headerlink" title></a></h4></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io">Cheyennee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io/2022/09/12/HTML/">http://cheyennee.github.io/2022/09/12/HTML/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cheyennee.github.io" target="_blank">Cheyennee</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="/2022/09/12/HTML/pic3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/09/12/array/"><img class="next-cover" src="/2022/09/12/array/study.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">数组</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Cheyennee</div><div class="author-info__description">生而为人，还请努力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8C%96%E7%9B%B8%E5%85%B3"><span class="toc-number">1.</span> <span class="toc-text">语义化相关</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="toc-number">1.1.</span> <span class="toc-text">语义化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E8%AF%AD%E4%B9%89%E5%8C%96%E7%9A%84%E7%90%86%E8%A7%A3"><span class="toc-number">1.2.</span> <span class="toc-text">对语义化的理解</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML5%E7%89%B9%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">HTML5特性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86HTML%E5%92%8CHTML5%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">如何区分HTML和HTML5？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML5%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">2.2.</span> <span class="toc-text">HTML5的新特性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML5%E7%A7%BB%E9%99%A4%E4%BA%86%E5%93%AA%E4%BA%9B%E5%85%83%E7%B4%A0%EF%BC%9F"><span class="toc-number">2.3.</span> <span class="toc-text">HTML5移除了哪些元素？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86HTML5%E6%96%B0%E6%A0%87%E7%AD%BE%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-number">2.4.</span> <span class="toc-text">如何处理HTML5新标签的浏览器兼容问题？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML5%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AA%E9%9C%80%E8%A6%81%E5%86%99-lt-DOCTYPE-HTML-gt-%EF%BC%9F"><span class="toc-number">2.5.</span> <span class="toc-text">HTML5为什么只需要写&lt;!DOCTYPE HTML&gt;？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Doctype%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F%E6%A0%87%E5%87%86%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%85%BC%E5%AE%B9%E6%A8%A1%E5%BC%8F%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">2.6.</span> <span class="toc-text">Doctype的作用？标准模式与兼容模式有什么区别？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">浏览器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8"><span class="toc-number">3.1.</span> <span class="toc-text">简述浏览器内核</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">3.2.</span> <span class="toc-text">常用的浏览器内核有哪些？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E5%A4%9A%E4%B8%AA%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%EF%BC%9F"><span class="toc-number">3.3.</span> <span class="toc-text">如何实现浏览器内多个标签页之间的通信？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#websocket%E5%A6%82%E4%BD%95%E5%85%BC%E5%AE%B9%E4%BD%8E%E7%89%88%E6%9C%AC%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%9F"><span class="toc-number">3.4.</span> <span class="toc-text">websocket如何兼容低版本浏览器？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%BB%E7%BA%BF%E5%AD%98%E5%82%A8"><span class="toc-number">4.</span> <span class="toc-text">离线存储</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">4.1.</span> <span class="toc-text">工作原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9HTML5%E7%A6%BB%E7%BA%BF%E5%AD%98%E5%82%A8%E8%B5%84%E6%BA%90%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E5%92%8C%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-number">4.2.</span> <span class="toc-text">浏览器对HTML5离线存储资源进行管理和加载的过程</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">本地存储方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#cookies%E3%80%81sessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">5.1.</span> <span class="toc-text">cookies、sessionStorage和localStorage的区别？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE"><span class="toc-number">6.</span> <span class="toc-text">标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F%E6%97%B6%EF%BC%8C%E4%BD%BF%E7%94%A8link%E5%92%8C-import%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">6.1.</span> <span class="toc-text">页面导入样式时，使用link和@import有什么区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F-%E7%A9%BA-void-%E5%85%83%E7%B4%A0%E6%9C%89%E9%82%A3%E4%BA%9B%EF%BC%9F"><span class="toc-number">6.2.</span> <span class="toc-text">行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#lt-img-gt-%E7%9A%84title%E5%92%8Calt%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">6.3.</span> <span class="toc-text">&lt;img&gt;的title和alt有什么区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#iframe"><span class="toc-number">7.</span> <span class="toc-text">iframe</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#iframe%E7%9A%84%E7%BC%BA%E7%82%B9%EF%BC%9F"><span class="toc-number">7.1.</span> <span class="toc-text">iframe的缺点？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#iframe%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">7.2.</span> <span class="toc-text">iframe的优点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2"><span class="toc-number">8.</span> <span class="toc-text">页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link"><span class="toc-number">9.</span> <span class="toc-text"></span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/09/12/HTML/" title="HTML"><img src="/2022/09/12/HTML/pic3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTML"/></a><div class="content"><a class="title" href="/2022/09/12/HTML/" title="HTML">HTML</a><time datetime="2022-09-12T11:02:07.000Z" title="发表于 2022-09-12 19:02:07">2022-09-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/09/12/array/" title="数组"><img src="/2022/09/12/array/study.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="数组"/></a><div class="content"><a class="title" href="/2022/09/12/array/" title="数组">数组</a><time datetime="2022-09-12T00:38:13.000Z" title="发表于 2022-09-12 08:38:13">2022-09-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Cheyennee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
