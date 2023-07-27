@@ -1,0 +1,405 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>零碎知识点 | Cheyennee</title><meta name="keywords" content="blog"><meta name="author" content="Cheyennee,714851125@qq.com"><meta name="copyright" content="Cheyennee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录刷题中遇到的知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="零碎知识点">
+<meta property="og:url" content="http://cheyennee.github.io/2021/02/15/random/index.html">
+<meta property="og:site_name" content="Cheyennee">
+<meta property="og:description" content="记录刷题中遇到的知识点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/random/cover.jpg">
+<meta property="article:published_time" content="2021-02-15T00:34:09.000Z">
+<meta property="article:modified_time" content="2022-11-28T14:19:45.328Z">
+<meta property="article:author" content="Cheyennee">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/random/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://cheyennee.github.io/2021/02/15/random/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '零碎知识点',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-28 22:19:45'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Cheyennee</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">零碎知识点</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-02-15T00:34:09.000Z" title="发表于 2021-02-15 08:34:09">2021-02-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-28T14:19:45.328Z" title="更新于 2022-11-28 22:19:45">2022-11-28</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%AC%94%E8%AF%95/">笔试</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="零碎知识点"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h4 id="HTML5-上一个版本是HTML4-01"><a href="#HTML5-上一个版本是HTML4-01" class="headerlink" title="HTML5(上一个版本是HTML4.01)"></a>HTML5(上一个版本是HTML4.01)</h4><ul>
+<li>互联网使用<strong>URL</strong>统一资源定位符标识分布在因特网上的各种文档</li>
+<li>HTML5支持HTML4中的所有表单控件</li>
+</ul>
+<h5 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h5><ul>
+<li><p>空元素：不需要闭合的标签</p>
+</li>
+<li><p>常见的空元素：</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img&gt; &lt;input&gt; &lt;embed&gt; &lt;link&gt; &lt;area&gt; &lt;base&gt; &lt;br&gt; &lt;col&gt; &lt;command&gt; &lt;hr&gt; &lt;keygen&gt;  &lt;meta&gt; &lt;param&gt; &lt;source&gt; &lt;track&gt; &lt;wbr&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>常见标签：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line">textarea:</span><br><span class="line">- 多行文本输入，可容纳无限数量的文本</span><br><span class="line">- 通过cols和rows属性来规定textarea的尺寸</span><br><span class="line">- 属性有：cols、rows、disabled、maxlength、placeholder、readonly、required、form、name、autofocus、wrap</span><br><span class="line">object:</span><br><span class="line">- 用于包含对象，如视频、音频等</span><br><span class="line">- 可以通过width来设置宽度</span><br><span class="line">embed:</span><br><span class="line">- 用于定义嵌入的内容，如插件等</span><br><span class="line">- 可以通过width来设置宽度</span><br><span class="line">sup:</span><br><span class="line">- 上标文本</span><br><span class="line">sub:</span><br><span class="line">- 下标文本</span><br><span class="line">source:</span><br><span class="line">- 定义多个数据源，提供备份支持并解决媒体支持问题</span><br><span class="line">- 例如&lt;source src=&quot;html.mp4&quot; type=&quot;video/mp4&quot;&gt;&lt;/source&gt;&lt;source src=&quot;html.ogv&quot; type=&quot;video/ogg&quot;&gt;&lt;/source&gt;</span><br><span class="line">track:</span><br><span class="line">- 为媒介(例如audio或vedio)规定外部文本轨道。用于规定字幕文件或其他包含文本的文件，当媒介播放时，这些文件是可见的。</span><br><span class="line">pre:（块级元素）</span><br><span class="line">- 可用于定义预格式化的文本。被包围在&lt;pre&gt;标签元素中的文本通常会保留空格和换行符，而文本也会呈现等宽字体。</span><br><span class="line">dir:</span><br><span class="line">- 定义目录列表</span><br><span class="line">dfn:</span><br><span class="line">- 术语标签</span><br><span class="line">abbr:</span><br><span class="line">- 缩写</span><br><span class="line">cite:</span><br><span class="line">- 定义作品的标题</span><br><span class="line">base:</span><br><span class="line">- 为页面上的所有的相对链接规定默认URL或者默认目标</span><br><span class="line">mark:</span><br><span class="line">- 表示标记或高亮显示文本，定义带有星号的文本</span><br><span class="line">a:</span><br><span class="line">- 链接，能用于发电子邮件&lt;a href=&quot;mailto:love@baidu.com&quot;&gt;love@baidu.com&lt;/a&gt;</span><br><span class="line">- a标签可以不需要href属性值，此时为超链接的一个占位符。href属性的可选值有：绝对路径(href=&quot;https://www.baidu.com&quot;)、相对路径(href=&quot;index.html&quot;)、锚(href=&quot;#top&quot;)</span><br><span class="line">- a标签的target属性可以指向一个具名的窗口或iframe。target属性的可选值有：_blank、_self、_new、_top、_parent等。_new和_blank都能打开新窗口，但_new多次点击该链接时始终在同一个新窗口中打开，而_blank多次点击该链接时都打开不同的新窗口。_top在顶层页面中打开链接；_parent在当前页面的上一层打开链接。</span><br><span class="line">- 当a的rel属性有多个值时，使用空格分隔</span><br><span class="line">iframe:</span><br><span class="line">- 会创建包含另一个文档的内联框架（即行内框架）</span><br><span class="line">meter:</span><br><span class="line">- 用于显示已知范围内的标量测量，包括min,max,value,optimal,low,high,form等属性</span><br><span class="line">progress:</span><br><span class="line">- 显示指示任务完成进度的指示器，该指示器通常显示为进度栏</span><br><span class="line">output:</span><br><span class="line">- 可以定义不同类型的输出。for属性用于定义输出字段相关的一个或多个元素。form属性定义输入字段所属的一个或多个表单。name属性定义对象的唯一名称。</span><br><span class="line">param:</span><br><span class="line">- 可以作为object和applet的参数</span><br><span class="line">caption:</span><br><span class="line">- 表示表格标题，不加粗</span><br><span class="line">article:</span><br><span class="line">- 文本或嵌入内容，可以用来提供作者信息</span><br><span class="line">picture:</span><br><span class="line">- 该元素可以让图片资源的调整更加灵活。可以用于屏幕适配。</span><br><span class="line">&lt;picture&gt;</span><br><span class="line">	&lt;source media=&quot;(min-width:650px)&quot; src=&quot;demo1.png&quot;&gt;&lt;/source&gt;</span><br><span class="line">	&lt;source media=&quot;(min-width:465px)&quot; src=&quot;demo2.png&quot;&gt;&lt;/source&gt;</span><br><span class="line">	&lt;img src=&quot;img_girl.png&quot;/&gt;</span><br><span class="line">&lt;/picture&gt;</span><br><span class="line">fieldset:</span><br><span class="line">- 可将表单内的相关元素分组.legend为标题</span><br><span class="line">&lt;fieldset&gt;</span><br><span class="line">	&lt;legend&gt;Personalia:&lt;/legend&gt; </span><br><span class="line">	Name: &lt;input type=&quot;text&quot;/&gt;</span><br><span class="line">	Email: &lt;input type=&quot;text&quot;/&gt;</span><br><span class="line">&lt;/fieldset&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>head标签中必不可少的是<code>&lt;meta&gt;</code>和<code>&lt;title&gt;</code></li>
+<li>一个页面中只能有一个title元素。若存在main元素，也只能有一个</li>
+<li>HTML5中的属性名对大小写不敏感，一般是小写</li>
+<li>H5中可以通过data-*来自定义属性</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-animal-type</span>=<span class="string">&quot;fish&quot;</span>&gt;</span>🐟<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span> <span class="attr">data-animal-type</span>=<span class="string">&quot;bird&quot;</span>&gt;</span>🐦<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 自定义列表 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dl</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dt</span>&gt;</span><span class="tag">&lt;/<span class="name">dt</span>&gt;</span> 标题</span><br><span class="line">    <span class="tag">&lt;<span class="name">dd</span>&gt;</span><span class="tag">&lt;/<span class="name">dd</span>&gt;</span> 描述</span><br><span class="line"><span class="tag">&lt;/<span class="name">dl</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!--  表格 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">th</span>&gt;</span><span class="tag">&lt;/<span class="name">th</span>&gt;</span> 定义表头</span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span>&gt;</span> 可以通过tr的个数判断该表格有几行</span><br><span class="line">    	<span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span> td表示单元格，可以通过有最多td的那一行判断该表格的列数</span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- optgroup在select中创建了一组选项，此元素不应该嵌套 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">select</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">optgroup</span> <span class="attr">label</span>=<span class="string">&quot;swedish cars&quot;</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;vovo&quot;</span>&gt;</span>Volvo<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;saab&quot;</span>&gt;</span>Saab<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">optgroup</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h5 id="Canvas与SVG"><a href="#Canvas与SVG" class="headerlink" title="Canvas与SVG"></a>Canvas与SVG</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">SVG知识点：</span><br><span class="line">- 使用XML格式定义图形</span><br><span class="line">- 是HTML下的一个分支</span><br><span class="line">- 可缩放的矢量图片</span><br><span class="line">- 文件小，放大缩小不会失真</span><br><span class="line">- 通过&lt;embed&gt;、&lt;object&gt;、&lt;iframe&gt;标签，可以直接嵌入进HTML页面中</span><br><span class="line">- 不依赖分辨率，支持事件绑定，大型渲染区域的程序(例如百度地图)，不能用来实现网页游戏</span><br><span class="line"></span><br><span class="line">区别：</span><br><span class="line">- canvas是通过js来完成图形绘制的</span><br><span class="line">- canvas中绘制的元素不可以通过浏览器提供的接口获取到，因为它所绘制的图形不是dom元素。而SVG中绘制的元素可以通过浏览器提供的接口获取到。</span><br><span class="line">- canvas产生的DOM数量比SVG要少</span><br><span class="line">- SVG可以使用CSS设置动画样式</span><br><span class="line"></span><br><span class="line">canvas知识点：</span><br><span class="line">- Ctx.arc(x,y,r,0,Math.PI,true);//这句代码的作用是在给定点绘制一个半圆。参数释义：x圆心，y圆心，r半径，0起始弧度，Math.PI结束弧度。</span><br><span class="line">- 使用canvas在画布上绘制需要调用getContext()这个内建对象</span><br><span class="line">- 依赖分辨率，不支持事件绑定，适合网页游戏</span><br><span class="line"></span><br><span class="line">手写动画的最小时间间隔是16.7ms=1s/60帧</span><br></pre></td></tr></table></figure>
+
+<h5 id="DHTML"><a href="#DHTML" class="headerlink" title="DHTML"></a>DHTML</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">DHTML知识点：</span><br><span class="line">- DHTML是动态的HTML，是HTML、CSS和客户端脚本的一种集成</span><br><span class="line">- 其中HTML确定页面框架，CSS和脚本确定页面动态样式、动态内容和动态定位</span><br><span class="line">- DHTML实现了网页从服务器下载后无需再经过服务器的处理，就能在浏览器中直接动态地更新网页的内容、排版样式和动画的功能。</span><br><span class="line">- DHTML包括HTML、HTML DOM、JS和CSS</span><br></pre></td></tr></table></figure>
+
+<h5 id="readonly与disabled区别"><a href="#readonly与disabled区别" class="headerlink" title="readonly与disabled区别"></a>readonly与disabled区别</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- readonly=true时，页面上无法修改内容，内容会被提交，但是可以通过JS修改，可以获得焦点</span><br><span class="line">- disabled=true时，内容无法被修改，也不会被提交，但是可以通过JS修改</span><br></pre></td></tr></table></figure>
+
+<h5 id="事件调用在html和react中的区别"><a href="#事件调用在html和react中的区别" class="headerlink" title="事件调用在html和react中的区别"></a>事件调用在html和react中的区别</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- 在HTML中，调用已定义的函数：onclick=&quot;add()&quot;</span><br><span class="line">- 在react中，调用已定义的函数：onClick=&#123;add&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="数据存储方式"><a href="#数据存储方式" class="headerlink" title="数据存储方式"></a>数据存储方式</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. WebStorage：包括localStorage和sessionStorage</span><br><span class="line">2. WebSQLDatabase：客户端本地化的一套数据库系统，可以将大量的数据保存在客户端，无须与服务器端进行交互</span><br></pre></td></tr></table></figure>
+
+<h5 id="全局属性"><a href="#全局属性" class="headerlink" title="全局属性"></a>全局属性</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">也就是所有标签都可以使用的属性，包括id\style\class等</span><br><span class="line">带有ID的DOM树元素会变成全局变量</span><br><span class="line">ID值不能以数字开头</span><br></pre></td></tr></table></figure>
+
+<h5 id="标签-1"><a href="#标签-1" class="headerlink" title="标签"></a>标签</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- p标签中不能嵌套某些标签，例如&lt;li&gt;\&lt;div&gt;。文本类的块级元素不能嵌套块级元素。</span><br><span class="line">- 在a标签的href中添加javascript:;能使得页面不跳转。</span><br><span class="line">- class和id都能设置伪类</span><br><span class="line">- align只能用在div标签中，目的是使div元素中的内容水平对齐；text-align规定元素中的文本水平对齐。两个属性使用的地方不同，但是作用相同。</span><br><span class="line">	&lt;div align=&quot;center&quot;&gt;&lt;/div&gt;</span><br><span class="line">	&lt;div style=&quot;text-align:center&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<h5 id="兼容"><a href="#兼容" class="headerlink" title="兼容"></a>兼容</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- display:inline 兼容目前所有的浏览器</span><br><span class="line">- border-radius：IE9+支持、firefox和chrome以及safari支持所有边框属性、opera支持border-radius和border-shadow，但对border-image需要前缀-o-</span><br><span class="line">- HTML5能向后兼容旧浏览器</span><br></pre></td></tr></table></figure>
+
+<h5 id="clientWidth"><a href="#clientWidth" class="headerlink" title="clientWidth"></a>clientWidth</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Element.clientWidth表示元素的内部宽度，包括内边距，不包括边框和外边距，即clientWidth = width+左右padding</span><br></pre></td></tr></table></figure>
+
+<h5 id="微信公众号相关H5页面的测试"><a href="#微信公众号相关H5页面的测试" class="headerlink" title="微信公众号相关H5页面的测试"></a>微信公众号相关H5页面的测试</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">概念：</span><br><span class="line">- H5页面是指一个可以无缝整合到微信资料中的移动网站，以创建互动营销活动。作为网页，微信H5页面和HTML5有相似的特点。H5是传统桌面网站的轻量级版本，支持无法嵌入到传统网页的功能。</span><br><span class="line">- H5页面第一次打开时，需要测试公众号授权</span><br><span class="line">- 手机定位未打开，H5和公众号没有权限，手动选择也不行</span><br><span class="line">- 公众号未授权进行定位时，H5页面的定位将要手动选择</span><br><span class="line">- H5页面需要测试页面是否能被浏览器正常打开</span><br></pre></td></tr></table></figure>
+
+<h5 id="元数据-meta-content-包括"><a href="#元数据-meta-content-包括" class="headerlink" title="元数据(meta content)包括"></a>元数据(meta content)包括</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">base\link\meta\noscript\style\script\title</span><br></pre></td></tr></table></figure>
+
+<h5 id="input标签"><a href="#input标签" class="headerlink" title="input标签"></a>input标签</h5><ul>
+<li>multiple属性允许input当type为file时上传多个文件</li>
+<li>type的取值可以是<code>image checkbox button file password radio reset submit text hidden date data-time email</code>等</li>
+<li>新属性：<code>search number tel</code></li>
+<li>输入类型data用于选取年、月、日；输入类型month选取年、月；输入类型week选取年、周；输入类型time用于选取时间(小时和分钟)</li>
+</ul>
+<h5 id="select标签"><a href="#select标签" class="headerlink" title="select标签"></a>select标签</h5><ul>
+<li>multiple属性对于select来说是设置多选</li>
+</ul>
+<h5 id="网页数值单位"><a href="#网页数值单位" class="headerlink" title="网页数值单位"></a>网页数值单位</h5><ul>
+<li>相对单位(不依赖其他元素大小)：<code>em ex ch rem vw vh vmax vmin</code></li>
+<li>绝对单位(依赖其他元素大小)：<code>cm mm q in pt pc px</code></li>
+</ul>
+<h5 id="table标签"><a href="#table标签" class="headerlink" title="table标签"></a>table标签</h5><ul>
+<li>常见元素：tr\td\th</li>
+<li>更复杂的元素：caption\col\colgroup\thead\tfoot\tbody</li>
+</ul>
+<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hidden</span><br><span class="line">- 功能是通知浏览器不渲染元素，该元素处于不可见状态，但元素中的内容还是浏览器创建的。也就是说页面装载后允许使用JS脚本将该属性取消，取消后该元素变为可见状态。</span><br></pre></td></tr></table></figure>
+
+<h5 id="控件包含复选框、组合框、编辑框、列表框"><a href="#控件包含复选框、组合框、编辑框、列表框" class="headerlink" title="控件包含复选框、组合框、编辑框、列表框"></a>控件包含复选框、组合框、编辑框、列表框</h5><h4 id="Form表单"><a href="#Form表单" class="headerlink" title="Form表单"></a>Form表单</h4><h5 id="获取表单中的文本"><a href="#获取表单中的文本" class="headerlink" title="获取表单中的文本"></a>获取表单中的文本</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 目标： --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">name</span>=<span class="string">&quot;a&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">select</span> <span class="attr">name</span>=<span class="string">&quot;a&quot;</span> <span class="attr">size</span>=<span class="string">&quot;1&quot;</span> <span class="attr">id</span>=<span class="string">&quot;obj&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;a&quot;</span>&gt;</span>1<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;b&quot;</span>&gt;</span>2<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">&quot;c&quot;</span>&gt;</span>3<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 代码</span></span><br><span class="line"><span class="variable language_">window</span>.<span class="property">onload</span> = <span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> obj = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(obj);</span><br><span class="line">    <span class="keyword">var</span> value = obj.<span class="property">value</span>;</span><br><span class="line">    <span class="keyword">var</span> options = obj.<span class="property">options</span>;</span><br><span class="line">    <span class="comment">//获取第几个option的value值</span></span><br><span class="line">    <span class="keyword">var</span> value1 = options[<span class="number">0</span>].<span class="property">value</span>;</span><br><span class="line">    <span class="comment">//获取第几个option的text值</span></span><br><span class="line">    <span class="keyword">var</span> text1 = options[<span class="number">0</span>].<span class="property">text</span>;</span><br><span class="line">    <span class="keyword">var</span> index = obj.<span class="property">selectedIndex</span>;</span><br><span class="line">    <span class="keyword">var</span> selectedText = options[index].<span class="property">text</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="enctype属性：规定如何对表单数据进行编码"><a href="#enctype属性：规定如何对表单数据进行编码" class="headerlink" title="enctype属性：规定如何对表单数据进行编码"></a>enctype属性：规定如何对表单数据进行编码</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- application/x-www-form-urlencoded：默认编码方式，在发送前编码所有字符</span><br><span class="line">- multipart/form-data：不对字符编码，在使用包含文件上传控件的表单时，必须使用</span><br><span class="line">- text/plain：将空格转换为“+”号，但不对特殊字符编码</span><br></pre></td></tr></table></figure>
+
+<h5 id="action属性：规定向何处发送表单"><a href="#action属性：规定向何处发送表单" class="headerlink" title="action属性：规定向何处发送表单"></a>action属性：规定向何处发送表单</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">可能的值：</span><br><span class="line">- 绝对URL：指向其他站点</span><br><span class="line">- 相对URL：指向站点内的文件</span><br></pre></td></tr></table></figure>
+
+<h5 id="method属性只有两个选项：get和post-其他方法是ajax里面的"><a href="#method属性只有两个选项：get和post-其他方法是ajax里面的" class="headerlink" title="method属性只有两个选项：get和post(其他方法是ajax里面的)"></a>method属性只有两个选项：get和post(其他方法是ajax里面的)</h5><h5 id="HTML5中新增表单元素属性是"><a href="#HTML5中新增表单元素属性是" class="headerlink" title="HTML5中新增表单元素属性是"></a>HTML5中新增表单元素属性是</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">placeholder</span><br><span class="line">multiple</span><br><span class="line">required</span><br><span class="line">pattern</span><br></pre></td></tr></table></figure>
+
+<h5 id="元素优先级"><a href="#元素优先级" class="headerlink" title="元素优先级"></a>元素优先级</h5><p>在HTML中，帧元素(frameset)的优先级最高，表单元素比非表单元素的优先级要高。</p>
+<h4 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h4><ul>
+<li>CSS加载不会阻塞DOM树的解析；CSS加载会阻塞DOM树的渲染；CSS加载会阻塞后面JS语句的执行</li>
+<li>去掉超文本链接的下划线：text-decoration: none</li>
+<li>去掉ul\li前面黑点：list-style-type: none</li>
+<li>将ul \ li前的小黑点改成正方形：list-style-type: square</li>
+</ul>
+<h5 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h5><ul>
+<li>text-transform: capitalize；首字母大写</li>
+<li>text-transform: lowercase；所有字母小写</li>
+<li>text-transform: uppercase；所有字母大写</li>
+<li>font-weight: bold；字体为粗体</li>
+</ul>
+<h5 id="锚伪类：用来表示链接的不同状态的伪类"><a href="#锚伪类：用来表示链接的不同状态的伪类" class="headerlink" title="锚伪类：用来表示链接的不同状态的伪类"></a>锚伪类：用来表示链接的不同状态的伪类</h5><ul>
+<li><code>a:link</code>:未访问的链接</li>
+<li><code>a:visited</code>:已访问的链接</li>
+<li><code>a:hover</code>：鼠标移动到链接上</li>
+<li><code>a:active</code>:选定的链接</li>
+</ul>
+<h5 id="属性方向"><a href="#属性方向" class="headerlink" title="属性方向"></a>属性方向</h5><ul>
+<li>margin:20 20 30 40;(上右下左)</li>
+<li>text-shadow属性中的四个值(length、length、length、color)代表的含义：阴影离开文字的横方向距离、阴影离开文字的纵方向距离、阴影的模糊半径、阴影的颜色</li>
+</ul>
+<h5 id="CSS使用服务器端的字体"><a href="#CSS使用服务器端的字体" class="headerlink" title="CSS使用服务器端的字体"></a>CSS使用服务器端的字体</h5><p><code>@font-face&#123;font-family:dreamy;font-weight:bold;src:url(http:www.xx.com/font.eot)&#125;</code></p>
+<h5 id="keyframes规则用于创建动画"><a href="#keyframes规则用于创建动画" class="headerlink" title="@keyframes规则用于创建动画"></a>@keyframes规则用于创建动画</h5><h4 id="JQuery"><a href="#JQuery" class="headerlink" title="JQuery"></a>JQuery</h4><ul>
+<li>$(selector).fadeIn()：使用淡入效果显示元素</li>
+<li>$(selector).fadeOut()：使用淡入效果隐藏元素</li>
+<li>$(selector).fadeToggle()：使用淡入效果显示&#x2F;隐藏元素来回切换</li>
+<li>$(selector).fadeTo()：使元素的透明度逐渐变化到指定值</li>
+<li>$(selector).slideUp()：隐藏</li>
+<li>$(selector).slideDown()：显示</li>
+<li>$().children()：沿着DOM树查询第一个直接子元素</li>
+<li>$().html()：返回DOM结构，返回页面源码</li>
+<li>$().contents()：能拿到所有子元素</li>
+<li>$().find()：查询某个元素</li>
+<li>$().text()：返回纯文本</li>
+<li>$().attr()：返回元素属性值</li>
+<li>$().val()：返回设置或表单字段的值</li>
+</ul>
+<h5 id="寻找元素"><a href="#寻找元素" class="headerlink" title="寻找元素"></a>寻找元素</h5><ul>
+<li>siblings：同辈元素</li>
+<li>find：后辈元素</li>
+<li>eq(index)：第index个元素</li>
+<li>next：下一个元素</li>
+</ul>
+<h4 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h4><ul>
+<li><p>在JS中，0可以作为分母，0&#x2F;0的结果为NaN，不会抛异常</p>
+</li>
+<li><p>rejected状态的promise需要一个捕获异常的回调函数，否则会报错</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//报错</span></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="number">123</span>).<span class="title function_">finally</span>(<span class="function"><span class="params">a</span>=&gt;</span><span class="variable language_">console</span>.<span class="title function_">log</span>(a));</span><br><span class="line"><span class="comment">//正确的写法</span></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">reject</span>(<span class="number">123</span>).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span>=&gt;</span>err).<span class="title function_">finally</span>(<span class="function"><span class="params">a</span>=&gt;</span><span class="variable language_">console</span>.<span class="title function_">log</span>(a));</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在JS中，当一般变量、函数、函数参数重名时，它们的优先级：已初始化的一般参数&gt;函数&gt;函数参数&gt;未初始化的一般参数</p>
+</li>
+</ul>
+<h4 id="JSON与XML"><a href="#JSON与XML" class="headerlink" title="JSON与XML"></a>JSON与XML</h4><p>XML特点</p>
+<ul>
+<li>只有唯一的根元素</li>
+<li>是标记语言，不是编程语言</li>
+<li>格式是严格要求，每个元素的开闭必须完整，不允许交叉开闭</li>
+<li>大小写敏感</li>
+</ul>
+<p>XML优点</p>
+<ul>
+<li>格式统一，符合标准</li>
+<li>容易与其他系统进行远程交互，数据传输比较方便</li>
+</ul>
+<p>XML缺点</p>
+<ul>
+<li>XML文件庞大，文件格式复杂，传输占带宽</li>
+<li>服务器端和客户端都需要花费大量代码来解析XML，导致服务器端和客户端代码变得异常复杂且不易维护</li>
+<li>客户端不同浏览器之间解析XML的方式不一致，需要重复编写很多代码</li>
+<li>服务器端和客户端解析XML需要花费较多资源和时间</li>
+</ul>
+<p>JSON优点</p>
+<ul>
+<li>数据格式比较简单，易于读写，格式都是压缩的，占用带宽小，传输速度比XML快</li>
+<li>易于解析，JS可以通过eval_r()进行读取</li>
+<li>支持多种语言，包括java、python等，便于服务器端解析</li>
+<li>JSON格式能够直接为服务器端代码使用，大大简化了服务器端和客户端的代码开发量，易于维护</li>
+</ul>
+<p>JSON缺点</p>
+<ul>
+<li>没有XML格式那么使用广泛，没有XML通用性高</li>
+<li>JSON格式在web应用中的推广还属于初级阶段</li>
+</ul>
+<p>JSON与XML的区别</p>
+<ul>
+<li>JSON是javascript object notation；XML是可扩展的标记语言。</li>
+<li>JSON基于JS；XML源于SGML。</li>
+<li>JSON是一种表示对象的方式，XML是一种标记语言，使用标记结构来表示数据项。但是JSON比XML更能表达结构化数据。</li>
+<li>JSON不提供对命名空间的支持，XML支持命名空间。</li>
+<li>JSON支持数组，XML不支持数组</li>
+<li>XML文件相对难以理解和阅读，JSON文件非常易于阅读</li>
+<li>XML对数据的类型描述表达比JSON更丰富</li>
+<li>JSON不使用结束标签，XML有开始和结束标签</li>
+<li>JSON安全性较低，XML安全性比JSON高</li>
+<li>JSON不支持注释，XML支持</li>
+<li>JSON仅支持UTF-8编码，XML支持各种注释</li>
+<li>存在一些数据库，直接支持XML或JSON数据的操作，例如mongodb，postgresql</li>
+</ul>
+<h4 id="React"><a href="#React" class="headerlink" title="React"></a>React</h4><p>Hook</p>
+<ul>
+<li>hook还无法覆盖class的所有使用场景，不常用的getSnapshotBeforeUpdate、getDerivedStateFromError和componentDidCatch生命周期还没有Hook的等价写法</li>
+</ul>
+<p>useEffect</p>
+<ul>
+<li>模拟三个生命周期（挂载、更新、卸载前）。挂载componentDidMount：第二个参数为空，或空数组。更新componentDidUpdate：第二个参数为需要观察的依赖，依赖变化则执行副作用函数。卸载前componentWillUnmount：在useEffect的回调函数中返回一个函数。</li>
+</ul>
+<p>useDebugValue</p>
+<ul>
+<li>可以在react开发者工具中显示自定义hook的标签</li>
+</ul>
+<p>Context</p>
+<ul>
+<li>context提供了一种在组件之间共享值的方式，而不必显式地通过组件树逐层传递props</li>
+<li>context的设计目的是为了共享那些对于一个组件树而言是全局的数据，组件树中的所有组件都能访问到这些数据，也能访问到后续数据的更新</li>
+<li>但是context会使组件的<strong>复用性变差</strong></li>
+</ul>
+<p>redux</p>
+<ul>
+<li>单一数据源</li>
+<li>state只读</li>
+<li>使用纯函数来执行修改</li>
+</ul>
+<p>StrictMode</p>
+<ul>
+<li>检测过时的context API</li>
+<li>识别不安全的生命周期</li>
+<li>检测意外的副作用</li>
+<li>仅在开发环境生效</li>
+</ul>
+<p>错误边界</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">若class组件定义了getDerivedStateFromError()或componentDidCatch()这两个生命周期方法中的任意一个，那么它就变成了错误边界。抛出错误后，需要使用getDerivedStateFromError()渲染备用UI，使用componentDidCatch()打印错误信息</span><br></pre></td></tr></table></figure>
+
+<p>lazy和suspense</p>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title class_">OtherComponent</span> = <span class="title class_">React</span>.<span class="title function_">lazy</span>(<span class="function">()=&gt;</span><span class="title function_">import</span>(<span class="string">&#x27;./OtherComponent&#x27;</span>));</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">MyComponent</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">    	<span class="language-xml"><span class="tag">&lt;&gt;</span></span></span><br><span class="line"><span class="language-xml">        	// Suspense中的fallback属性指定加载指示器，此处为Component1，在加载过程中展示，以防其组件树中的某些子组件尚未具备渲染条件</span></span><br><span class="line"><span class="language-xml">			<span class="tag">&lt;<span class="name">React.Suspense</span> <span class="attr">fallback</span>=<span class="string">&#123;</span>&lt;<span class="attr">Component1</span> /&gt;</span>&#125;&gt;</span></span><br><span class="line"><span class="language-xml">        		<span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">                    <span class="tag">&lt;<span class="name">OtherComponent</span>&gt;</span><span class="tag">&lt;/<span class="name">OtherComponent</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">            	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        	<span class="tag">&lt;/<span class="name">React.Suspense</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">        <span class="tag">&lt;/&gt;</span></span></span><br><span class="line">    )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>React.lazy()允许定义一个动态加载的组件</li>
+<li>lazy懒加载组件，经常和suspense组件搭配使用，常用于渲染异步组件。suspense可以做加载动画，代码拆分，用于加载完之前先渲染一个加载动画或者占位符</li>
+</ul>
+<p>路由组件</p>
+<ul>
+<li>history的属性值有：createMemoryHistory、hashHistory、browserHistory</li>
+</ul>
+<p>ReactDOM.render()</p>
+<ul>
+<li>ReactDom.render()不会修改容器节点，只会修改容器节点的子节点。可以在不覆盖现有子节点的情况下，将组件插入已有的DOM节点中。会返回对根组件ReactComponent实例的引用。</li>
+</ul>
+<p>JSX</p>
+<ul>
+<li>JSX代码最终会被转换成使用React.createElement()方法生成的react元素</li>
+</ul>
+<p>生命周期</p>
+<ul>
+<li>componentWillUnmount()中可以执行：清除timer、取消网络请求、清除在componentDidMount()中创建的订阅等操作，但不能调用setState，因为该组件将永远不会重新渲染。</li>
+</ul>
+<p>剪贴板事件</p>
+<ul>
+<li>onCopy、onCut、onPaste</li>
+</ul>
+<p>refs</p>
+<ul>
+<li>适合的使用场景：1）管理焦点，文本选择或媒体播放  2）触发强制动画  3）集成第三方DOM库</li>
+</ul>
+<p>React.findDOMNode</p>
+<ul>
+<li>组件并不是真实的 DOM 节点，而是存在于内存之中的一种数据结构，叫做虚拟 DOM 。只有当它插入文档以后，才会变成真实的 DOM 。根据 React 的设计，所有的 DOM 变动，都先在虚拟 DOM 上发生，然后再将实际发生变动的部分，反映在真实 DOM上，这种算法叫做 <a target="_blank" rel="noopener" href="http://calendar.perfplanet.com/2013/diff/">DOM diff</a> ，它可以极大提高网页的性能表现。但是，有时需要从组件获取真实 DOM 的节点，这时就要用到 React.findDOMNode 方法。</li>
+<li>只在已挂载的组件上可用。如果尝试调用未挂载的组件，则将引发异常。</li>
+<li>在严格模式下，使用此方法会报警告。</li>
+</ul>
+<p>ReactDOM.createPortal(child, container)</p>
+<ul>
+<li>可以将子节点渲染到存在于父组件以外的DOM节点上</li>
+<li>从portal内部触发的事件会一直冒泡至含React树的祖先</li>
+<li>portal可以被放置在DOM树种的任何地方，其行为和普通的React子节点行为一致</li>
+</ul>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><ul>
+<li>html：<code>&lt;!-- --&gt;</code></li>
+<li>CSS: &#x2F;* *&#x2F;</li>
+<li>js: &#x2F;&#x2F;</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io">Cheyennee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io/2021/02/15/random/">http://cheyennee.github.io/2021/02/15/random/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cheyennee.github.io" target="_blank">Cheyennee</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/random/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2021/03/12/JS/"><img class="prev-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/js/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">JS</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Cheyennee</div><div class="author-info__description">生而为人，还请努力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cheyennee"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">在路上</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML5-%E4%B8%8A%E4%B8%80%E4%B8%AA%E7%89%88%E6%9C%AC%E6%98%AFHTML4-01"><span class="toc-number">1.</span> <span class="toc-text">HTML5(上一个版本是HTML4.01)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE"><span class="toc-number">1.1.</span> <span class="toc-text">标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%97%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">列表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Canvas%E4%B8%8ESVG"><span class="toc-number">1.3.</span> <span class="toc-text">Canvas与SVG</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#DHTML"><span class="toc-number">1.4.</span> <span class="toc-text">DHTML</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#readonly%E4%B8%8Edisabled%E5%8C%BA%E5%88%AB"><span class="toc-number">1.5.</span> <span class="toc-text">readonly与disabled区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E8%B0%83%E7%94%A8%E5%9C%A8html%E5%92%8Creact%E4%B8%AD%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.6.</span> <span class="toc-text">事件调用在html和react中的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">1.7.</span> <span class="toc-text">数据存储方式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%B1%9E%E6%80%A7"><span class="toc-number">1.8.</span> <span class="toc-text">全局属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE-1"><span class="toc-number">1.9.</span> <span class="toc-text">标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%BC%E5%AE%B9"><span class="toc-number">1.10.</span> <span class="toc-text">兼容</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#clientWidth"><span class="toc-number">1.11.</span> <span class="toc-text">clientWidth</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%BE%AE%E4%BF%A1%E5%85%AC%E4%BC%97%E5%8F%B7%E7%9B%B8%E5%85%B3H5%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%B5%8B%E8%AF%95"><span class="toc-number">1.12.</span> <span class="toc-text">微信公众号相关H5页面的测试</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE-meta-content-%E5%8C%85%E6%8B%AC"><span class="toc-number">1.13.</span> <span class="toc-text">元数据(meta content)包括</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#input%E6%A0%87%E7%AD%BE"><span class="toc-number">1.14.</span> <span class="toc-text">input标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#select%E6%A0%87%E7%AD%BE"><span class="toc-number">1.15.</span> <span class="toc-text">select标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BD%91%E9%A1%B5%E6%95%B0%E5%80%BC%E5%8D%95%E4%BD%8D"><span class="toc-number">1.16.</span> <span class="toc-text">网页数值单位</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#table%E6%A0%87%E7%AD%BE"><span class="toc-number">1.17.</span> <span class="toc-text">table标签</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">1.18.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%8E%A7%E4%BB%B6%E5%8C%85%E5%90%AB%E5%A4%8D%E9%80%89%E6%A1%86%E3%80%81%E7%BB%84%E5%90%88%E6%A1%86%E3%80%81%E7%BC%96%E8%BE%91%E6%A1%86%E3%80%81%E5%88%97%E8%A1%A8%E6%A1%86"><span class="toc-number">1.19.</span> <span class="toc-text">控件包含复选框、组合框、编辑框、列表框</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Form%E8%A1%A8%E5%8D%95"><span class="toc-number">2.</span> <span class="toc-text">Form表单</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%A1%A8%E5%8D%95%E4%B8%AD%E7%9A%84%E6%96%87%E6%9C%AC"><span class="toc-number">2.1.</span> <span class="toc-text">获取表单中的文本</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#enctype%E5%B1%9E%E6%80%A7%EF%BC%9A%E8%A7%84%E5%AE%9A%E5%A6%82%E4%BD%95%E5%AF%B9%E8%A1%A8%E5%8D%95%E6%95%B0%E6%8D%AE%E8%BF%9B%E8%A1%8C%E7%BC%96%E7%A0%81"><span class="toc-number">2.2.</span> <span class="toc-text">enctype属性：规定如何对表单数据进行编码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#action%E5%B1%9E%E6%80%A7%EF%BC%9A%E8%A7%84%E5%AE%9A%E5%90%91%E4%BD%95%E5%A4%84%E5%8F%91%E9%80%81%E8%A1%A8%E5%8D%95"><span class="toc-number">2.3.</span> <span class="toc-text">action属性：规定向何处发送表单</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#method%E5%B1%9E%E6%80%A7%E5%8F%AA%E6%9C%89%E4%B8%A4%E4%B8%AA%E9%80%89%E9%A1%B9%EF%BC%9Aget%E5%92%8Cpost-%E5%85%B6%E4%BB%96%E6%96%B9%E6%B3%95%E6%98%AFajax%E9%87%8C%E9%9D%A2%E7%9A%84"><span class="toc-number">2.4.</span> <span class="toc-text">method属性只有两个选项：get和post(其他方法是ajax里面的)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML5%E4%B8%AD%E6%96%B0%E5%A2%9E%E8%A1%A8%E5%8D%95%E5%85%83%E7%B4%A0%E5%B1%9E%E6%80%A7%E6%98%AF"><span class="toc-number">2.5.</span> <span class="toc-text">HTML5中新增表单元素属性是</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E4%BC%98%E5%85%88%E7%BA%A7"><span class="toc-number">2.6.</span> <span class="toc-text">元素优先级</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CSS"><span class="toc-number">3.</span> <span class="toc-text">CSS</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7-1"><span class="toc-number">3.1.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%94%9A%E4%BC%AA%E7%B1%BB%EF%BC%9A%E7%94%A8%E6%9D%A5%E8%A1%A8%E7%A4%BA%E9%93%BE%E6%8E%A5%E7%9A%84%E4%B8%8D%E5%90%8C%E7%8A%B6%E6%80%81%E7%9A%84%E4%BC%AA%E7%B1%BB"><span class="toc-number">3.2.</span> <span class="toc-text">锚伪类：用来表示链接的不同状态的伪类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E6%96%B9%E5%90%91"><span class="toc-number">3.3.</span> <span class="toc-text">属性方向</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CSS%E4%BD%BF%E7%94%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E7%9A%84%E5%AD%97%E4%BD%93"><span class="toc-number">3.4.</span> <span class="toc-text">CSS使用服务器端的字体</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#keyframes%E8%A7%84%E5%88%99%E7%94%A8%E4%BA%8E%E5%88%9B%E5%BB%BA%E5%8A%A8%E7%94%BB"><span class="toc-number">3.5.</span> <span class="toc-text">@keyframes规则用于创建动画</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JQuery"><span class="toc-number">4.</span> <span class="toc-text">JQuery</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%BB%E6%89%BE%E5%85%83%E7%B4%A0"><span class="toc-number">4.1.</span> <span class="toc-text">寻找元素</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JS"><span class="toc-number">5.</span> <span class="toc-text">JS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JSON%E4%B8%8EXML"><span class="toc-number">6.</span> <span class="toc-text">JSON与XML</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#React"><span class="toc-number">7.</span> <span class="toc-text">React</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">8.</span> <span class="toc-text">注释</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/07/js%E9%A2%98/" title="js题"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/dp/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js题"/></a><div class="content"><a class="title" href="/2023/07/07/js%E9%A2%98/" title="js题">js题</a><time datetime="2023-07-07T14:28:39.043Z" title="发表于 2023-07-07 22:28:39">2023-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/18/top100/" title="top100"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="top100"/></a><div class="content"><a class="title" href="/2023/06/18/top100/" title="top100">top100</a><time datetime="2023-06-18T07:47:11.000Z" title="发表于 2023-06-18 15:47:11">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/06/ts/" title="TS"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/js/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TS"/></a><div class="content"><a class="title" href="/2023/06/06/ts/" title="TS">TS</a><time datetime="2023-06-06T14:32:28.000Z" title="发表于 2023-06-06 22:32:28">2023-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/01/playwright/" title="playwright"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/linux/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="playwright"/></a><div class="content"><a class="title" href="/2023/05/01/playwright/" title="playwright">playwright</a><time datetime="2023-04-30T23:25:56.000Z" title="发表于 2023-05-01 07:25:56">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/" title="前端安全"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/interview/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端安全"/></a><div class="content"><a class="title" href="/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/" title="前端安全">前端安全</a><time datetime="2023-03-27T05:15:38.000Z" title="发表于 2023-03-27 13:15:38">2023-03-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Cheyennee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

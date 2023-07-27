@@ -1,0 +1,215 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>rxjs | Cheyennee</title><meta name="keywords" content="blog"><meta name="author" content="Cheyennee,714851125@qq.com"><meta name="copyright" content="Cheyennee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录与rxjs相关的内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="rxjs">
+<meta property="og:url" content="http://cheyennee.github.io/2023/01/15/rxjs/index.html">
+<meta property="og:site_name" content="Cheyennee">
+<meta property="og:description" content="记录与rxjs相关的内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/css/cover.jpg">
+<meta property="article:published_time" content="2023-01-15T11:30:05.000Z">
+<meta property="article:modified_time" content="2023-07-27T05:49:09.374Z">
+<meta property="article:author" content="Cheyennee">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/css/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://cheyennee.github.io/2023/01/15/rxjs/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'rxjs',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-27 13:49:09'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Cheyennee</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">rxjs</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-01-15T11:30:05.000Z" title="发表于 2023-01-15 19:30:05">2023-01-15</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-27T05:49:09.374Z" title="更新于 2023-07-27 13:49:09">2023-07-27</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/rxjs/">rxjs</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="rxjs"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h1 id="可观察对象Observable"><a href="#可观察对象Observable" class="headerlink" title="可观察对象Observable"></a>可观察对象Observable</h1><p>可观察对象对在应用的各个部分之间传递消息提供了支持。</p>
+<h2 id="观察者模式与发布-x2F-订阅模式的区别"><a href="#观察者模式与发布-x2F-订阅模式的区别" class="headerlink" title="观察者模式与发布&#x2F;订阅模式的区别"></a>观察者模式与发布&#x2F;订阅模式的区别</h2><p>观察者模式和发布&#x2F;订阅模式都是用来处理对象之间的一对多关系的。<strong>在观察者模式中，观察者知道被观察者的存在，并且直接从被观察者那里获取更新</strong>。而在发布&#x2F;订阅模式中，<strong>发布者和订阅者不知道对方的存在。它们只是通过调度中心进行通信</strong>。<br>观察者（Observer）模式是一个软件设计模式，它有一个对象，称之为主体 Subject，负责维护一个依赖项（称之为观察者 Observer）的列表，并且在状态变化时自动通知它们。该模式和发布&#x2F;订阅模式非常相似（但不完全一样）。</p>
+<h2 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h2><ul>
+<li>声明式：也就是说，虽然你定义了一个用于发布值的函数，但是在有消费者订阅它之前，这个函数并不会实际执行。订阅之后，当这个函数执行完或取消订阅时，订阅者就会收到通知。</li>
+<li>可观察对象可以发送多个任意类型的值 —— 字面量、消息、事件。无论这些值是同步发送的还是异步发送的，接收这些值的 API 都是一样的。由于准备（setup）和清场（teardown）的逻辑都是由可观察对象自己处理的，因此你的应用代码只管订阅并消费这些值就可以了，做完之后，取消订阅。无论这个流是按键流、HTTP 响应流还是定时器，对这些值进行监听和停止监听的接口都是一样的。</li>
+</ul>
+<h2 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myObserverable = <span class="title function_">of</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line"><span class="keyword">const</span> myObserver = &#123;</span><br><span class="line">    <span class="attr">next</span>: <span class="function">(<span class="params">x: <span class="built_in">number</span></span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;observer got a next value: &#x27;</span>, x),</span><br><span class="line">    <span class="attr">error</span>: <span class="function">(<span class="params">err: <span class="built_in">Error</span></span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;observer got an error: &#x27;</span>, err),</span><br><span class="line">    <span class="attr">complete</span>: <span class="function">() =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;observer got a complete notification&#x27;</span>)</span><br><span class="line">&#125;;</span><br><span class="line">myObserverable.<span class="title function_">subscribe</span>(myObserver);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">ESC_CODE</span> = <span class="string">&#x27;Escape&#x27;</span>;</span><br><span class="line"><span class="keyword">const</span> nameInput = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;name&#x27;</span>) <span class="keyword">as</span> <span class="title class_">HTMLInputElement</span>;</span><br><span class="line"><span class="keyword">const</span> subscription = <span class="title function_">fromEvent</span>(nameInput, <span class="string">&#x27;keydown&#x27;</span>).<span class="title function_">subscribe</span>(<span class="function">(<span class="params">e: KeyboardEvent</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(e.<span class="property">code</span> === <span class="variable constant_">ESC_CODE</span>)&#123;</span><br><span class="line">        nameInput.<span class="property">value</span> = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="多播"><a href="#多播" class="headerlink" title="多播"></a>多播</h2><p>典型的可观察对象会为每一个观察者创建一次新的、<strong>独立的执行</strong>。有时候，不应该对每一个订阅者都独立执行一次，这就需要通过多播实现。多播是指在同一个可观察对象上多次调用 subscribe()。这种情况下，该可观察对象的多个实例共享同一个执行路径。</p>
+<h1 id="RXJS"><a href="#RXJS" class="headerlink" title="RXJS"></a>RXJS</h1><h2 id="什么是RxJS"><a href="#什么是RxJS" class="headerlink" title="什么是RxJS"></a>什么是RxJS</h2><p>RxJS 是一个库，它通过使用 observable 序列来编写异步和基于事件的程序。它提供了一个核心类型 Observable，附属类型 (Observer、 Schedulers、 Subjects) 和操作符 (map、filter、reduce、every, 等等)，这些数组操作符可以把异步事件作为集合来处理。<strong>响应式编程是一种面向数据流和变更传播的异步编程范式。</strong>RxJS（响应式扩展的 JavaScript 版）是一个使用<strong>可观察对象</strong>进行<strong>响应式编程</strong>的库，它让组合异步代码和基于回调的代码变得更简单。<br>响应式编程是一种编程范式，它强调数据流和变化传播。在响应式编程中，您可以定义数据流和数据流之间的变换，并且可以使用观察者模式来订阅和处理这些数据流。<br>React也可以被视为响应式编程的一种形式。React中的组件状态和属性都可以被视为响应式数据，当它们发生变化时，React会自动重新渲染视图以反映这些变化。此外，React还提供了一些钩子函数，如<code>useEffect</code>和<code>useReducer</code>，可以用于处理异步数据流和状态管理，这些也是响应式编程的重要概念。</p>
+<h2 id="RxJS操作符的用途"><a href="#RxJS操作符的用途" class="headerlink" title="RxJS操作符的用途"></a>RxJS操作符的用途</h2><ul>
+<li>把现有的异步代码转换成可观察对象</li>
+<li>迭代流中的各个值</li>
+<li>把这些值映射成其它类型</li>
+<li>对流进行过滤</li>
+<li>组合多个流</li>
+</ul>
+<h2 id="常用的操作符"><a href="#常用的操作符" class="headerlink" title="常用的操作符"></a>常用的操作符</h2><ul>
+<li>of: 返回一个 Observable 实例，它用同步的方式把参数中提供的这些值发送出来。</li>
+<li>from: 从一个数组、类数组对象、Promise、迭代器对象或者类 Observable 对象创建一个 Observable。</li>
+<li>fromEvent: 创建一个 Observable，它通过添加事件监听器的方式，根据提供的事件源（比如 DOM 事件、Node.js EventEmitter 或者其他事件源）来实现。</li>
+<li>combineLatest: 当提供的任何一个 Observable 发出值时，从每个 Observable 中获取最新发出的值，然后使用可选的 project 函数把这些值投射成一个值，然后发出这个投射的结果。</li>
+<li>startWith: 返回一个 Observable，它在发出原始 Observable 的值之前发出给定的值。</li>
+<li>debounceTime: 延迟发出值，直到下一个时间段（由 dueTime 参数决定）内没有新的值出现才发出原始值。</li>
+<li>filter: 使用指定的函数测试源 Observable 发出的值，只有通过测试的才会被发出。</li>
+<li>take: 只发出源 Observable 发出的前 n 个值（n 是一个 number 类型）。</li>
+<li>takeUntil: 发出源 Observable 的值，直到提供的 Observable 发出值。</li>
+<li>map: 将每个源值投射成 Observable，该 Observable 会合并到输出 Observable 中。</li>
+<li>tap: 拦截源 Observable 的值并且调用一个函数或方法，但返回的输出 Observable 与源 Observable 是相同的。</li>
+<li>share: 共享源 Observable，以防止副作用或重复的 Observable 执行。</li>
+<li>ofType: 用于过滤Observable中的特定类型的值。</li>
+</ul>
+<h2 id="常用操作符总结"><a href="#常用操作符总结" class="headerlink" title="常用操作符总结"></a>常用操作符总结</h2><ul>
+<li>创建操作符：of、from、fromEvent</li>
+<li>组合操作符：combineLatest、startWith</li>
+<li>过滤操作符：debounceTime、filter、take、takeUntil</li>
+<li>转换操作符：map、tap</li>
+<li>多播操作符：share</li>
+</ul>
+<h2 id="错误处理操作符"><a href="#错误处理操作符" class="headerlink" title="错误处理操作符"></a>错误处理操作符</h2><ul>
+<li>catchError: 捕获错误，并返回新的 Observable 或错误。</li>
+<li>retry: 可以尝试失败的请求.</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> apiData = <span class="title function_">ajax</span>(<span class="string">&#x27;/api/data&#x27;</span>).<span class="title function_">pipe</span>(</span><br><span class="line">    <span class="title function_">map</span>(<span class="function">(<span class="params">res: <span class="built_in">any</span></span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(!res.<span class="property">response</span>)&#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;error occurred&#x27;</span>);</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">Error</span>(<span class="string">&#x27;value exception&#x27;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res.<span class="property">response</span>;</span><br><span class="line">    &#125;),</span><br><span class="line">    <span class="title function_">retry</span>(<span class="number">3</span>),</span><br><span class="line">    <span class="title function_">catchError</span>(<span class="function">()=&gt;</span><span class="title function_">of</span>([]))</span><br><span class="line">);</span><br><span class="line">apiData.<span class="title function_">subscribe</span>(&#123;</span><br><span class="line">    <span class="title function_">next</span>(<span class="params">x: T</span>)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;data: &#x27;</span>, x);&#125;,</span><br><span class="line">    <span class="title function_">error</span>(<span class="params"></span>)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;errors already caught... will not run&#x27;</span>);&#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="可观察对象（Observable）相对于Promise有以下优点："><a href="#可观察对象（Observable）相对于Promise有以下优点：" class="headerlink" title="可观察对象（Observable）相对于Promise有以下优点："></a>可观察对象（Observable）相对于Promise有以下优点：</h2><ol>
+<li>支持多个值：Observable可以发出多个值，而Promise只能发出一个值。这使得Observable更适合处理流数据（如鼠标事件、HTTP响应等）。</li>
+<li>可取消：Observable可以通过unsubscribe()方法来取消订阅，从而中止请求并释放资源。而Promise一旦开始执行就无法取消。</li>
+<li>更丰富的操作符：Observable提供了更多的操作符，如map、filter、reduce等，可以对数据进行更复杂的处理和转换。</li>
+<li>更好的错误处理：Observable可以使用catch操作符来捕获和处理错误，而Promise只能使用catch()方法来处理错误。</li>
+<li>更好的内存管理：Observable可以使用操作符如take、takeUntil等来控制内存泄漏，而Promise没有这样的机制。<br>总之，Observable比Promise更适合处理流数据和异步操作，并提供了更多的操作符和更好的错误处理和内存管理机制。</li>
+</ol>
+<h2 id="可观察对象vs数组"><a href="#可观察对象vs数组" class="headerlink" title="可观察对象vs数组"></a>可观察对象vs数组</h2><p>可观察对象会随时间生成值。数组是用一组静态的值创建的。某种意义上，可观察对象是异步的，而数组是同步的。 </p>
+<h2 id="可观察对象vs事件"><a href="#可观察对象vs事件" class="headerlink" title="可观察对象vs事件"></a>可观察对象vs事件</h2><p>一个显著的不同是你可以配置可观察对象，使其在把事件传给事件处理器之前先进行转换。</p>
+<h2 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h2><h3 id="指数化退避"><a href="#指数化退避" class="headerlink" title="指数化退避"></a>指数化退避</h3><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; timer &#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ajax &#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs/ajax&#x27;</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; retry &#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs/operators&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">function</span> <span class="title function_">backoff</span>(<span class="params">maxTries: <span class="built_in">number</span>, initialDelay: <span class="built_in">number</span></span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">retry</span>(&#123;</span><br><span class="line">        <span class="attr">count</span>: maxTries,</span><br><span class="line">        <span class="attr">delay</span>: <span class="function">(<span class="params">error, retryCount</span>) =&gt;</span> <span class="title function_">timer</span>(initialDelay * retryCount ** <span class="number">2</span>),</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">ajax</span>(<span class="string">&#x27;/api/endpoint&#x27;</span>)</span><br><span class="line">  .<span class="title function_">pipe</span>(<span class="title function_">backoff</span>(<span class="number">3</span>, <span class="number">250</span>))</span><br><span class="line">  .<span class="title function_">subscribe</span>(<span class="keyword">function</span> <span class="title function_">handleData</span>(<span class="params">data</span>) &#123; <span class="comment">/* ... */</span> &#125;);</span><br></pre></td></tr></table></figure>
+
+<h1 id="Angular中的Observable"><a href="#Angular中的Observable" class="headerlink" title="Angular中的Observable"></a>Angular中的Observable</h1><ul>
+<li>EventEmitter: 扩展了 RxJS Subject，并添加了一个 emit() 方法，这样它就可以发送任意值了。当你调用 emit() 时，就会把所发送的值传给订阅上来的观察者的 next() 方法。</li>
+<li>HttpClient: HttpClient[基于XHR].get() 方法返回一个 Observable，它会在 HTTP 响应可用时发出该响应。HttpClient.get() 方法返回的 Observable 会发出单个值，并在此后就会完成。这意味着它不会发出多个值，而是只发出一个值，然后结束。</li>
+<li>Async管道: Async 管道接受一个 Promise 或者 Observable 作为输入，并且订阅该输入，最终返回该输入发出的值。当 Promise 或者 Observable 发出值时，Async 管道就会把这些值作为最终的结果返回。</li>
+<li>响应式表单：FormControl 的 valueChanges 属性和 statusChanges 属性包含了会发出变更事件的可观察对象。</li>
+</ul>
+<h1 id="Subscription-amp-BehaviorSubject"><a href="#Subscription-amp-BehaviorSubject" class="headerlink" title="Subscription &amp; BehaviorSubject"></a>Subscription &amp; BehaviorSubject</h1><h2 id="Subscription"><a href="#Subscription" class="headerlink" title="Subscription"></a>Subscription</h2><p>Subscription 表示可清理资源的对象，通常是 Observable 的执行。Subscription 有一个重要的方法，叫做 unsubscribe()，它不需要任何参数，也不返回任何值。调用此方法就可以取消对 Observable 的执行，以及释放资源或者进行清理。</p>
+<h2 id="BehaviorSubject"><a href="#BehaviorSubject" class="headerlink" title="BehaviorSubject"></a>BehaviorSubject</h2><p>BehaviorSubject 是一种特殊类型的 Subject，它保存了发送给消费者的最新值。并且当有新的观察者订阅时，会立即从 BehaviorSubject 那接收到“当前值”。</p>
+<h1 id="Observable-amp-Subject"><a href="#Observable-amp-Subject" class="headerlink" title="Observable &amp; Subject"></a>Observable &amp; Subject</h1><h2 id="Observable"><a href="#Observable" class="headerlink" title="Observable"></a>Observable</h2><p>Observable 是一个可调用的未来值或事件的集合。它是流中的生产者。Observable 接口声明了用来处理值的方法，这些方法是消费者用来处理 Observable 发出的连续值的。Observable 提供了诸如 map、forEach、reduce、concat、flatMap 等操作符。</p>
+<h2 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h2><p>Subject 是一种特殊类型的 Observable，它允许将值多播给多个观察者，所以 Subject 是多播的，而普通的 Observables 是单播的（每个已订阅的观察者都拥有 Observable 的独立执行）。</p>
+<h1 id="Subject示例"><a href="#Subject示例" class="headerlink" title="Subject示例"></a>Subject示例</h1><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; <span class="title class_">Subject</span> &#125; <span class="keyword">from</span> <span class="string">&#x27;rxjs&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> subject = <span class="keyword">new</span> <span class="title class_">Subject</span>&lt;<span class="built_in">number</span>&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 订阅Subject</span></span><br><span class="line">subject.<span class="title function_">subscribe</span>(&#123;</span><br><span class="line">  <span class="attr">next</span>: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`观察者A收到值：<span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line">subject.<span class="title function_">subscribe</span>(&#123;</span><br><span class="line">  <span class="attr">next</span>: <span class="function">(<span class="params">v</span>) =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`观察者B收到值：<span class="subst">$&#123;v&#125;</span>`</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发出值</span></span><br><span class="line">subject.<span class="title function_">next</span>(<span class="number">1</span>);</span><br><span class="line">subject.<span class="title function_">next</span>(<span class="number">2</span>);</span><br><span class="line">subject.<span class="title function_">next</span>(<span class="number">3</span>);</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io">Cheyennee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io/2023/01/15/rxjs/">http://cheyennee.github.io/2023/01/15/rxjs/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cheyennee.github.io" target="_blank">Cheyennee</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/css/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/01/30/angular/"><img class="prev-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/flex/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">angular</div></div></a></div><div class="next-post pull-right"><a href="/2023/01/08/ngrx/"><img class="next-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/react/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">ngrx</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Cheyennee</div><div class="author-info__description">生而为人，还请努力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cheyennee"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">在路上</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%AF%E8%A7%82%E5%AF%9F%E5%AF%B9%E8%B1%A1Observable"><span class="toc-number">1.</span> <span class="toc-text">可观察对象Observable</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%8F%91%E5%B8%83-x2F-%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">1.1.</span> <span class="toc-text">观察者模式与发布&#x2F;订阅模式的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.</span> <span class="toc-text">特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A4%BA%E4%BE%8B"><span class="toc-number">1.3.</span> <span class="toc-text">示例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E6%92%AD"><span class="toc-number">1.4.</span> <span class="toc-text">多播</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RXJS"><span class="toc-number">2.</span> <span class="toc-text">RXJS</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFRxJS"><span class="toc-number">2.1.</span> <span class="toc-text">什么是RxJS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RxJS%E6%93%8D%E4%BD%9C%E7%AC%A6%E7%9A%84%E7%94%A8%E9%80%94"><span class="toc-number">2.2.</span> <span class="toc-text">RxJS操作符的用途</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">2.3.</span> <span class="toc-text">常用的操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E7%AC%A6%E6%80%BB%E7%BB%93"><span class="toc-number">2.4.</span> <span class="toc-text">常用操作符总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86%E6%93%8D%E4%BD%9C%E7%AC%A6"><span class="toc-number">2.5.</span> <span class="toc-text">错误处理操作符</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%82%E5%AF%9F%E5%AF%B9%E8%B1%A1%EF%BC%88Observable%EF%BC%89%E7%9B%B8%E5%AF%B9%E4%BA%8EPromise%E6%9C%89%E4%BB%A5%E4%B8%8B%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">2.6.</span> <span class="toc-text">可观察对象（Observable）相对于Promise有以下优点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%82%E5%AF%9F%E5%AF%B9%E8%B1%A1vs%E6%95%B0%E7%BB%84"><span class="toc-number">2.7.</span> <span class="toc-text">可观察对象vs数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%82%E5%AF%9F%E5%AF%B9%E8%B1%A1vs%E4%BA%8B%E4%BB%B6"><span class="toc-number">2.8.</span> <span class="toc-text">可观察对象vs事件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">2.9.</span> <span class="toc-text">实例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%87%E6%95%B0%E5%8C%96%E9%80%80%E9%81%BF"><span class="toc-number">2.9.1.</span> <span class="toc-text">指数化退避</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Angular%E4%B8%AD%E7%9A%84Observable"><span class="toc-number">3.</span> <span class="toc-text">Angular中的Observable</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Subscription-amp-BehaviorSubject"><span class="toc-number">4.</span> <span class="toc-text">Subscription &amp; BehaviorSubject</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Subscription"><span class="toc-number">4.1.</span> <span class="toc-text">Subscription</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BehaviorSubject"><span class="toc-number">4.2.</span> <span class="toc-text">BehaviorSubject</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Observable-amp-Subject"><span class="toc-number">5.</span> <span class="toc-text">Observable &amp; Subject</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Observable"><span class="toc-number">5.1.</span> <span class="toc-text">Observable</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Subject"><span class="toc-number">5.2.</span> <span class="toc-text">Subject</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Subject%E7%A4%BA%E4%BE%8B"><span class="toc-number">6.</span> <span class="toc-text">Subject示例</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/07/js%E9%A2%98/" title="js题"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/dp/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js题"/></a><div class="content"><a class="title" href="/2023/07/07/js%E9%A2%98/" title="js题">js题</a><time datetime="2023-07-07T14:28:39.043Z" title="发表于 2023-07-07 22:28:39">2023-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/18/top100/" title="top100"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="top100"/></a><div class="content"><a class="title" href="/2023/06/18/top100/" title="top100">top100</a><time datetime="2023-06-18T07:47:11.000Z" title="发表于 2023-06-18 15:47:11">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/06/ts/" title="TS"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/js/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TS"/></a><div class="content"><a class="title" href="/2023/06/06/ts/" title="TS">TS</a><time datetime="2023-06-06T14:32:28.000Z" title="发表于 2023-06-06 22:32:28">2023-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/01/playwright/" title="playwright"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/linux/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="playwright"/></a><div class="content"><a class="title" href="/2023/05/01/playwright/" title="playwright">playwright</a><time datetime="2023-04-30T23:25:56.000Z" title="发表于 2023-05-01 07:25:56">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/" title="前端安全"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/interview/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端安全"/></a><div class="content"><a class="title" href="/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/" title="前端安全">前端安全</a><time datetime="2023-03-27T05:15:38.000Z" title="发表于 2023-03-27 13:15:38">2023-03-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Cheyennee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

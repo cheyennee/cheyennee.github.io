@@ -1,0 +1,665 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HTML | Cheyennee</title><meta name="keywords" content="blog"><meta name="author" content="Cheyennee,714851125@qq.com"><meta name="copyright" content="Cheyennee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录与HTML相关的内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML">
+<meta property="og:url" content="http://cheyennee.github.io/2021/04/06/HTML/index.html">
+<meta property="og:site_name" content="Cheyennee">
+<meta property="og:description" content="记录与HTML相关的内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/html/pic3.jpg">
+<meta property="article:published_time" content="2021-04-06T11:02:07.000Z">
+<meta property="article:modified_time" content="2022-12-14T11:49:00.886Z">
+<meta property="article:author" content="Cheyennee">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/html/pic3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://cheyennee.github.io/2021/04/06/HTML/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HTML',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-12-14 19:49:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Cheyennee</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">HTML</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2021-04-06T11:02:07.000Z" title="发表于 2021-04-06 19:02:07">2021-04-06</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-12-14T11:49:00.886Z" title="更新于 2022-12-14 19:49:00">2022-12-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/HTML/">HTML</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HTML"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h4 id="语义化相关"><a href="#语义化相关" class="headerlink" title="语义化相关"></a>语义化相关</h4><h5 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h5><ul>
+<li><p>在HTML5出来之前，习惯于用div来表示页面的章节，但是div是没有语义的。HTML5通过加入语义标签，如header\nav\main\aside\section(如果想把一块内容分为几块应该使用section)等，来更加清晰的表达文档结构</p>
+</li>
+<li><p>HTML的语义化是指：通过使用包含语义的标签（如<code>h1</code>-<code>h6</code>）恰当地表示文档结构</p>
+</li>
+<li><p>CSS的语义化是指：为HTML标签添加有意义的class</p>
+</li>
+<li><p>为什么需要语义化：</p>
+<ul>
+<li><p>HTML语义化让页面的内容结构化，结构更清晰</p>
+</li>
+<li><p>去掉CSS样式后页面呈现清晰的结构，是容易阅读的</p>
+</li>
+<li><p>盲人使用读屏器更好地阅读</p>
+</li>
+<li><p>搜索引擎的爬虫也依赖于HTML标记来确定上下文和各个关键字的权重，语义化利于SEO</p>
+</li>
+<li><p>便于团队项目的可持续运作及维护</p>
+</li>
+<li><p>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解</p>
+</li>
+</ul>
+</li>
+<li><p>div标签本身不具有语义，但是可以结合class、title、lang属性来表示具有语义的一组内容</p>
+</li>
+</ul>
+<h4 id="HTML5特性"><a href="#HTML5特性" class="headerlink" title="HTML5特性"></a>HTML5特性</h4><h5 id="如何区分HTML和HTML5？"><a href="#如何区分HTML和HTML5？" class="headerlink" title="如何区分HTML和HTML5？"></a>如何区分HTML和HTML5？</h5><ul>
+<li>DOCTYPE声明</li>
+<li>新增的结构元素</li>
+<li>新增的功能元素</li>
+</ul>
+<h5 id="HTML5的新特性-语义标签、本地存储、媒体播放器、新增选择器"><a href="#HTML5的新特性-语义标签、本地存储、媒体播放器、新增选择器" class="headerlink" title="HTML5的新特性(语义标签、本地存储、媒体播放器、新增选择器)"></a>HTML5的新特性(语义标签、本地存储、媒体播放器、新增选择器)</h5><ul>
+<li>新增选择器 document.querySelector、document.querySelectorAll</li>
+<li>拖拽释放(Drag and drop) API</li>
+<li>媒体播放的 video 和 audio（方法有：加载load、播放play、暂停pause;事件有：play、pause、seek、abort;属性有：preload设置是否在页面加载后载入视频、autoplay设置是否在加载后立即播放、buffered返回用户已缓冲音视频的范围、controller返回音视频的当前媒体控制器）</li>
+<li>本地存储 localStorage 和 sessionStorage</li>
+<li>离线应用 manifest</li>
+<li>桌面通知 Notifications</li>
+<li>语意化标签 article、footer、header、nav、section</li>
+<li>增强表单控件 calendar、date、time、email、url、search</li>
+<li>地理位置 Geolocation</li>
+<li>多任务 webworker</li>
+<li>全双工通信协议 websocket</li>
+<li>历史管理 history</li>
+<li>跨域资源共享(CORS) Access-Control-Allow-Origin</li>
+<li>页面可见性改变事件 visibilitychange</li>
+<li>跨窗口通信 PostMessage</li>
+<li>Form Data 对象</li>
+<li>绘画 canvas</li>
+</ul>
+<h5 id="Geolocation-API"><a href="#Geolocation-API" class="headerlink" title="Geolocation API"></a>Geolocation API</h5><ul>
+<li>存在于navigator对象中，只包含三个方法：1.getCurrentPosition获取当前位置 2.watchPosition监视位置 3.clearWatch 清除监视</li>
+</ul>
+<h5 id="HTML5移除了哪些元素？"><a href="#HTML5移除了哪些元素？" class="headerlink" title="HTML5移除了哪些元素？"></a>HTML5移除了哪些元素？</h5><ul>
+<li>纯表现的元素：basefont、big、center、font、s、strike、tt、u</li>
+<li>对可用性产生负面影响的元素：frame、frameset、noframes</li>
+<li>只有部分浏览器支持的元素：applet、bgsound、blink、marquee</li>
+</ul>
+<h5 id="如何处理HTML5新标签的浏览器兼容问题-如何解决IE9及以下版本对H5新增标签不识别、CSS不起作用的问题-？"><a href="#如何处理HTML5新标签的浏览器兼容问题-如何解决IE9及以下版本对H5新增标签不识别、CSS不起作用的问题-？" class="headerlink" title="如何处理HTML5新标签的浏览器兼容问题(如何解决IE9及以下版本对H5新增标签不识别、CSS不起作用的问题)？"></a>如何处理HTML5新标签的浏览器兼容问题(如何解决IE9及以下版本对H5新增标签不识别、CSS不起作用的问题)？</h5><ul>
+<li>为网站创建多套模板，通过程序对User-Agent的判断给不同的浏览器用户显示不同的页面，但这样成本高，也失去了响应式设计的意义</li>
+<li>通过 document.createElement 创建新标签</li>
+<li>使用 html5shiv.js，原理是利用脚本document.createElement(“”)创建对应的脚本，CSS选择器便能正确应用到该标签。html5shiv主要解决HTML5提出的新的元素不被IE6-8识别，这些新元素不能作为父节点包裹子元素，并且不能应用CSS样式。让CSS 样式应用在未知元素上只需执行 。document.createElement(elementName) 即可实现。html5shiv就是根据这个原理创建的。</li>
+</ul>
+<h5 id="SGML和DTD-了解即可"><a href="#SGML和DTD-了解即可" class="headerlink" title="SGML和DTD(了解即可)"></a>SGML和DTD(了解即可)</h5><ul>
+<li>SGML一种国际标准，该标准定义独立于平台和应用的文本文档格式，索引和链接信息，为用户提供一种类似于语法的机制，<strong>用来定义文档的结构和指示文档结构的标签</strong>。制定SGML的基本思想是把文档内容于样式分开。SGML规定了在文档中嵌入描述标记的标准格式，指定了描述文档结构的标准方法，这是SGML的精华。换句话说，你可以使用SGML为你创作的每一种类型的文档设置层次结构模型。SGML是一个包含超文本链接的综合语言，在Web上使用的HTML格式是使用固定标签集的一种SGML文档。</li>
+<li>一个典型的文档可被分为3个层次：结构，内容，样式。SGML主要是处理结构和内容之间的关系。结构：为了描述文档的结构，SGML定义了一个称为“文档类型定义（Document Type Definition,<strong>DTD</strong>）”的文件，它<strong>为组织文档的文档元素</strong>（例如章和章标题，节和主题等）<strong>提供了一个框架</strong>。此外，DTD还为文档元素之间的相互关系指定了规则。例如，“章的标题必须是在章开始之后的第一个元素”，“每个列表至少要有两个项目”等。DTD定义的这些规则可以确保文档的一致性。</li>
+<li>内容：这里指的内容就是信息本身。内容包括信息名称（标题）、段落、项目列表和表格中的具体内容，具体的图形和声音等。确定内容在DTD结构中的位置的方法称为“加标签”，而创建SGML文档实际上就是围绕内容插入相应的标签。这些标签就是给结构中的每一部分的开始和结束做标记。</li>
+<li>样式：SGML本身正在定义样式（style）的设置标准，即文档样式语义学和规范语言（Document Style Semantics and Specification Language，DSSSL）。</li>
+<li>为什么HTML5不使用SGML？W3C 在制定 HTML5 标准时，希望摆脱 SGML 的一些无用的功能和声明，并延续 HTML4 的风格，而非严格的 XHTML 的风格。</li>
+</ul>
+<h5 id="HTML5为什么只需要写-lt-DOCTYPE-HTML-gt-？"><a href="#HTML5为什么只需要写-lt-DOCTYPE-HTML-gt-？" class="headerlink" title="HTML5为什么只需要写&lt;!DOCTYPE HTML&gt;？"></a>HTML5为什么只需要写<code>&lt;!DOCTYPE HTML&gt;</code>？</h5><ul>
+<li>HTML5 不基于 SGML，因此不需要对DTD进行引用，但是需要doctype来规范浏览器的行为，告诉浏览器应该用什么文档标准来解析这个文档</li>
+<li>而HTML4.01基于SGML,所以需要对DTD进行引用，才能告知浏览器文档所使用的文档类型</li>
+</ul>
+<h5 id="Doctype的作用？标准-严格standards-模式与兼容-混杂quirks-模式有什么区别？"><a href="#Doctype的作用？标准-严格standards-模式与兼容-混杂quirks-模式有什么区别？" class="headerlink" title="Doctype的作用？标准(严格standards)模式与兼容(混杂quirks)模式有什么区别？"></a>Doctype的作用？标准(严格standards)模式与兼容(混杂quirks)模式有什么区别？</h5><ul>
+<li><code>&lt;!DOCTYPE&gt;</code>声明位于位<code>于HTML</code>文档中的第一行，处于 <code>&lt;html&gt;</code> 标签之前。告知浏览器的解析器用什么文档标准解析这个文档。<code>DOCTYPE</code>不存在或格式不正确会导致文档以兼容模式呈现</li>
+<li>标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行。在兼容模式中，页面以宽松的向后兼容的方式显示,模拟老式浏览器的行为以防止站点无法工作。</li>
+</ul>
+<h5 id="严格模式与混杂模式的语句解析有哪些不同点？"><a href="#严格模式与混杂模式的语句解析有哪些不同点？" class="headerlink" title="严格模式与混杂模式的语句解析有哪些不同点？"></a>严格模式与混杂模式的语句解析有哪些不同点？</h5><ul>
+<li>混杂模式下盒模型的宽高包括padding和border</li>
+<li>混杂模式下可以设置行内元素的宽高</li>
+<li>混杂模式下可以设置百分比的高度</li>
+<li>混杂模式下无法使用margin: 0 auto；设置水平居中</li>
+<li>混杂模式下设置图片padding会失效</li>
+<li>混杂模式下table中的字体属性不能继承上层的设置</li>
+<li>混杂模式下white-space:pre会失效</li>
+</ul>
+<h5 id="HTML5的DTD"><a href="#HTML5的DTD" class="headerlink" title="HTML5的DTD"></a>HTML5的DTD</h5><ul>
+<li><code>&lt;!DOCTYPE html&gt;</code></li>
+</ul>
+<p><strong>HTML5的form如何关闭自动完成功能？</strong></p>
+<ul>
+<li>自动完成功能：当你往输入框输入内容的时候，浏览器会从你以前的同名输入框的历史记录中查找出类似的内容并列在输入框下面，这样就不用全部输入进去了，直接选择列表中的项目就可以了。</li>
+<li>方案：给不想要提示的 form 或某个 input 设置为 autocomplete&#x3D;off。</li>
+</ul>
+<h5 id="HTML5编码"><a href="#HTML5编码" class="headerlink" title="HTML5编码"></a>HTML5编码</h5><ul>
+<li>UTF-8称为万国码，使用此编码方式可以在网页上显示中文简体繁体及其他语言，例如英语、日文、韩文等</li>
+<li>GBK是汉字编码，是双字节码，可表示繁体字和简体字</li>
+</ul>
+<p><strong>网页验证码是干嘛的，是为了解决什么安全问题</strong></p>
+<ul>
+<li>区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水</li>
+<li>有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试</li>
+</ul>
+<h5 id="DOM常见的节点类型"><a href="#DOM常见的节点类型" class="headerlink" title="DOM常见的节点类型"></a>DOM常见的节点类型</h5><ul>
+<li>Element(元素节点)：HTML标签，树构建块</li>
+<li>Attr(属性节点)</li>
+<li>Text(文本节点)：包含文本</li>
+<li>Comment(注释节点)：可以将信息放入此类节点，它不会显示，但JS可以从DOM中读取它</li>
+<li>Document(文档节点)：DOM的入口点</li>
+<li>DocumentType(文档类型节点)</li>
+<li>DocumentFragment(文档片段节点)</li>
+</ul>
+<h5 id="获取Element对象的方法"><a href="#获取Element对象的方法" class="headerlink" title="获取Element对象的方法"></a>获取Element对象的方法</h5><ul>
+<li>getElementById()</li>
+<li>getElementsByTagName()</li>
+<li>getElementsByClassName()</li>
+<li>getElementsByName()</li>
+</ul>
+<h5 id="meta"><a href="#meta" class="headerlink" title="meta"></a>meta</h5><ul>
+<li>width用于控制viewport的大小</li>
+<li>height用于控制viewport的高度</li>
+<li>initial-scale表示初始缩放比例(0-10之间的正数，1表示无缩放)</li>
+<li>minimum-scale表示viewport能缩放到的最小值(0-10之间的正数)</li>
+<li>maximum-scale表示viewport能缩放到的最大值(0-10之间的正数)</li>
+<li>user-scalable表示是否可以手动缩放(yes or no)</li>
+</ul>
+<h4 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h4><h5 id="简述浏览器内核"><a href="#简述浏览器内核" class="headerlink" title="简述浏览器内核"></a>简述浏览器内核</h5><ul>
+<li>主要分成两部分：渲染引擎(<code>layout engineer</code>或<code>Rendering Engine</code>)和<code>JS</code>引擎</li>
+<li>渲染引擎：负责取得网页的内容（HTML、XML、图像等等）、整理讯息（例如加入CSS等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核</li>
+<li>JS引擎：解析和执行javascript来实现网页的动态效果</li>
+<li>最开始渲染引擎和JS引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎</li>
+</ul>
+<h5 id="常用的浏览器内核有哪些？"><a href="#常用的浏览器内核有哪些？" class="headerlink" title="常用的浏览器内核有哪些？"></a>常用的浏览器内核有哪些？</h5><ul>
+<li><code>Trident</code>内核：<code>IE,MaxThon,TT,The World,360</code>,搜狗浏览器等。[又称MSHTML]</li>
+<li><code>Gecko</code>内核：<code>Netscape6</code>及以上版本，<code>Firefox,MozillaSuite/SeaMonkey</code>等</li>
+<li><code>Presto</code>内核：原<code>Opera7</code>及以上。 [<code>Opera</code>内核原为：Presto，现为：<code>Blink</code>;]</li>
+<li><code>Webkit</code>内核：<code>Safari,原Chrome</code>等。 [ <code>Chrome</code>的<code>Blink</code>（<code>WebKit</code>的分支）]</li>
+<li><code>Blink</code>内核：新版google、新版opera</li>
+</ul>
+<h5 id="如何实现浏览器内多个标签页之间的通信？-占坑，代码及演示效果"><a href="#如何实现浏览器内多个标签页之间的通信？-占坑，代码及演示效果" class="headerlink" title="如何实现浏览器内多个标签页之间的通信？[占坑，代码及演示效果]"></a>如何实现浏览器内多个标签页之间的通信？[占坑，代码及演示效果]</h5><ul>
+<li>localstorge、cookies等本地存储方式</li>
+<li>iframe + contentWindow</li>
+<li>postMessage</li>
+<li>SharedWorker(Web Worker API)</li>
+<li>WebSocket</li>
+</ul>
+<h5 id="websocket如何兼容低版本浏览器？-占坑，代码及演示效果"><a href="#websocket如何兼容低版本浏览器？-占坑，代码及演示效果" class="headerlink" title="websocket如何兼容低版本浏览器？[占坑，代码及演示效果]"></a>websocket如何兼容低版本浏览器？[占坑，代码及演示效果]</h5><ul>
+<li>Adobe Flash Socket 、</li>
+<li>ActiveX HTMLFile (IE) 、</li>
+<li>基于 multipart 编码发送 XHR 、</li>
+<li>基于长轮询的 XHR</li>
+</ul>
+<h5 id="浏览器渲染流程"><a href="#浏览器渲染流程" class="headerlink" title="浏览器渲染流程"></a>浏览器渲染流程</h5><ul>
+<li>构建HTML并构建DOM树</li>
+<li>构建render树</li>
+<li>布局render树</li>
+<li>绘制render树</li>
+</ul>
+<h5 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h5><ul>
+<li>window对象表示浏览器的窗口，可用于检索有关窗口状态的信息</li>
+<li>window对象是浏览器所有内容的主容器</li>
+<li>浏览器打开HTML文档时，通常会创建一个window对象</li>
+<li>如果文档定义了多个框架，浏览器会为每个框架创建window对象</li>
+</ul>
+<h4 id="离线存储"><a href="#离线存储" class="headerlink" title="离线存储"></a>离线存储</h4><h5 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h5><ul>
+<li><p>原理：用户在线时，保存更新用户机器上的缓存文件；当用户离线时，可以正常访问离线储存站点或应用内容。HTML5的离线存储是基于一个新建的cache.manifest文件的缓存机制，通过这个文件上的解析清单离线存储资源，这些资源就会像cookie一样被存储了下来。之后当网络处于离线状态时，浏览器会把离线存储的数据进行页面展示。</p>
+</li>
+<li><p>使用：</p>
+<ul>
+<li><p>在页面头部加上manifest属性</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">HTML</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">manifest</span> = <span class="string">&quot;cache.manifest&quot;</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在项目中新建 manifest 文件，例如cache.manifest。在manifest文件的编写离线存储的资源。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line">//v0.11</span><br><span class="line">//manifest文件一般由三个部分组成：CACHE\NETWORK\FALLBACK</span><br><span class="line"></span><br><span class="line">CACHE:</span><br><span class="line">//CACHE:表示需要离线存储的资源列表，由于包含manifest文件的页面将被自动离线存储，所以不需要把页面自身也列出来。</span><br><span class="line">js/app.js</span><br><span class="line">css/style.css</span><br><span class="line"></span><br><span class="line">NETWORK:</span><br><span class="line">//NETWORK:表示在它下面列出来的资源只有在在线的情况下才能访问，他们不会被离线存储，所以在离线情况下无法使用这些资源。不过，如果在CACHE和NETWORK中有一个相同的资源，那么这个资源还是会被离线存储，也就是说CACHE的优先级更高。</span><br><span class="line">resourse/logo.png</span><br><span class="line"></span><br><span class="line">FALLBACK:</span><br><span class="line">//FALLBACK:表示如果访问第一个资源失败，那么就使用第二个资源来替换他，比如如果访问根目录下任何一个资源失败了，那么就去访问offline.html。</span><br><span class="line">offline.html</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在 web 服务器配置正确的 MIME-type，即 text&#x2F;cache-manifest</p>
+</li>
+<li><p>在离线状态时，操作window.applicationCache进行需求实现</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="浏览器对HTML5离线存储资源进行管理和加载的过程"><a href="#浏览器对HTML5离线存储资源进行管理和加载的过程" class="headerlink" title="浏览器对HTML5离线存储资源进行管理和加载的过程"></a>浏览器对HTML5离线存储资源进行管理和加载的过程</h5><ul>
+<li>在线的情况下，浏览器发现html头部有manifest属性，它会请求manifest文件，如果是第一次访问app，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过app并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。</li>
+<li>离线的情况下，浏览器就直接使用离线存储的资源。</li>
+</ul>
+<h5 id="使用的注意点"><a href="#使用的注意点" class="headerlink" title="使用的注意点"></a>使用的注意点</h5><ul>
+<li>如果服务器对离线的资源进行了更新，那么必须更新manifest文件之后这些资源才能被浏览器重新下载，如果只是更新了资源而没有更新manifest文件的话，浏览器并不会重新下载资源，也就是说还是使用原来离线存储的资源。</li>
+<li>对于manifest文件进行缓存的时候需要十分小心，因为可能出现一种情况就是你对manifest文件进行了更新，但是http的缓存规则告诉浏览器本地缓存的manifest文件还没过期，这个情况下浏览器还是使用原来的manifest文件，所以对于manifest文件最好不要设置缓存。</li>
+<li>浏览器在下载manifest文件中的资源的时候，它会一次性下载所有资源，如果某个资源由于某种原因下载失败，那么这次的所有更新就算是失败的，浏览器还是会使用原来的资源。</li>
+<li>在更新了资源之后，新的资源需要到下次再打开app才会生效，如果需要资源马上就能生效，那么可以使用<code>window.applicationCache.swapCache()</code>方法来使之生效，出现这种现象的原因是浏览器会先使用离线资源加载页面，然后再去检查manifest是否有更新，所以需要到下次打开页面才能生效。</li>
+</ul>
+<h4 id="本地存储方式"><a href="#本地存储方式" class="headerlink" title="本地存储方式"></a>本地存储方式</h4><h5 id="cookies、sessionStorage和localStorage的区别？"><a href="#cookies、sessionStorage和localStorage的区别？" class="headerlink" title="cookies、sessionStorage和localStorage的区别？"></a>cookies、sessionStorage和localStorage的区别？</h5><ul>
+<li>cookie是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）</li>
+<li>cookie数据始终在同源的http请求中携带（即使不需要），记会在浏览器和服务器间来回传递</li>
+<li><code>sessionStorage</code>和<code>localStorage</code>不会自动把数据发给服务器，仅在本地保存</li>
+<li>存储大小：<ul>
+<li><code>cookie</code>数据大小不能超过4k</li>
+<li><code>sessionStorage</code>和<code>localStorage</code>虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大</li>
+</ul>
+</li>
+<li>有期时间：<ul>
+<li><code>localStorage</code> 存储持久数据，浏览器关闭后数据不丢失除非主动删除数据</li>
+<li><code>sessionStorage</code> 数据在当前浏览器窗口关闭后自动删除</li>
+<li><code>cookie</code> 设置的<code>cookie</code>过期时间之前一直有效，即使窗口或浏览器关闭</li>
+</ul>
+</li>
+</ul>
+<h4 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h4><h5 id="页面导入样式时，使用link和-import有什么区别？"><a href="#页面导入样式时，使用link和-import有什么区别？" class="headerlink" title="页面导入样式时，使用link和@import有什么区别？"></a><strong>页面导入样式时，使用link和@import有什么区别？</strong></h5><ul>
+<li><code>link</code>属于<code>XHTML</code>标签，除了加载<code>CSS</code>外，还能用于定义<code>RSS</code>,定义<code>rel</code>连接属性等作用；而<code>@import</code>是<code>CSS</code>提供的，只能用于加载<code>CSS</code>。也就是说，<code>link</code>是HTML范畴，<code>@import</code>是CSS范畴。</li>
+<li>页面被加载时，<code>link</code>会同时被加载，而<code>@import</code>引用的<code>CSS</code>会等到页面被加载完再加载</li>
+<li><code>link</code>是<code>XHTML</code>标签，无兼容问题，而<code>import</code>是<code>CSS2.1</code> 提出的，只在<code>IE5</code>以上才能被识别。</li>
+<li><code>link</code>方式样式的权重高于<code>@import</code></li>
+<li><code>link</code>可以通过JS操作DOM动态引入样式表改变样式，而<code>@import</code>不可以</li>
+</ul>
+<h5 id="行内元素和块级元素"><a href="#行内元素和块级元素" class="headerlink" title="行内元素和块级元素"></a>行内元素和块级元素</h5><ul>
+<li>行内元素的特点：1）在一行上显示 2）不能直接设置宽高 3）元素的宽和高就是内容撑开的宽高</li>
+<li>块级元素的特点：1）独占一行 2）可以设置宽高 3）嵌套下，子块元素宽度(没有定义的情况下)和父块元素宽度默认一致</li>
+</ul>
+<h5 id="行内元素有哪些？块级元素有哪些？-空-void-元素有那些？"><a href="#行内元素有哪些？块级元素有哪些？-空-void-元素有那些？" class="headerlink" title="行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？"></a><strong>行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</strong></h5><ul>
+<li>行内元素有：<code>a b span img input select strong</code></li>
+<li>块级元素有：<code>div ul ol li dl dt dd h1 h2 h3 h4…p table form</code></li>
+<li>常见的空元素:<code> &lt;br&gt; &lt;hr&gt; &lt;img&gt; &lt;input&gt; &lt;link&gt; &lt;meta&gt; &lt;embed&gt;</code></li>
+</ul>
+<p><strong>label的作用是什么？是怎么用的？</strong></p>
+<ul>
+<li>label标签用来定义表单控件间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件</li>
+<li>使用方法1：<ul>
+<li><code>&lt;label for=&quot;mobile&quot;&gt;Number:&lt;/label&gt;</code></li>
+<li><code>&lt;input type=&quot;text&quot; id=&quot;mobile&quot;/&gt;</code></li>
+</ul>
+</li>
+<li>使用方法2：<ul>
+<li><code>&lt;label&gt;Date:&lt;input type=&quot;text&quot;/&gt;&lt;/label&gt;</code></li>
+</ul>
+</li>
+<li>使用方法3：<ul>
+<li><code>&lt;input type=&quot;checkbox&quot; id=&quot;c1&quot;/&gt;&lt;label for=&quot;c1&quot;&gt;记住我&lt;/label&gt;</code></li>
+</ul>
+</li>
+<li>label标签可以嵌套a标签，且点击a标签可以跳转</li>
+<li>不要在label标签内部放置可交互的元素，例如anchors或buttons。这样会让用户更难触发与label相关联的表单输入元素。</li>
+<li>label标签只有两个属性：for(规定label绑定到哪个表单元素)、form(规定label字段所属的一个或多个表单)</li>
+</ul>
+<p><strong>title与h1的区别、b与strong的区别、i与em的区别？</strong></p>
+<ul>
+<li><code>title</code>属性没有明确意义只表示是个标题，<code>h1</code>则表示层次明确的标题，对页面信息的抓取也有很大的影响</li>
+<li><code>strong</code>是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：会重读，而是展示强调内容；<code>b</code>表示粗体。</li>
+<li><code>i</code>内容展示为斜体，语义上与普通文本无区别；<code>em</code>表示<strong>斜体强调</strong>的文本，语义上也表示为斜体，不加粗文本。<code>em</code>可以被设备识别，而<code>i</code>不行。</li>
+<li>自然样式标签：<code>b</code>, <code>i</code>, <code>u</code>, <code>s</code>, <code>pre</code></li>
+<li>语义样式标签：<code>strong</code>, <code>em</code>, <code>ins</code>, <code>del</code>, <code>code</code></li>
+<li>应该准确使用语义样式标签, 但不能滥用。如果不能确定时，首选使用自然样式标签</li>
+</ul>
+<h5 id="lt-img-gt-的title和alt有什么区别"><a href="#lt-img-gt-的title和alt有什么区别" class="headerlink" title="&lt;img&gt;的title和alt有什么区别"></a><code>&lt;img&gt;</code>的<code>title</code>和<code>alt</code>有什么区别</h5><ul>
+<li><code>title</code> 通常当鼠标滑动到元素上的时候显示</li>
+<li><code>alt</code>是<code>&lt;img&gt;</code>的特有属性，是图片内容的等价描述，用于图片无法加载时显示、读屏器阅读图片。可提图片高可访问性，除了纯装饰图片外都必须设置有意义的值，搜索引擎会重点分析。</li>
+</ul>
+<h5 id="元素事件有哪些"><a href="#元素事件有哪些" class="headerlink" title="元素事件有哪些"></a>元素事件有哪些</h5><ul>
+<li>onblur：元素失去焦点时触发</li>
+<li>onfocus：元素聚焦时触发</li>
+<li>onsearch：用户向搜索域或文本搜索时触发</li>
+<li>onload：元素被载入</li>
+<li>onreset：表单元素被重置</li>
+<li>onchange：当域内容改变时</li>
+</ul>
+<h5 id="audio和vedio"><a href="#audio和vedio" class="headerlink" title="audio和vedio"></a>audio和vedio</h5><p>属性</p>
+<ul>
+<li>currentTime：设置或返回视频播放的当前位置，设置该属性时，播放会跳跃到指定的位置</li>
+<li>duration：规定造成过渡效果需要花费的时间</li>
+<li>defaultPlaybackRate：设置或返回音频或者视频播放的默认速度</li>
+<li>playbackRate：设置或返回视频当前的播放速度</li>
+</ul>
+<h5 id="lt-meta-gt-标签的作用"><a href="#lt-meta-gt-标签的作用" class="headerlink" title="&lt;meta&gt;标签的作用"></a><code>&lt;meta&gt;</code>标签的作用</h5><ul>
+<li>表示支持响应式设计</li>
+<li>支持正常的绘制和缩放</li>
+</ul>
+<h5 id="table常用的属性"><a href="#table常用的属性" class="headerlink" title="table常用的属性"></a>table常用的属性</h5><ul>
+<li>cellpadding：单元格边沿与其内容之间的空白</li>
+<li>cellspacing：单元格之间的空白</li>
+</ul>
+<h4 id="iframe"><a href="#iframe" class="headerlink" title="iframe"></a>iframe</h4><h5 id="iframe的缺点？"><a href="#iframe的缺点？" class="headerlink" title="iframe的缺点？"></a><strong>iframe的缺点？</strong></h5><ul>
+<li>iframe的创建比一般的DOM元素慢了1-2个数量级。且iframe会阻塞主页面的Onload事件。</li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于SEO</li>
+<li>iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载</li>
+<li>使用<code>iframe</code>之前需要考虑这两个缺点。如果需要使用<code>iframe</code>，最好是通过<code>javascript</code>动态给<code>iframe</code>添加<code>src</code>属性值，这样可以绕开以上两个问题</li>
+</ul>
+<h5 id="iframe的优点"><a href="#iframe的优点" class="headerlink" title="iframe的优点"></a>iframe的优点</h5><ul>
+<li>用来加载速度较慢的内容（如广告）</li>
+<li>可以使脚本可以并行下载</li>
+<li>可以实现跨子域通信</li>
+</ul>
+<h5 id="iframe使用场景"><a href="#iframe使用场景" class="headerlink" title="iframe使用场景"></a>iframe使用场景</h5><ul>
+<li>典型系统结构，左侧是功能树，右侧是常见table或表单等。为了将每个功能单独分离，使用iframe</li>
+<li>ajax上传文件</li>
+<li>加载其他网站的内容，如广告</li>
+<li>上传图片时，避免当前页刷新</li>
+<li>跨域访问的时候可以用到iframe请求不同域名下的资源，与第三方域名下的页面共享cookie</li>
+</ul>
+<h4 id="页面"><a href="#页面" class="headerlink" title="页面"></a>页面</h4><p><strong>页面可见性（Page Visibility API） 可以有哪些用途？</strong></p>
+<ul>
+<li>通过 visibilityState 的值检测页面当前是否可见，以及打开网页的时间等;</li>
+<li>在页面被切换到其他后台进程的时候，自动暂停音乐或视频的播放</li>
+<li>当用户浏览其他页面，暂停网站首页幻灯自动播放</li>
+<li>完成登陆后，无刷新自动同步其他页面的登录状态</li>
+</ul>
+<p><strong>如何在页面上实现一个圆形的可点击区域？</strong></p>
+<ul>
+<li>map+area或者svg</li>
+<li>border-radius</li>
+<li>纯js实现 需要求一个点在不在圆上简单算法、获取鼠标坐标等等</li>
+</ul>
+<p><strong>实现不使用 border 画出1px高的线，在不同浏览器的标准模式与怪异模式下都能保持一致的效果</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style=&quot;height:1px;overflow:hidden;background:red&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="数据序列化技术"><a href="#数据序列化技术" class="headerlink" title="数据序列化技术"></a>数据序列化技术</h4><p>定义：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">将内存对象转化成字节流的过程，它直接决定了数据解析效率以及模式演化能力</span><br></pre></td></tr></table></figure>
+
+<p>方法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- JSON数据格式</span><br><span class="line">- Property list数据格式</span><br><span class="line">- protocal buffer是google出品的</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="跨文档传输"><a href="#跨文档传输" class="headerlink" title="跨文档传输"></a>跨文档传输</h4><p>定义：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">网页文档之间相互接收和发送消息</span><br></pre></td></tr></table></figure>
+
+<p>特点：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 可以实现同域内和跨域的web页面之间的相互通信</span><br><span class="line">- 可以相互传递字符串和对象</span><br><span class="line">- 使用这个功能，需要获取到网页所在窗口对象的实例</span><br><span class="line">- 可以使用window.postMessage实现</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="获取焦点"><a href="#获取焦点" class="headerlink" title="获取焦点"></a>获取焦点</h4><p>定义：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入框焦点：当鼠标在某个输入框中点击一下，输入框中出现光标，此时输入框获得了焦点</span><br></pre></td></tr></table></figure>
+
+<p>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a标签没有href属性的话获取不到焦点</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a><strong>跨域</strong></h4><h5 id="例子："><a href="#例子：" class="headerlink" title="例子："></a>例子：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">- web字体受浏览器跨域限制</span><br><span class="line">- canvas中使用drawImage贴图会受跨域限制</span><br><span class="line"></span><br><span class="line">- CSS文件的加载不受跨域限制</span><br><span class="line">- window.onerror方法默认情况下无法获取跨域脚本的报错详情</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="3D"><a href="#3D" class="headerlink" title="3D"></a>3D</h4><ul>
+<li>在Blink和webkit的浏览器中，某个元素具有3D或透视变换的CSS属性，会让浏览器创建单独的图层。</li>
+<li>我们平常会使用left和top属性来修改元素的位置，但left和top会触发重布局，更好的方法是使用translate，这个不会触发回流，这是因为translate重新绘制了一个图层。</li>
+<li>解决浏览器渲染的性能问题时，首要目标是要避免层的重绘和重排。</li>
+<li>过多触发3D加速会导致严重的性能问题。</li>
+</ul>
+<h4 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h4><h5 id="DOM事件对象-符合W3C标准-："><a href="#DOM事件对象-符合W3C标准-：" class="headerlink" title="DOM事件对象(符合W3C标准)："></a>DOM事件对象(符合W3C标准)：</h5><ul>
+<li>preventDefault()：取消默认事件</li>
+<li>stopImmediatePropagation()：取消事件冒泡同时阻止当前节点上的事件处理程序被调用</li>
+<li>stopPropagation()：取消事件冒泡，对当前节点无影响</li>
+</ul>
+<h5 id="IE事件对象"><a href="#IE事件对象" class="headerlink" title="IE事件对象"></a>IE事件对象</h5><ul>
+<li>cancelBubble()：取消事件冒泡</li>
+<li>returnValue()：取消事件默认行为</li>
+</ul>
+<h5 id="事件模型"><a href="#事件模型" class="headerlink" title="事件模型"></a>事件模型</h5><ul>
+<li>DOM0级模型。只支持冒泡，不支持捕获。同一个类型的事件只能绑定一次，希望为同一个元素绑定多个同类型事件的时候，后绑定的事件会覆盖之前的事件。</li>
+<li>IE事件模型。有事件处理和事件冒泡阶段。通过attachEvent来添加监听函数，可以添加多个监听函数，按顺序依次执行。</li>
+<li>DOM2级模型。有事件捕获、事件处理和事件冒泡三个阶段。第一阶段是事件捕获。捕获指事件从document一直向下传播到目标元素，依次检查经过的节点是否绑定了事件监听函数，如果有则执行。第二阶段是事件处理，执行目标元素绑定的监听事件。第三阶段是冒泡，当子元素（事件源）事件触发，事件会沿着包含关系，依次往上级传递，每一级都可以感知到事件，直到触发根元素（根源)。依次检查经过的节点是否绑定了事件监听函数，如果有则执行。这种模型通过addEventListener来添加监听函数，其中第三个参数可以指定事件是否在<strong>捕获</strong>阶段执行。</li>
+</ul>
+<h5 id="addEventListener的参数"><a href="#addEventListener的参数" class="headerlink" title="addEventListener的参数"></a>addEventListener的参数</h5><p>​		第一个参数是事件名、第二个参数是事件处理函数、第三个参数用于指定事件处理的时期。当第三个参数为false的时候，表示在冒泡阶段进行事件处理；为true的时候，表示在事件捕获的时候处理。</p>
+<h5 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h5><ul>
+<li>概念：通俗的讲就是<strong>把一个元素响应事件的函数委托到另一个元素</strong>。把一个或一组元素的事件委托到它的父层或者更外层元素上，真正绑定事件的是外层元素，<strong>当事件响应到需要绑定的元素上时，会通过冒泡机制触发它的外层元素的绑定事件</strong>，然后在外层元素上执行函数。</li>
+<li>优点：1.只需要将同类元素的事件委托给父级或者更外层的元素，不需要给所有元素都绑定事件，减少了内存占用空间，提升了性能。2.动态新增的元素无需重新绑定事件。</li>
+<li>缺点：1.事件委托基于冒泡，对于不冒泡的事件不支持。2.层级过多，冒泡过程中，可能会被某层阻止。</li>
+</ul>
+<h5 id="target与currentTarget的区别"><a href="#target与currentTarget的区别" class="headerlink" title="target与currentTarget的区别"></a>target与currentTarget的区别</h5><ul>
+<li>target为触发事件的某个具体对象</li>
+<li>currentTarget为绑定事件的对象</li>
+</ul>
+<h5 id="不支持冒泡的事件"><a href="#不支持冒泡的事件" class="headerlink" title="不支持冒泡的事件"></a>不支持冒泡的事件</h5><ul>
+<li>mouseenter</li>
+<li>mouseleave</li>
+<li>blur</li>
+<li>resize</li>
+<li>load</li>
+<li>focus</li>
+<li>unload</li>
+<li>妈妈不让浪费昂</li>
+</ul>
+<h4 id="DOM常用API"><a href="#DOM常用API" class="headerlink" title="DOM常用API"></a>DOM常用API</h4><ol>
+<li>创建新节点</li>
+</ol>
+<ul>
+<li>document.createDocumentFragment()&#x2F;&#x2F;创建DOM片段</li>
+<li>document.createElement()&#x2F;&#x2F;创建一个具体的元素</li>
+<li>document.createTextNode()&#x2F;&#x2F;创建一个文本节点</li>
+</ul>
+<ol start="2">
+<li>添加、移除、替换、插入新节点</li>
+</ol>
+<ul>
+<li>document.appendChild(node)</li>
+<li>document.removeChild(node)</li>
+<li>document.replaceChild(new, old)</li>
+<li>document.insertBefore(new, old)</li>
+</ul>
+<ol start="3">
+<li>查询节点</li>
+</ol>
+<p>3.1 查询某一节点</p>
+<ul>
+<li>document.getElementById(id)</li>
+<li>document.getElementsByName(‘test’)</li>
+<li>document.getElementsByTagName(‘input’)</li>
+<li>document.getElementsByClassName()</li>
+<li>document.querySelector(‘myClass’)&#x2F;&#x2F;返回第一个类名为myClass的元素&#x2F;标签元素</li>
+<li>document.querySelectorAll()</li>
+</ul>
+<p>3.2 查询父节点</p>
+<ul>
+<li>curnode.parentElement</li>
+<li>curnode.parentNode</li>
+</ul>
+<p>3.3 查询子节点</p>
+<ul>
+<li>curnode.children</li>
+<li>curnode.getElementsByTagName()</li>
+<li>curnode.getElementsByClassName()</li>
+<li>curnode.firstElementChild&#x2F;&#x2F;第一个子元素</li>
+<li>curnode.lastElementChild&#x2F;&#x2F;最后一个子元素</li>
+</ul>
+<p>3.4 查询兄弟节点</p>
+<ul>
+<li>curnode.nextElementSibling&#x2F;&#x2F;下一个兄弟节点</li>
+<li>curnode.previousElementSibling&#x2F;&#x2F;上一个兄弟节点</li>
+</ul>
+<ol start="4">
+<li>属性操作</li>
+</ol>
+<ul>
+<li>curnode.attributes&#x2F;&#x2F;返回值为{name, value}</li>
+<li>curnode.getAttribute(key)</li>
+<li>curnode.setAttribute(key, value)</li>
+<li>curnode.hasAttribute(key)</li>
+<li>curnode.removeAttribute(key)</li>
+</ul>
+<ol start="5">
+<li>innerHTML \ outerHTML \ innerText \ outerText</li>
+</ol>
+<img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/html/pic1.png" alt="inner" style="zoom:50%;">
+
+<ul>
+<li>innerHTML: <code>&lt;p&gt;Text in DIV&lt;/p&gt;</code></li>
+<li>outerHTML: <code>&lt;div&gt;&lt;p&gt;…&lt;/p&gt;&lt;/div&gt;</code></li>
+<li>innerText: Text in DIV</li>
+<li>outerText: Text in DIV</li>
+<li>innerText与outerText的区别：outerText赋值时会把标签一起赋值掉</li>
+</ul>
+<h3 id="浏览器渲染机制"><a href="#浏览器渲染机制" class="headerlink" title="浏览器渲染机制"></a>浏览器渲染机制</h3><h4 id="渲染步骤"><a href="#渲染步骤" class="headerlink" title="渲染步骤"></a>渲染步骤</h4><ul>
+<li>解析HTML，构建DOM树</li>
+<li>解析CSS，生成CSSOM树</li>
+<li>合并DOM树和CSSOM树，生成render渲染树</li>
+<li>根据render渲染树进行布局</li>
+<li>调用GPU对渲染树进行绘制，合成图层，显示在屏幕上</li>
+</ul>
+<p><strong>注意：</strong>1.构建CSSOM树的时候，会阻塞渲染，直到CSSOM树构建完成。2.HTML解析到script标签的时候，会暂停构建DOM树，完成后才会从暂停的地方重新开始。</p>
+<h4 id="解析HTML标签，构建DOM树"><a href="#解析HTML标签，构建DOM树" class="headerlink" title="解析HTML标签，构建DOM树"></a>解析HTML标签，构建DOM树</h4><p>​		在这个阶段，引擎开始解析html，解析出来的结果会成为一棵dom树（包含全节点，包括隐藏的节点和<code>&lt;head&gt;</code>标签）</p>
+<p>​		当解析器开始解析<code>script</code>标签时，会发生：</p>
+<ol>
+<li>html解析器停止解析</li>
+<li>如果是外部脚本，就从外部网络获取脚本代码</li>
+<li>将控制权交给JS引擎，执行JS代码</li>
+<li>恢复HTML解析器的控制权</li>
+</ol>
+<h4 id="解析CSS标签，构建CSSOM树"><a href="#解析CSS标签，构建CSSOM树" class="headerlink" title="解析CSS标签，构建CSSOM树"></a>解析CSS标签，构建CSSOM树</h4><h4 id="把DOM和CSSOM组合成渲染树"><a href="#把DOM和CSSOM组合成渲染树" class="headerlink" title="把DOM和CSSOM组合成渲染树"></a>把DOM和CSSOM组合成渲染树</h4><p>​		在这个阶段会让原本的DOM树和CSSOM树相结合，成为渲染树render tree。<strong>需要注意的是：</strong>render tree不会将所有原本的DOM树全部构建出来，一些不需要显示的元素则不会被构建到渲染树中。例如，不会添加<code>head</code>标签元素；不会添加样式中有<code>display: none</code>的元素。</p>
+<h4 id="在渲染树的基础上进行布局，计算每个节点的几何结构"><a href="#在渲染树的基础上进行布局，计算每个节点的几何结构" class="headerlink" title="在渲染树的基础上进行布局，计算每个节点的几何结构"></a>在渲染树的基础上进行布局，计算每个节点的几何结构</h4><p>​	布局(layout)：定位坐标和大小，是否换行，各种position, overflow, z-index属性。当js脚本中存在修改会影响dom的布局时，会产生回流（Reflow）,回流会让浏览器重新执行第四步和第五步的操作。</p>
+<h4 id="调用GPU绘制，合成图层，显示在屏幕上"><a href="#调用GPU绘制，合成图层，显示在屏幕上" class="headerlink" title="调用GPU绘制，合成图层，显示在屏幕上"></a>调用GPU绘制，合成图层，显示在屏幕上</h4><p>​		将渲染树的各个节点绘制到屏幕上，这一步被称为绘制painting。当js脚本中存在修改会影响dom样式,但不影响布局时，会产生重绘（Repaint）,重绘会让浏览器重新执行第五步的操作。</p>
+<h3 id="优化浏览器渲染性能"><a href="#优化浏览器渲染性能" class="headerlink" title="优化浏览器渲染性能"></a>优化浏览器渲染性能</h3><ol>
+<li>在合适的时机选择使用Load或者DOMContentLoaded</li>
+</ol>
+<ul>
+<li>Load事件触发代表页面中的DOM、CSS、JS、图片已经全部加载完成</li>
+<li>DOMContentLoaded事件触发代表初始的HTML被完全加载和解析，不需要等待CSS、JS、图片加载。</li>
+</ul>
+<ol start="2">
+<li>使用不同的图层渲染页面</li>
+</ol>
+<ul>
+<li>一般来说，可以把普通文档流看成一个图层。特定的属性可以生成一个新的图层。不同的图层渲染互不影响，所以对于某些频繁需要渲染的建议单独生成一个新图层，提高性能。但也不能生成过多的图层，会引起反作用。</li>
+</ul>
+<ol start="3">
+<li>通过优化重绘和重排来减少相应的页面渲染时间</li>
+</ol>
+<p>JS执行会阻塞DOM树的解析和渲染，CSS加载不会阻塞DOM的解析，CSS加载会阻塞DOM的渲染。</p>
+<h3 id="页面白屏怎么排查定位问题-客户端、浏览器端、服务器端"><a href="#页面白屏怎么排查定位问题-客户端、浏览器端、服务器端" class="headerlink" title="页面白屏怎么排查定位问题(客户端、浏览器端、服务器端)"></a>页面白屏怎么排查定位问题(客户端、浏览器端、服务器端)</h3><ol>
+<li>确保网络连接通畅</li>
+<li>查看网络URL地址是否输入有误。a.无效请求。当发送的请求无效时，服务器不会返回相应的内容，导致页面无法正常展示，最终以空白页的形式展示。b.错误路径。服务器无法返回正常的请求资源，最终导致页面无法正常显示。</li>
+<li>查看控制台是否有报错信息。a.JS报错。b.资源加载顺序。当网速慢较慢，下载相关资源很慢，就会出现短暂白屏。</li>
+<li>查看接口访问是否有请求。a.服务器异常报502错误的时候会出现空白页。b.DNS无法解析，会导致浏览器白屏。</li>
+</ol>
+<h3 id="window-requestAnimationFrame"><a href="#window-requestAnimationFrame" class="headerlink" title="window.requestAnimationFrame"></a>window.requestAnimationFrame</h3><p>​		requestAnimationFrame的功能与setTimeout类似。不同之处在于，setTimeout必须指定多长时间再执行，而requestAnimationFrame则是推迟到浏览器下一次重绘时就执行回调。重绘通常是16ms一次，因为大多数屏幕渲染的时间间隔是每秒60帧。如果某个函数会改变网页布局，一般就放在window.requestAnimationFrame()里面执行，这样可以节省系统资源。</p>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><ul>
+<li>用JS实现一个无限循环动画</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--使用html实现--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">            <span class="selector-id">#e</span>&#123;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">left</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">top</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">                zoom: <span class="number">1</span>;</span></span><br><span class="line"><span class="language-css">            &#125;</span></span><br><span class="line"><span class="language-css">        </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;e&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        	<span class="keyword">var</span> e = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;e&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> left = <span class="number">0</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">function</span> <span class="title function_">render</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span>(flag)&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">if</span>(left&gt;=<span class="number">100</span>)</span></span><br><span class="line"><span class="language-javascript">                        flag = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">                   	e.<span class="property">style</span>.<span class="property">left</span> = <span class="string">`<span class="subst">$&#123;left++&#125;</span>px`</span>;</span></span><br><span class="line"><span class="language-javascript">                &#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">if</span>(left&lt;=<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript">                        flag= <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">                    e.<span class="property">style</span>.<span class="property">left</span> = <span class="string">`<span class="subst">$&#123;left--&#125;</span>px`</span>;</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">            <span class="built_in">setInterval</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="title function_">render</span>();</span></span><br><span class="line"><span class="language-javascript">            &#125;, <span class="number">1000</span>/<span class="number">60</span>);</span></span><br><span class="line"><span class="language-javascript">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--使用requestAnimationFrame实现--&gt;</span></span><br><span class="line"><span class="comment">&lt;!--使用html实现--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">title</span>&gt;</span>document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">            <span class="selector-id">#e</span>&#123;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">width</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">height</span>: <span class="number">100px</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">position</span>: absolute;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">left</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">                <span class="attribute">top</span>: <span class="number">0</span>;</span></span><br><span class="line"><span class="language-css">                zoom: <span class="number">1</span>;</span></span><br><span class="line"><span class="language-css">            &#125;</span></span><br><span class="line"><span class="language-css">        </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;e&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript">        	<span class="keyword">var</span> e = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;e&#x27;</span>);</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> flag = <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> left = <span class="number">0</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">var</span> id = <span class="literal">null</span>;</span></span><br><span class="line"><span class="language-javascript">            <span class="keyword">function</span> <span class="title function_">render</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span>(flag)&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">if</span>(left&gt;=<span class="number">100</span>)</span></span><br><span class="line"><span class="language-javascript">                        flag = <span class="literal">false</span>;</span></span><br><span class="line"><span class="language-javascript">                   	e.<span class="property">style</span>.<span class="property">left</span> = <span class="string">`<span class="subst">$&#123;left++&#125;</span>px`</span>;</span></span><br><span class="line"><span class="language-javascript">                &#125;<span class="keyword">else</span>&#123;</span></span><br><span class="line"><span class="language-javascript">                    <span class="keyword">if</span>(left&lt;=<span class="number">0</span>)</span></span><br><span class="line"><span class="language-javascript">                        flag= <span class="literal">true</span>;</span></span><br><span class="line"><span class="language-javascript">                    e.<span class="property">style</span>.<span class="property">left</span> = <span class="string">`<span class="subst">$&#123;left--&#125;</span>px`</span>;</span></span><br><span class="line"><span class="language-javascript">                &#125;</span></span><br><span class="line"><span class="language-javascript">            &#125;</span></span><br><span class="line"><span class="language-javascript">            (<span class="keyword">function</span> <span class="title function_">animloop</span>(<span class="params"></span>)&#123;</span></span><br><span class="line"><span class="language-javascript">                <span class="title function_">render</span>();</span></span><br><span class="line"><span class="language-javascript">                id = <span class="variable language_">window</span>.<span class="title function_">requestAnimationFrame</span>(animloop);</span></span><br><span class="line"><span class="language-javascript">                <span class="keyword">if</span>(left === <span class="number">50</span>)</span></span><br><span class="line"><span class="language-javascript">                    <span class="title function_">cancelAnimationFrame</span>(id);</span></span><br><span class="line"><span class="language-javascript">            &#125;)()</span></span><br><span class="line"><span class="language-javascript">        </span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="浏览器事件循环"><a href="#浏览器事件循环" class="headerlink" title="浏览器事件循环"></a>浏览器事件循环</h3><h4 id="事件循环的概念"><a href="#事件循环的概念" class="headerlink" title="事件循环的概念"></a>事件循环的概念</h4><p>​		在程序中设置两个线程：一个负责程序本身的运行，称为主线程；另一个负责主线程与其他进程的通信，称为消息线程。</p>
+<p>事件循环可以简单描述为：</p>
+<ol>
+<li>函数入栈，当栈中执行到异步任务的时候，就把他丢给webAPIs，接着继续执行同步任务，直到栈为空；</li>
+<li>在此期间webAPIs完成这个事件，把回调函数放入回调队列中等待；</li>
+<li>当执行栈为空的时候，事件循环就把回调队列中的任务放入执行栈中，回到步骤一执行。</li>
+</ol>
+<p>上述步骤中的webAPIs可能是DOM、AJAX、Timeout等。</p>
+<h4 id="浏览器中常驻的线程"><a href="#浏览器中常驻的线程" class="headerlink" title="浏览器中常驻的线程"></a>浏览器中常驻的线程</h4><ul>
+<li>JS引擎线程</li>
+<li>GUI渲染线程</li>
+<li>事件触发线程</li>
+</ul>
+<h3 id="window事件"><a href="#window事件" class="headerlink" title="window事件"></a>window事件</h3><p>onbeforeunload：当浏览器窗口关闭或者刷新时触发</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io">Cheyennee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io/2021/04/06/HTML/">http://cheyennee.github.io/2021/04/06/HTML/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cheyennee.github.io" target="_blank">Cheyennee</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/html/pic3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2021/04/15/CSS/"><img class="prev-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/css/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">CSS</div></div></a></div><div class="next-post pull-right"><a href="/2021/03/12/JS/"><img class="next-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/js/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">JS</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Cheyennee</div><div class="author-info__description">生而为人，还请努力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cheyennee"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">在路上</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8C%96%E7%9B%B8%E5%85%B3"><span class="toc-number">1.</span> <span class="toc-text">语义化相关</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="toc-number">1.1.</span> <span class="toc-text">语义化</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HTML5%E7%89%B9%E6%80%A7"><span class="toc-number">2.</span> <span class="toc-text">HTML5特性</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86HTML%E5%92%8CHTML5%EF%BC%9F"><span class="toc-number">2.1.</span> <span class="toc-text">如何区分HTML和HTML5？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML5%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7-%E8%AF%AD%E4%B9%89%E6%A0%87%E7%AD%BE%E3%80%81%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E3%80%81%E5%AA%92%E4%BD%93%E6%92%AD%E6%94%BE%E5%99%A8%E3%80%81%E6%96%B0%E5%A2%9E%E9%80%89%E6%8B%A9%E5%99%A8"><span class="toc-number">2.2.</span> <span class="toc-text">HTML5的新特性(语义标签、本地存储、媒体播放器、新增选择器)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Geolocation-API"><span class="toc-number">2.3.</span> <span class="toc-text">Geolocation API</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML5%E7%A7%BB%E9%99%A4%E4%BA%86%E5%93%AA%E4%BA%9B%E5%85%83%E7%B4%A0%EF%BC%9F"><span class="toc-number">2.4.</span> <span class="toc-text">HTML5移除了哪些元素？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%A4%84%E7%90%86HTML5%E6%96%B0%E6%A0%87%E7%AD%BE%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E5%85%BC%E5%AE%B9%E9%97%AE%E9%A2%98-%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3IE9%E5%8F%8A%E4%BB%A5%E4%B8%8B%E7%89%88%E6%9C%AC%E5%AF%B9H5%E6%96%B0%E5%A2%9E%E6%A0%87%E7%AD%BE%E4%B8%8D%E8%AF%86%E5%88%AB%E3%80%81CSS%E4%B8%8D%E8%B5%B7%E4%BD%9C%E7%94%A8%E7%9A%84%E9%97%AE%E9%A2%98-%EF%BC%9F"><span class="toc-number">2.5.</span> <span class="toc-text">如何处理HTML5新标签的浏览器兼容问题(如何解决IE9及以下版本对H5新增标签不识别、CSS不起作用的问题)？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SGML%E5%92%8CDTD-%E4%BA%86%E8%A7%A3%E5%8D%B3%E5%8F%AF"><span class="toc-number">2.6.</span> <span class="toc-text">SGML和DTD(了解即可)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML5%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AA%E9%9C%80%E8%A6%81%E5%86%99-lt-DOCTYPE-HTML-gt-%EF%BC%9F"><span class="toc-number">2.7.</span> <span class="toc-text">HTML5为什么只需要写&lt;!DOCTYPE HTML&gt;？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Doctype%E7%9A%84%E4%BD%9C%E7%94%A8%EF%BC%9F%E6%A0%87%E5%87%86-%E4%B8%A5%E6%A0%BCstandards-%E6%A8%A1%E5%BC%8F%E4%B8%8E%E5%85%BC%E5%AE%B9-%E6%B7%B7%E6%9D%82quirks-%E6%A8%A1%E5%BC%8F%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">2.8.</span> <span class="toc-text">Doctype的作用？标准(严格standards)模式与兼容(混杂quirks)模式有什么区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E4%B8%8E%E6%B7%B7%E6%9D%82%E6%A8%A1%E5%BC%8F%E7%9A%84%E8%AF%AD%E5%8F%A5%E8%A7%A3%E6%9E%90%E6%9C%89%E5%93%AA%E4%BA%9B%E4%B8%8D%E5%90%8C%E7%82%B9%EF%BC%9F"><span class="toc-number">2.9.</span> <span class="toc-text">严格模式与混杂模式的语句解析有哪些不同点？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML5%E7%9A%84DTD"><span class="toc-number">2.10.</span> <span class="toc-text">HTML5的DTD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HTML5%E7%BC%96%E7%A0%81"><span class="toc-number">2.11.</span> <span class="toc-text">HTML5编码</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#DOM%E5%B8%B8%E8%A7%81%E7%9A%84%E8%8A%82%E7%82%B9%E7%B1%BB%E5%9E%8B"><span class="toc-number">2.12.</span> <span class="toc-text">DOM常见的节点类型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96Element%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B9%E6%B3%95"><span class="toc-number">2.13.</span> <span class="toc-text">获取Element对象的方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#meta"><span class="toc-number">2.14.</span> <span class="toc-text">meta</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8"><span class="toc-number">3.</span> <span class="toc-text">浏览器</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AE%80%E8%BF%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8"><span class="toc-number">3.1.</span> <span class="toc-text">简述浏览器内核</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="toc-number">3.2.</span> <span class="toc-text">常用的浏览器内核有哪些？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E5%A4%9A%E4%B8%AA%E6%A0%87%E7%AD%BE%E9%A1%B5%E4%B9%8B%E9%97%B4%E7%9A%84%E9%80%9A%E4%BF%A1%EF%BC%9F-%E5%8D%A0%E5%9D%91%EF%BC%8C%E4%BB%A3%E7%A0%81%E5%8F%8A%E6%BC%94%E7%A4%BA%E6%95%88%E6%9E%9C"><span class="toc-number">3.3.</span> <span class="toc-text">如何实现浏览器内多个标签页之间的通信？[占坑，代码及演示效果]</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#websocket%E5%A6%82%E4%BD%95%E5%85%BC%E5%AE%B9%E4%BD%8E%E7%89%88%E6%9C%AC%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%9F-%E5%8D%A0%E5%9D%91%EF%BC%8C%E4%BB%A3%E7%A0%81%E5%8F%8A%E6%BC%94%E7%A4%BA%E6%95%88%E6%9E%9C"><span class="toc-number">3.4.</span> <span class="toc-text">websocket如何兼容低版本浏览器？[占坑，代码及演示效果]</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%B5%81%E7%A8%8B"><span class="toc-number">3.5.</span> <span class="toc-text">浏览器渲染流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#window%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.6.</span> <span class="toc-text">window对象</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A6%BB%E7%BA%BF%E5%AD%98%E5%82%A8"><span class="toc-number">4.</span> <span class="toc-text">离线存储</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="toc-number">4.1.</span> <span class="toc-text">工作原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AF%B9HTML5%E7%A6%BB%E7%BA%BF%E5%AD%98%E5%82%A8%E8%B5%84%E6%BA%90%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E5%92%8C%E5%8A%A0%E8%BD%BD%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-number">4.2.</span> <span class="toc-text">浏览器对HTML5离线存储资源进行管理和加载的过程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">4.3.</span> <span class="toc-text">使用的注意点</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">5.</span> <span class="toc-text">本地存储方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#cookies%E3%80%81sessionStorage%E5%92%8ClocalStorage%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">5.1.</span> <span class="toc-text">cookies、sessionStorage和localStorage的区别？</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E7%AD%BE"><span class="toc-number">6.</span> <span class="toc-text">标签</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E5%AF%BC%E5%85%A5%E6%A0%B7%E5%BC%8F%E6%97%B6%EF%BC%8C%E4%BD%BF%E7%94%A8link%E5%92%8C-import%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="toc-number">6.1.</span> <span class="toc-text">页面导入样式时，使用link和@import有什么区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E5%92%8C%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0"><span class="toc-number">6.2.</span> <span class="toc-text">行内元素和块级元素</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F-%E7%A9%BA-void-%E5%85%83%E7%B4%A0%E6%9C%89%E9%82%A3%E4%BA%9B%EF%BC%9F"><span class="toc-number">6.3.</span> <span class="toc-text">行内元素有哪些？块级元素有哪些？ 空(void)元素有那些？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#lt-img-gt-%E7%9A%84title%E5%92%8Calt%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="toc-number">6.4.</span> <span class="toc-text">&lt;img&gt;的title和alt有什么区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%83%E7%B4%A0%E4%BA%8B%E4%BB%B6%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="toc-number">6.5.</span> <span class="toc-text">元素事件有哪些</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#audio%E5%92%8Cvedio"><span class="toc-number">6.6.</span> <span class="toc-text">audio和vedio</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#lt-meta-gt-%E6%A0%87%E7%AD%BE%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">6.7.</span> <span class="toc-text">&lt;meta&gt;标签的作用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#table%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="toc-number">6.8.</span> <span class="toc-text">table常用的属性</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#iframe"><span class="toc-number">7.</span> <span class="toc-text">iframe</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#iframe%E7%9A%84%E7%BC%BA%E7%82%B9%EF%BC%9F"><span class="toc-number">7.1.</span> <span class="toc-text">iframe的缺点？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#iframe%E7%9A%84%E4%BC%98%E7%82%B9"><span class="toc-number">7.2.</span> <span class="toc-text">iframe的优点</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#iframe%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">7.3.</span> <span class="toc-text">iframe使用场景</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2"><span class="toc-number">8.</span> <span class="toc-text">页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%8F%E5%88%97%E5%8C%96%E6%8A%80%E6%9C%AF"><span class="toc-number">9.</span> <span class="toc-text">数据序列化技术</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%A8%E6%96%87%E6%A1%A3%E4%BC%A0%E8%BE%93"><span class="toc-number">10.</span> <span class="toc-text">跨文档传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E7%84%A6%E7%82%B9"><span class="toc-number">11.</span> <span class="toc-text">获取焦点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F"><span class="toc-number">12.</span> <span class="toc-text">跨域</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BE%8B%E5%AD%90%EF%BC%9A"><span class="toc-number">12.1.</span> <span class="toc-text">例子：</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3D"><span class="toc-number">13.</span> <span class="toc-text">3D</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">14.</span> <span class="toc-text">事件对象</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#DOM%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1-%E7%AC%A6%E5%90%88W3C%E6%A0%87%E5%87%86-%EF%BC%9A"><span class="toc-number">14.1.</span> <span class="toc-text">DOM事件对象(符合W3C标准)：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#IE%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">14.2.</span> <span class="toc-text">IE事件对象</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B"><span class="toc-number">14.3.</span> <span class="toc-text">事件模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#addEventListener%E7%9A%84%E5%8F%82%E6%95%B0"><span class="toc-number">14.4.</span> <span class="toc-text">addEventListener的参数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98"><span class="toc-number">14.5.</span> <span class="toc-text">事件委托</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#target%E4%B8%8EcurrentTarget%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">14.6.</span> <span class="toc-text">target与currentTarget的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%8D%E6%94%AF%E6%8C%81%E5%86%92%E6%B3%A1%E7%9A%84%E4%BA%8B%E4%BB%B6"><span class="toc-number">14.7.</span> <span class="toc-text">不支持冒泡的事件</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DOM%E5%B8%B8%E7%94%A8API"><span class="toc-number">15.</span> <span class="toc-text">DOM常用API</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6"><span class="toc-number"></span> <span class="toc-text">浏览器渲染机制</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%B2%E6%9F%93%E6%AD%A5%E9%AA%A4"><span class="toc-number">1.</span> <span class="toc-text">渲染步骤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90HTML%E6%A0%87%E7%AD%BE%EF%BC%8C%E6%9E%84%E5%BB%BADOM%E6%A0%91"><span class="toc-number">2.</span> <span class="toc-text">解析HTML标签，构建DOM树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E6%9E%90CSS%E6%A0%87%E7%AD%BE%EF%BC%8C%E6%9E%84%E5%BB%BACSSOM%E6%A0%91"><span class="toc-number">3.</span> <span class="toc-text">解析CSS标签，构建CSSOM树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%8ADOM%E5%92%8CCSSOM%E7%BB%84%E5%90%88%E6%88%90%E6%B8%B2%E6%9F%93%E6%A0%91"><span class="toc-number">4.</span> <span class="toc-text">把DOM和CSSOM组合成渲染树</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%A8%E6%B8%B2%E6%9F%93%E6%A0%91%E7%9A%84%E5%9F%BA%E7%A1%80%E4%B8%8A%E8%BF%9B%E8%A1%8C%E5%B8%83%E5%B1%80%EF%BC%8C%E8%AE%A1%E7%AE%97%E6%AF%8F%E4%B8%AA%E8%8A%82%E7%82%B9%E7%9A%84%E5%87%A0%E4%BD%95%E7%BB%93%E6%9E%84"><span class="toc-number">5.</span> <span class="toc-text">在渲染树的基础上进行布局，计算每个节点的几何结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E7%94%A8GPU%E7%BB%98%E5%88%B6%EF%BC%8C%E5%90%88%E6%88%90%E5%9B%BE%E5%B1%82%EF%BC%8C%E6%98%BE%E7%A4%BA%E5%9C%A8%E5%B1%8F%E5%B9%95%E4%B8%8A"><span class="toc-number">6.</span> <span class="toc-text">调用GPU绘制，合成图层，显示在屏幕上</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E6%80%A7%E8%83%BD"><span class="toc-number"></span> <span class="toc-text">优化浏览器渲染性能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%B5%E9%9D%A2%E7%99%BD%E5%B1%8F%E6%80%8E%E4%B9%88%E6%8E%92%E6%9F%A5%E5%AE%9A%E4%BD%8D%E9%97%AE%E9%A2%98-%E5%AE%A2%E6%88%B7%E7%AB%AF%E3%80%81%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AB%AF%E3%80%81%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF"><span class="toc-number"></span> <span class="toc-text">页面白屏怎么排查定位问题(客户端、浏览器端、服务器端)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-requestAnimationFrame"><span class="toc-number"></span> <span class="toc-text">window.requestAnimationFrame</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">1.</span> <span class="toc-text">实例</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF"><span class="toc-number"></span> <span class="toc-text">浏览器事件循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E7%9A%84%E6%A6%82%E5%BF%B5"><span class="toc-number">1.</span> <span class="toc-text">事件循环的概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E5%B8%B8%E9%A9%BB%E7%9A%84%E7%BA%BF%E7%A8%8B"><span class="toc-number">2.</span> <span class="toc-text">浏览器中常驻的线程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window%E4%BA%8B%E4%BB%B6"><span class="toc-number"></span> <span class="toc-text">window事件</span></a></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/07/js%E9%A2%98/" title="js题"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/dp/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js题"/></a><div class="content"><a class="title" href="/2023/07/07/js%E9%A2%98/" title="js题">js题</a><time datetime="2023-07-07T14:28:39.043Z" title="发表于 2023-07-07 22:28:39">2023-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/18/top100/" title="top100"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="top100"/></a><div class="content"><a class="title" href="/2023/06/18/top100/" title="top100">top100</a><time datetime="2023-06-18T07:47:11.000Z" title="发表于 2023-06-18 15:47:11">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/06/ts/" title="TS"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/js/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TS"/></a><div class="content"><a class="title" href="/2023/06/06/ts/" title="TS">TS</a><time datetime="2023-06-06T14:32:28.000Z" title="发表于 2023-06-06 22:32:28">2023-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/01/playwright/" title="playwright"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/linux/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="playwright"/></a><div class="content"><a class="title" href="/2023/05/01/playwright/" title="playwright">playwright</a><time datetime="2023-04-30T23:25:56.000Z" title="发表于 2023-05-01 07:25:56">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/" title="前端安全"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/interview/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端安全"/></a><div class="content"><a class="title" href="/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/" title="前端安全">前端安全</a><time datetime="2023-03-27T05:15:38.000Z" title="发表于 2023-03-27 13:15:38">2023-03-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Cheyennee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>前端安全 | Cheyennee</title><meta name="keywords" content="blog"><meta name="author" content="Cheyennee,714851125@qq.com"><meta name="copyright" content="Cheyennee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="记录前端安全相关内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端安全">
+<meta property="og:url" content="http://cheyennee.github.io/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/index.html">
+<meta property="og:site_name" content="Cheyennee">
+<meta property="og:description" content="记录前端安全相关内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/interview/cover.jpg">
+<meta property="article:published_time" content="2023-03-27T05:15:38.000Z">
+<meta property="article:modified_time" content="2023-07-27T05:25:26.732Z">
+<meta property="article:author" content="Cheyennee">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/interview/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://cheyennee.github.io/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '前端安全',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-27 13:25:26'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Cheyennee</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">前端安全</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-27T05:15:38.000Z" title="发表于 2023-03-27 13:15:38">2023-03-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-07-27T05:25:26.732Z" title="更新于 2023-07-27 13:25:26">2023-07-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="前端安全"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="CSP（Content-Security-Policy）可以解决什么问题？"><a href="#CSP（Content-Security-Policy）可以解决什么问题？" class="headerlink" title="CSP（Content Security Policy）可以解决什么问题？"></a>CSP（Content Security Policy）可以解决什么问题？</h2><h3 id="是什么"><a href="#是什么" class="headerlink" title="是什么"></a>是什么</h3><p>​		CSP（Content Security Policy）是为了解决 Web 应用程序中的安全问题而创建的一种规范。CSP 通过限制 Web 应用程序能够加载和执行的内容，来减少恶意攻击的成功率。具体来说，<strong>CSP 允许 Web 应用程序管理员定义哪些来源可以加载资源和运行 JavaScript 等代码。</strong>这些源可以是域名、协议或端口号等。CSP能够用于规定，我们的网站只接受我们指定的请求资源。默认配置下不允许执行内联代码等，如<code>&lt;script&gt;</code>、<code>eval()</code>、<code>setTimeout()</code>等。</p>
+<p>​		当浏览器尝试加载一个 Web 页面时，它会检查页面是否包含 CSP 头，并根据该头信息确定允许加载哪些资源。如果某个资源的来源不在允许列表内，则浏览器将停止加载该资源并向用户发出警告。这样就可以防止注入恶意代码并帮助保护用户隐私和身份。</p>
+<h3 id="CSP的使用方式"><a href="#CSP的使用方式" class="headerlink" title="CSP的使用方式"></a>CSP的使用方式</h3><ul>
+<li>通过定义在HTTP响应头中使用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;Content-Security-Policy: default-src &#x27;self&#x27;&quot;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>通过定义在HTML中使用</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;self&#x27;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="CSP在HTTP响应头的工作流程"><a href="#CSP在HTTP响应头的工作流程" class="headerlink" title="CSP在HTTP响应头的工作流程"></a>CSP在HTTP响应头的工作流程</h3><ul>
+<li>客户端请求 Web 页面。</li>
+<li>服务器返回 Web 页面及相关资源，并设置 CSP 头。</li>
+<li>浏览器解析 Web 页面，并根据 CSP 头信息确定允许加载哪些资源。</li>
+<li>如果某个资源的来源不在允许列表内，则浏览器将停止加载该资源并向用户发出警告。</li>
+</ul>
+<h3 id="CSP-的使用方法"><a href="#CSP-的使用方法" class="headerlink" title="CSP 的使用方法"></a>CSP 的使用方法</h3><p>需要注意的是，在实际应用中，Web 开发人员需要谨慎设置 CSP 规则，以确保不会限制正常的 Web 应用程序功能。此外，开发人员也需要定期审核 CSP 规则，以确保其仍然适用于最新的 Web 应用程序版本。<br>总之，CSP 的原理是通过限制 Web 应用程序能够加载和执行的内容，来减少恶意攻击的成功率。它可以帮助保护用户隐私和身份，并提高 Web 应用程序的安全性。</p>
+<h2 id="XSS（Cross-Site-Scripting）跨站脚本攻击"><a href="#XSS（Cross-Site-Scripting）跨站脚本攻击" class="headerlink" title="XSS（Cross Site Scripting）跨站脚本攻击"></a>XSS（Cross Site Scripting）跨站脚本攻击</h2><h3 id="是什么-1"><a href="#是什么-1" class="headerlink" title="是什么"></a>是什么</h3><p>​		XSS（Cross Site Scripting）跨站脚本攻击，是指通过存在安全漏洞的 Web 网站注册用户的浏览器内运行非法的 HTML 标签或 JavaScript 进而对网站进行的各种攻击。XSS 攻击通常指的是通过利用网站没有对用户提交数据进行转义过滤就直接输出在页面上的漏洞进行的攻击。XSS 攻击的危害是非常严重的，它不仅能够破坏网站的正常功能，还可能窃取用户的各种信息。</p>
+<h3 id="XSS的分类"><a href="#XSS的分类" class="headerlink" title="XSS的分类"></a>XSS的分类</h3><ul>
+<li>反射型 XSS<br>反射型XSS只是简单地把用户输入的数据“反射”给浏览器。也就是说，黑客往往需要诱使用户“点击”一个恶意链接，才能攻击成功。通常反射型XSS的恶意代码存在URL里，通过URL传递参数的功能，如网站搜索、跳转等。由于需要用户主动打开恶意的URL才能生效，攻击者往往会结合多种手段诱导用户点击。</li>
+<li>存储型 XSS<br>存储型 XSS 会把用户输入的数据“存储”在服务器端。比较常见的一个场景就是，黑客写下一篇包含有恶意 JavaScript 代码的博客文章，文章发表后，所有访问该博客文章的用户，都会在他们的浏览器中执行这段恶意的 JavaScript 代码。</li>
+<li>基于DOM的 XSS</li>
+</ul>
+<h3 id="XSS攻击防御"><a href="#XSS攻击防御" class="headerlink" title="XSS攻击防御"></a>XSS攻击防御</h3><ul>
+<li>HttpOnly<br>浏览器将禁止页面的JavaScript访问带有HttpOnly属性的Cookie。所以我们需要在http的响应头set-cookie时设置httpOnly，让浏览器知道不能通过document.cookie的方式获取到cookie内容。</li>
+<li>输入检查<br>对于用户输入的内容，我们需要进行检查，对于不符合规范的内容，我们需要进行过滤。比如对于用户输入的内容，我们可以使用正则表达式进行检查，如果不符合规范，我们就不接受用户的输入。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const htmlEncode = function (handleString)&#123;</span><br><span class="line">    return handleString</span><br><span class="line">    .replace(/&amp;/g,&quot;&amp;amp;&quot;)</span><br><span class="line">    .replace(/&lt;/g,&quot;&amp;lt;&quot;)</span><br><span class="line">    .replace(/&gt;/g,&quot;&amp;gt;&quot;)</span><br><span class="line">    .replace(/ /g,&quot;&amp;nbsp;&quot;)</span><br><span class="line">    .replace(/&#x27;/g,&quot;&amp;#39;&quot;)</span><br><span class="line">    .replace(/&quot;/g,&quot;&amp;quot;&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>输出检查<br>在变量输出到HTML页面时，可以使用编码或转义的方式来防御XSS攻击.</li>
+</ul>
+<h2 id="Websocket存在的安全问题"><a href="#Websocket存在的安全问题" class="headerlink" title="Websocket存在的安全问题"></a>Websocket存在的安全问题</h2><h3 id="是什么-2"><a href="#是什么-2" class="headerlink" title="是什么"></a>是什么</h3><p>​		WebSocket是HTML5开始提供的一种浏览器与服务器间进行全双工通讯的网络技术。</p>
+<h3 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h3><ul>
+<li>认证<br>WebSocket 协议没有规定服务器在握手阶段应该如何认证客户端身份。服务器可以采用任何 HTTP 服务器的客户端身份认证机制，如 cookie认证，HTTP 基础认证，TLS 身份认证等。在WebSocket应用认证实现上面临的安全问题和传统的Web应用认证是相同的。</li>
+<li>授权<br>WebSocket协议没有指定任何授权方式，应用程序中用户资源访问等的授权策略由服务端或开发者实现。</li>
+<li>拒绝服务<br>WebSocket协议没有指定任何拒绝服务的机制，应用程序中拒绝服务的策略由服务端或开发者实现。</li>
+<li>中间人攻击<br>WebSocket使用HTTP或HTTPS协议进行握手请求，在使用HTTP协议的情况下，若存在中间人可以嗅探HTTP流量，那么中间人可以获取并篡改WebSocket握手请求，通过伪造客户端信息与服务器建立WebSocket连接。</li>
+<li>输入校验<br>WebSocket应用程序中，服务端对客户端输入的数据没有进行校验，导致服务端应用程序存在XSS漏洞。</li>
+</ul>
+<h2 id="鉴权"><a href="#鉴权" class="headerlink" title="鉴权"></a>鉴权</h2><h3 id="Session-Cookie认证"><a href="#Session-Cookie认证" class="headerlink" title="Session-Cookie认证"></a>Session-Cookie认证</h3><h4 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h4><p>​		服务端生成一个session，将session的id返回给客户端，客户端将session的id保存在cookie中，下次请求时，将cookie中的session的id发送给服务端，服务端根据session的id找到对应的session，从而判断用户是否登录。</p>
+<h4 id="优缺点"><a href="#优缺点" class="headerlink" title="优缺点"></a>优缺点</h4><ul>
+<li>优点<ol>
+<li>服务端可以控制session的有效期，可以在session过期后，强制用户重新登录。</li>
+<li>服务端可以在session中存储用户的信息，比如用户的权限信息，从而减少服务端的查询压力。</li>
+</ol>
+</li>
+<li>缺点<br>脱离浏览器无法使用，比如原生应用</li>
+</ul>
+<h3 id="Token认证"><a href="#Token认证" class="headerlink" title="Token认证"></a>Token认证</h3><h4 id="为什么需要Token"><a href="#为什么需要Token" class="headerlink" title="为什么需要Token"></a>为什么需要Token</h4><p>​		<strong>负载均衡多服务器的情况，不好确认当前用户是否登录，因为多服务器不共享 Session。</strong>这个问题也可以将 Session 存在一个服务器中来解决，但是就不能完全达到负载均衡的效果。<br>​		Token 和 Session-Cookie 认证方式中的 Session ID 不同，并非只是一个标识符。Token 一般会包含用户的相关信息，通过验证 Token 不仅可以完成身份校验，还可以获取预设的信息。<br>​		客户端可以将 token 存放于 localStroage 等容器中。客户端每次访问都传递 token，服务端解密 token，服务端就不需要存储 Session 占用存储空间，就很好的解决负载均衡多服务器的问题了。</p>
+<h4 id="JWT-目前最常用的token认证方法"><a href="#JWT-目前最常用的token认证方法" class="headerlink" title="JWT(目前最常用的token认证方法)"></a>JWT(目前最常用的token认证方法)</h4><p>​		参见链接：<a target="_blank" rel="noopener" href="https://cheyennee.cn/2021/09/10/JWT/">https://cheyennee.cn/2021/09/10/JWT/</a></p>
+<h4 id="单点登录"><a href="#单点登录" class="headerlink" title="单点登录"></a>单点登录</h4><p>​		单点登录（Single Sign On，简称 SSO）是目前比较流行的企业业务整合的解决方案之一，它的主要思想是用户只需要登录一次，就可以访问所有相互信任的应用系统。</p>
+<h2 id="点击劫持"><a href="#点击劫持" class="headerlink" title="点击劫持"></a>点击劫持</h2><h3 id="是什么-3"><a href="#是什么-3" class="headerlink" title="是什么"></a>是什么</h3><p>​		点击劫持是一种视觉欺骗的攻击手段。攻击者将需要攻击的网站通过iframe嵌套的方式嵌入到自己的网页中，并将iframe设置为透明，在页面中透出一个按钮诱导用户点击。</p>
+<h3 id="防御"><a href="#防御" class="headerlink" title="防御"></a>防御</h3><ul>
+<li><p>X-FRAME-OPTIONS<br>X-FRAME-OPTIONS 是一个 HTTP 响应头，在现代浏览器有一个很好的支持。这个 HTTP 响应头 就是为了防御用 iframe 嵌套的点击劫持攻击。<br>X-FRAME-OPTIONS 有三个值可选，分别是 DENY、SAMEORIGIN、ALLOW-FROM。DENY 表示页面不允许通过 iframe 的方式展示，即便是在相同域名的页面中嵌套也不允许。SAMEORIGIN 表示页面可以在相同域名下通过 iframe 的方式展示。ALLOW-FROM 表示页面可以在指定来源的 iframe 中展示。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">X-FRAME-OPTIONS: DENY</span><br><span class="line">X-FRAME-OPTIONS: SAMEORIGIN</span><br><span class="line">X-FRAME-OPTIONS: ALLOW-FROM https://example.com/</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="Cookie的Samesite-Cookie属性"><a href="#Cookie的Samesite-Cookie属性" class="headerlink" title="Cookie的Samesite Cookie属性"></a>Cookie的Samesite Cookie属性</h2><h3 id="是什么-4"><a href="#是什么-4" class="headerlink" title="是什么"></a>是什么</h3><p>​		Samesite Cookie属性是为了防止CSRF攻击和用户追踪而作出的改进。Samesite Cookie属性可以让Cookie在跨站请求时不会被发送，从而可以阻止跨站请求伪造攻击（CSRF）。</p>
+<h3 id="三个值"><a href="#三个值" class="headerlink" title="三个值"></a>三个值</h3><ul>
+<li>Strict<br>Strict模式下，浏览器完全禁止第三方Cookie，跨站点时，任何情况下都不会发送Cookie。这将完全阻止CSRF攻击带来的风险，但是会影响到用户的体验（比如让用户在跨站点时无法正常使用单点登录）。</li>
+<li>Lax<br>Lax模式是默认值，Lax模式会阻止第三方站点的Cookie发送，但是用户从外部链接导航到网站时（比如从搜索引擎结果链接访问网站）除外。这种方式可以防止CSRF攻击，同时可以保证用户的单点登录体验。</li>
+<li>None<br>Cookie将在所有上下文中发送，即允许跨域发送。</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io">Cheyennee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/">http://cheyennee.github.io/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cheyennee.github.io" target="_blank">Cheyennee</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/interview/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/05/01/playwright/"><img class="prev-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/linux/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">playwright</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/12/leetcode-for-js/"><img class="next-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/handwrite/pic4.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">leetcode for js</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Cheyennee</div><div class="author-info__description">生而为人，还请努力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">46</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">1</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cheyennee"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">在路上</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSP%EF%BC%88Content-Security-Policy%EF%BC%89%E5%8F%AF%E4%BB%A5%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">CSP（Content Security Policy）可以解决什么问题？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.1.</span> <span class="toc-text">是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSP%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-number">1.2.</span> <span class="toc-text">CSP的使用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSP%E5%9C%A8HTTP%E5%93%8D%E5%BA%94%E5%A4%B4%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">1.3.</span> <span class="toc-text">CSP在HTTP响应头的工作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSP-%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95"><span class="toc-number">1.4.</span> <span class="toc-text">CSP 的使用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#XSS%EF%BC%88Cross-Site-Scripting%EF%BC%89%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB"><span class="toc-number">2.</span> <span class="toc-text">XSS（Cross Site Scripting）跨站脚本攻击</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88-1"><span class="toc-number">2.1.</span> <span class="toc-text">是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XSS%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">2.2.</span> <span class="toc-text">XSS的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#XSS%E6%94%BB%E5%87%BB%E9%98%B2%E5%BE%A1"><span class="toc-number">2.3.</span> <span class="toc-text">XSS攻击防御</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Websocket%E5%AD%98%E5%9C%A8%E7%9A%84%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">Websocket存在的安全问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88-2"><span class="toc-number">3.1.</span> <span class="toc-text">是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-number">3.2.</span> <span class="toc-text">安全问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%89%B4%E6%9D%83"><span class="toc-number">4.</span> <span class="toc-text">鉴权</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Session-Cookie%E8%AE%A4%E8%AF%81"><span class="toc-number">4.1.</span> <span class="toc-text">Session-Cookie认证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="toc-number">4.1.1.</span> <span class="toc-text">过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="toc-number">4.1.2.</span> <span class="toc-text">优缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Token%E8%AE%A4%E8%AF%81"><span class="toc-number">4.2.</span> <span class="toc-text">Token认证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81Token"><span class="toc-number">4.2.1.</span> <span class="toc-text">为什么需要Token</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JWT-%E7%9B%AE%E5%89%8D%E6%9C%80%E5%B8%B8%E7%94%A8%E7%9A%84token%E8%AE%A4%E8%AF%81%E6%96%B9%E6%B3%95"><span class="toc-number">4.2.2.</span> <span class="toc-text">JWT(目前最常用的token认证方法)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E7%82%B9%E7%99%BB%E5%BD%95"><span class="toc-number">4.2.3.</span> <span class="toc-text">单点登录</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E5%87%BB%E5%8A%AB%E6%8C%81"><span class="toc-number">5.</span> <span class="toc-text">点击劫持</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88-3"><span class="toc-number">5.1.</span> <span class="toc-text">是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B2%E5%BE%A1"><span class="toc-number">5.2.</span> <span class="toc-text">防御</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie%E7%9A%84Samesite-Cookie%E5%B1%9E%E6%80%A7"><span class="toc-number">6.</span> <span class="toc-text">Cookie的Samesite Cookie属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88-4"><span class="toc-number">6.1.</span> <span class="toc-text">是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E4%B8%AA%E5%80%BC"><span class="toc-number">6.2.</span> <span class="toc-text">三个值</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/07/js%E9%A2%98/" title="js题"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/dp/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="js题"/></a><div class="content"><a class="title" href="/2023/07/07/js%E9%A2%98/" title="js题">js题</a><time datetime="2023-07-07T14:28:39.043Z" title="发表于 2023-07-07 22:28:39">2023-07-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/18/top100/" title="top100"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="top100"/></a><div class="content"><a class="title" href="/2023/06/18/top100/" title="top100">top100</a><time datetime="2023-06-18T07:47:11.000Z" title="发表于 2023-06-18 15:47:11">2023-06-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/06/ts/" title="TS"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/js/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="TS"/></a><div class="content"><a class="title" href="/2023/06/06/ts/" title="TS">TS</a><time datetime="2023-06-06T14:32:28.000Z" title="发表于 2023-06-06 22:32:28">2023-06-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/05/01/playwright/" title="playwright"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/linux/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="playwright"/></a><div class="content"><a class="title" href="/2023/05/01/playwright/" title="playwright">playwright</a><time datetime="2023-04-30T23:25:56.000Z" title="发表于 2023-05-01 07:25:56">2023-05-01</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/" title="前端安全"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/interview/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="前端安全"/></a><div class="content"><a class="title" href="/2023/03/27/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8/" title="前端安全">前端安全</a><time datetime="2023-03-27T05:15:38.000Z" title="发表于 2023-03-27 13:15:38">2023-03-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Cheyennee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
