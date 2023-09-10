@@ -1,0 +1,348 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>HTTP-TCP | Cheyennee</title><meta name="keywords" content="blog"><meta name="author" content="Cheyennee,714851125@qq.com"><meta name="copyright" content="Cheyennee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="认真记录与HTTP、TCP相关的内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP-TCP">
+<meta property="og:url" content="http://cheyennee.github.io/2023/09/08/HTTP-TCP/index.html">
+<meta property="og:site_name" content="Cheyennee">
+<meta property="og:description" content="认真记录与HTTP、TCP相关的内容">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/http/cover.jpg">
+<meta property="article:published_time" content="2023-09-08T01:35:27.000Z">
+<meta property="article:modified_time" content="2023-09-09T01:44:40.688Z">
+<meta property="article:author" content="Cheyennee">
+<meta property="article:tag" content="blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/http/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://cheyennee.github.io/2023/09/08/HTTP-TCP/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'HTTP-TCP',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-09 09:44:40'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Cheyennee</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">HTTP-TCP</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-08T01:35:27.000Z" title="发表于 2023-09-08 09:35:27">2023-09-08</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-09T01:44:40.688Z" title="更新于 2023-09-09 09:44:40">2023-09-09</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/HTTP/">HTTP</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="HTTP-TCP"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="请求类型"><a href="#请求类型" class="headerlink" title="请求类型"></a>请求类型</h2><ul>
+<li>GET：发送请求来获取服务器上的某个资源</li>
+<li>POST：向URL指定的资源提交数据或附加新的数据</li>
+<li>PUT：向服务器提交数据，与POST方法类似。但是PUT指定了资源在服务器上的位置，而POST没有</li>
+<li>PATCH: 对已知资源进行局部更新</li>
+<li>HEAD：只请求页面首部</li>
+<li>DELETE：删除服务器上的资源</li>
+<li>OPTIONS：获取当前URL支持的请求方法</li>
+<li>TRACE：用于激活远程的、应用层的请求消息</li>
+<li>CONNECT：把请求连接转换到TCP&#x2F;IP通道</li>
+</ul>
+<h2 id="GET和POST的区别"><a href="#GET和POST的区别" class="headerlink" title="GET和POST的区别"></a>GET和POST的区别</h2><ul>
+<li>GET在浏览器回退时是无害的, 而POST会再次提交请求（✔）</li>
+<li>GET产生的URL地址可以被保存, 而POST不可以</li>
+<li>GET请求会被浏览器主动cache, 而POST不会</li>
+<li>GET请求只能进行url编码, 而POST支持多种编码方式（✔）</li>
+<li>GET请求参数会被完整保留在浏览器历史记录中, 而POST中的参数不会被保留</li>
+<li>GET请求在URL中传输的参数是有长度限制的, 而POST没有（✔）</li>
+<li>对参数的数据类型, GET只接受ASCLL字符, 而POST没有限制</li>
+<li>GET比POST更不安全, 因为参数直接暴露在URL上, 所以不能用来传递敏感信息（✔）</li>
+<li>GET参数通过URL传递, POST放在Request body中（✔）</li>
+<li>GET产生一个TCP包，POST产生两个TCP包。对于GET请求，浏览器会把<code>header</code>和<code>data</code>一起发送数据，服务器响应<code>200</code>.对于POST请求，浏览器会先发送<code>header</code>，服务器响应<code>100 continue</code>，浏览器再发送<code>data</code>，服务器响应<code>200</code>。（✔）</li>
+</ul>
+<p>※ 我们可以给GET加上<code>request body</code>, 也可以在POST加上<code>url</code>参数. 这在技术上是行的通的.所以get和post实际上是一种约定的规则. </p>
+<h2 id="PUT和POST的区别"><a href="#PUT和POST的区别" class="headerlink" title="PUT和POST的区别"></a>PUT和POST的区别</h2><ul>
+<li>PUT 方法是幂等的, 而 POST 的非幂等的</li>
+<li>PUT指定了资源在服务器上的位置，而POST没有</li>
+</ul>
+<h2 id="PUT和PATCH的区别"><a href="#PUT和PATCH的区别" class="headerlink" title="PUT和PATCH的区别"></a>PUT和PATCH的区别</h2><ul>
+<li><code>PUT</code> 是重新更新全部信息, <code>PATCH</code> 是更新某部分的信息.</li>
+</ul>
+<h2 id="HTTP-Keep-Alive"><a href="#HTTP-Keep-Alive" class="headerlink" title="HTTP Keep-Alive"></a>HTTP Keep-Alive</h2><h3 id="keep-alive的优点："><a href="#keep-alive的优点：" class="headerlink" title="keep-alive的优点："></a>keep-alive的优点：</h3><ul>
+<li>较少的 CPU 和内存的使用（由于同时打开的连接的减少了）</li>
+<li>允许请求和应答的 HTTP 管线化</li>
+<li>降低拥塞控制 （TCP 连接减少了）</li>
+<li>减少了后续请求的延迟（无需再进行握手）</li>
+<li>报告错误无需关闭 TCP</li>
+</ul>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><p>Http1.1中默认开启Keep-Alive，也可以配置额外的参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Connection: keep-alive</span><br><span class="line">Keep-Alive: timeout=5, max=100 // 这个TCP通道可以保持5秒，max则表示这个长连接最多接受100次请求就断开，默认没有限制</span><br></pre></td></tr></table></figure>
+
+<h2 id="TCP-Keep-Alive与HTTP-Keep-Alive的区别"><a href="#TCP-Keep-Alive与HTTP-Keep-Alive的区别" class="headerlink" title="TCP Keep Alive与HTTP Keep Alive的区别"></a>TCP Keep Alive与HTTP Keep Alive的区别</h2><p>HTTP Keep Alive主要是TCP连接的复用，避免建立过多的TCP连接；</p>
+<p>TCP Keep Alive主要是保持TCP连接的存活，本质上是在发送心跳包；每隔一段时间给接受方发送一个探测包, 如果收到回应的ACK, 则认为连接还是存活的, 在超过一定重试次数之后, 还是没有收到对方的回应, 则丢弃该TCP连接.</p>
+<h2 id="管线化-为什么无需等待请求响应就能发送下一个请求"><a href="#管线化-为什么无需等待请求响应就能发送下一个请求" class="headerlink" title="管线化(为什么无需等待请求响应就能发送下一个请求)"></a>管线化(为什么无需等待请求响应就能发送下一个请求)</h2><p>​		本质上是将<strong>多个HTTP请求整批提交</strong>的技术, 而且在传输过程中不需要先等待服务端的回应. 管线化机制必须通过永久连接完成, 并且只有GET和HEAD请求可以进行管线化, 而POST则有所限制. 只能在HTTP1.1中启用.</p>
+<p>​		关键在于把多个HTTP的请求消息同时塞入一个TCP分组中, 所以只要提交一个分组就能同时发出多个请求, 借此减少网络上多余的分组并降低线路负载.</p>
+<h2 id="HTTP请求报文"><a href="#HTTP请求报文" class="headerlink" title="HTTP请求报文"></a>HTTP请求报文</h2><ol>
+<li>请求行：请求方法、URL字段、HTTP协议版本字段（使用空格分隔）</li>
+<li>请求头：键值对的形式</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">User-Agent：产生请求的浏览器类型</span><br><span class="line">Accept：客户端可识别的内容类型列表</span><br><span class="line">Host：请求的主机名</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>空行</li>
+<li>请求体：携带的数据</li>
+</ol>
+<h2 id="HTTP响应报文"><a href="#HTTP响应报文" class="headerlink" title="HTTP响应报文"></a>HTTP响应报文</h2><ol>
+<li>响应行：协议版本、状态码、状态码原因短语</li>
+<li>响应头</li>
+<li>空行</li>
+<li>响应体</li>
+</ol>
+<h2 id="内容编码"><a href="#内容编码" class="headerlink" title="内容编码"></a>内容编码</h2><p>​		内容编码能将数据容量变小。内容编码指明应用在实体内容上的编码格式, 并保持实体信息原样压缩. 内容编码后的实体由客户端接收并负责解码.</p>
+<p>​	常用的内容编码有以下几种:</p>
+<ul>
+<li>gzip(GNU zip)</li>
+<li>compress(UNIX系统的标准压缩)</li>
+<li>deflate(zlib)</li>
+<li>identity(不进行编码)</li>
+</ul>
+<h2 id="分块传输编码"><a href="#分块传输编码" class="headerlink" title="分块传输编码"></a>分块传输编码</h2><p>​		在Http通信过程中, 请求的编码实体资源尚未全部传输完成之前, 浏览器无法显示请求页面. 在传输大容量数据的时候, 通过把数据分割为多块, 能够让浏览器逐步显示页面。这种把实体主体分块的功能称为<strong>分块传输编码</strong>(Chunked Transfer Coding).分块传输编码会将实体分成多个部分(块), 每一块都会用16进制来标记块的大小, 而实体主体的最后一块会使用”0(CR+LF)”来标记.使用分块传输编码的实体主体会由接受的客户端负责解码, 恢复到编码前的实体主体.</p>
+<h2 id="HTTP响应状态码"><a href="#HTTP响应状态码" class="headerlink" title="HTTP响应状态码"></a>HTTP响应状态码</h2><h5 id="2XX-成功："><a href="#2XX-成功：" class="headerlink" title="2XX 成功："></a>2XX 成功：</h5><ul>
+<li>200 OK, 表示从客户端发来的请求在服务器端被正确处理 ✨</li>
+<li>201 Created, 请求已经被实现，而且有一个新的资源已经依据请求的需要而建立</li>
+<li>202 Accepted, 请求已接受，但是还没执行，不保证完成请求</li>
+<li>204 No content, 表示请求成功，但响应报文不含实体的主体部分</li>
+<li>206 Partial Content, 进行范围请求 ✨</li>
+</ul>
+<h5 id="3XX-重定向："><a href="#3XX-重定向：" class="headerlink" title="3XX 重定向："></a>3XX 重定向：</h5><ul>
+<li>301 moved permanently，永久性重定向，表示资源已被分配了新的 URL</li>
+<li>302 found，临时性重定向，表示资源临时被分配了新的 URL ✨</li>
+<li>304 not modified，表示服务器允许访问资源，但因发生请求未满足条件的情况</li>
+<li>307 temporary redirect，临时重定向，和 302 含义相同, 但是不会改变请求方式</li>
+</ul>
+<h5 id="4XX-客户端错误："><a href="#4XX-客户端错误：" class="headerlink" title="4XX 客户端错误："></a>4XX 客户端错误：</h5><ul>
+<li>400 bad request，请求报文存在语法错误 ✨</li>
+<li>401 unauthorized，表示发送的请求需要有通过 HTTP 认证的认证信息 ✨</li>
+<li>403 forbidden，表示对请求资源的访问被服务器拒绝 ✨</li>
+<li>404 not found，表示在服务器上没有找到请求的资源 ✨</li>
+<li>408 Request timeout, 客户端请求超时</li>
+<li>409 Confict, 请求的资源可能引起冲突</li>
+</ul>
+<h5 id="5XX-服务器错误："><a href="#5XX-服务器错误：" class="headerlink" title="5XX 服务器错误："></a>5XX 服务器错误：</h5><ul>
+<li>500 internal sever error，表示服务器端在执行请求时发生了错误 ✨</li>
+<li>501 Not Implemented 请求超出服务器能力范围，例如服务器不支持当前请求所需要的某个功能，或者请求是服务器不支持的某个方法</li>
+<li>503 service unavailable，表明服务器暂时处于超负载或正在停机维护，无法处理请求</li>
+<li>505 http version not supported 服务器不支持http协议版本，或者拒绝支持在请求中使用的 HTTP 版本</li>
+</ul>
+<h5 id="302，303，307的区别"><a href="#302，303，307的区别" class="headerlink" title="302，303，307的区别"></a>302，303，307的区别</h5><p>​		302 是 http1.0 的协议状态码，在 http1.1 版本的时候为了细化 302 状态码又出来了两个 303 和 307。</p>
+<p>​		303 明确表示客户端应当采用 get 方法获取资源，他会把 POST 请求变为 GET 请求进行重定向。 307 会遵照浏览器标准，不会从 post 变为 get。</p>
+<h5 id="301与302对搜索引擎的影响"><a href="#301与302对搜索引擎的影响" class="headerlink" title="301与302对搜索引擎的影响"></a>301与302对搜索引擎的影响</h5><p>​		301 重定向是网页更改地址后对搜索引擎友好的最好方法，只要不是暂时搬移的情况,都建议使用 301 来做转址。 如果我们把一个地址采用 301 跳转方式跳转的话，搜索引擎会把老地址的<code>PageRank</code>等信息带到新地址，同时在搜索引擎索引库中彻底废弃掉原先的老地址。旧网址的排名等完全清零。</p>
+<p>​		302容易被搜索引擎误判。</p>
+<h2 id="HTTP首部字段"><a href="#HTTP首部字段" class="headerlink" title="HTTP首部字段"></a>HTTP首部字段</h2><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>通用首部字段: 请求报文和响应报文都会使用的首部字段</li>
+<li>请求首部字段: 客户端向服务器发送请求报文时使用的首部字段, 补充了请求的附加内容, 客户端信息, 响应内容相关优先级信息</li>
+<li>响应首部字段: 从服务端向客户端返回响应报文时使用的首部, 补充了响应的附加内容, 也会要求客户端附加额外的内容信息</li>
+<li>实体首部字段: 针对请求报文和响应报文的实体部分使用的首部, 补充了资源内容更新时间和实体有关的信息</li>
+</ul>
+<h3 id="通用首部字段（请求报文和响应报文都有的）"><a href="#通用首部字段（请求报文和响应报文都有的）" class="headerlink" title="通用首部字段（请求报文和响应报文都有的）"></a>通用首部字段（请求报文和响应报文都有的）</h3><ul>
+<li><code>Cache-Control</code> 控制缓存 ✨</li>
+<li><code>Connection</code> 连接管理、逐跳首部 ✨ <code>Connetion: close</code> HTTP&#x2F;1.1版本是默认持久连接的. 只要TCP连接不断开, 就可以一直发送HTTP请求, 持续不断, 没有上限.</li>
+<li><code>Upgrade</code> 可以用来检测HTTP协议以及其他协议是否可使用, 并用更高的版本进行通信.</li>
+<li><code>via</code> 代理服务器的相关信息, 可以用来追踪客户端与服务器之间的请求和响应报文的传输路径. 也可以用于避免请求回环的发生, 常常和trace请求一起使用.</li>
+<li><code>Warning</code> 告知用户一些与缓存相关的问题的警告, 格式如下: <code>Warning: [警告码] [警告的主机:端口号] &quot;[警告内容]&quot; ([日期时间])</code></li>
+<li><code>Transfor-Encoding</code> 报文主体的传输编码格式 ✨</li>
+<li><code>Trailer</code> 会事先说明在报文主体后面记录了哪些首部字段, 可以应用在分块传输编码的时候.</li>
+<li><code>Pragma</code> 报文指令, 是历史遗留字段, 仅仅为了兼容而存在.</li>
+<li><code>Date</code> 创建报文的日期</li>
+</ul>
+<h3 id="请求头部字段"><a href="#请求头部字段" class="headerlink" title="请求头部字段"></a>请求头部字段</h3><ul>
+<li><code>Accept</code> 客户端或者代理能够处理的媒体类型 ✨</li>
+<li><code>Accept-Encoding</code> 优先可处理的编码格式</li>
+<li><code>Accept-Language</code> 优先可处理的自然语言</li>
+<li><code>Accept-Charset</code> 优先可以处理的字符集</li>
+<li><code>Authorization</code> web 的认证信息 ✨</li>
+<li><code>Host</code> 请求资源所在<strong>服务器</strong>, 是HTTP&#x2F;1.1规范中唯一一个必须被包含在请求内的首部字段</li>
+<li><code>Expect</code> 期待服务器的特定行为</li>
+<li><code>If-Match</code> 比较实体标记Etag, 只有两个值匹配一致的时候, 服务器才会接受请求</li>
+<li><code>If-None-Match</code> 比较实体标记（ETage）与 If-Match 相反 ✨</li>
+<li><code>If-Modified-Since</code> 比较资源更新时间（Last-Modified）✨</li>
+<li><code>If-Unmodified-Since</code> 比较资源更新时间（Last-Modified），与 If-Modified-Since 相反 ✨</li>
+<li><code>If-Ranges</code> 告知服务器若指定的<code>if-range</code>字段值(ETag的值或者时间)与请求资源的ETag值或者时间相一致的时候, 作为范围请求处理. 反之, 返回全体资源</li>
+<li><code>Range</code> 实体的字节范围请求 ✨</li>
+<li><code>Proxy-Authorization</code> 代理服务器要求 web 认证信息</li>
+<li><code>From</code> 用户的邮箱地址</li>
+<li><code>User-Agent</code> 客户端程序信息 ✨</li>
+<li><code>Max-Forwrads</code> 最大的逐跳次数, 每经过一个代理服务器就减1, 可以用来检查请求路径的通信情况.</li>
+<li><code>TE</code> <strong>传输编码</strong>的优先级</li>
+<li><code>Referer</code> 请求原始方的<code>url</code>, 可以知道URI是从哪个web页面发起的</li>
+</ul>
+<h3 id="响应首部字段"><a href="#响应首部字段" class="headerlink" title="响应首部字段"></a>响应首部字段</h3><ul>
+<li><code>Accept-Ranges</code> 能接受的字节范围, 当不能处理范围请求时, 可以发送<code>Accept-Ranges: none</code></li>
+<li><code>Age</code> 告知客户端, 源服务器在多久之前创建了响应, 字段值单位为秒</li>
+<li><code>ETag</code> 能够表示资源唯一资源的字符串 ✨</li>
+<li><code>Location</code> 令客户端重定向的 URI, 基本用在配合30x的重定向请求时提供 ✨</li>
+<li><code>Proxy-Authenticate</code> 代理服务器要求客户端的验证信息</li>
+<li><code>Retry-After</code> 和状态码 503 一起使用的首部字段，表示下次请求服务器的时间</li>
+<li><code>Server</code> 服务器的信息 ✨</li>
+<li><code>Vary</code> 代理服务器的缓存信息控制, 比如<code>Vary: Accept-Language</code>表示只能对相同自然语言的请求返回缓存</li>
+<li><code>WWW-Authenticate</code> 服务器要求客户端的验证信息</li>
+</ul>
+<h2 id="HTTP1-1缺点"><a href="#HTTP1-1缺点" class="headerlink" title="HTTP1.1缺点"></a>HTTP1.1缺点</h2><p>​		针对同一域名下的请求有一定数量限制，超过限制数目的请求会被阻塞。</p>
+<h2 id="HTTP2缺点"><a href="#HTTP2缺点" class="headerlink" title="HTTP2缺点"></a>HTTP2缺点</h2><p>​		所有压力都集中在底层一个TCP连接上，TCP很可能是下一个性能瓶颈。多个请求是在同一个 TCP 管道中，这样当 HTTP 2.0 出现丢包时，整个 TCP 都要开始等待重传，那么就会阻塞该 TCP连接中的所有请求。</p>
+<h2 id="HTTP3"><a href="#HTTP3" class="headerlink" title="HTTP3"></a>HTTP3</h2><p>​		HTTP3是在保持QUIC稳定性的同时，使用UDP来实现高速度, 同时又不会牺牲TLS的安全性.</p>
+<p><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/http-tcp/http3.png" alt="quic"></p>
+<h3 id="1-安全性-TLS（与https中SSL-x2F-TLS建立连接的过程是一致的）"><a href="#1-安全性-TLS（与https中SSL-x2F-TLS建立连接的过程是一致的）" class="headerlink" title="1. 安全性-TLS（与https中SSL&#x2F;TLS建立连接的过程是一致的）"></a>1. 安全性-TLS（与https中SSL&#x2F;TLS建立连接的过程是一致的）</h3><ul>
+<li>首次连接, 客户端发送<code>Inchoate Client Hello</code>, 用于请求连接;</li>
+<li>服务端生成g, p, a, 根据g, p, a算出A, 然后将g, p, A放到Server Config中在发送<code>Rejection</code>消息给客户端.</li>
+<li>客户端接收到g,p,A后, 自己再生成b, 根据g,p,a算出B, 根据A,p,b算出初始密钥K, B和K算好后, 客户端会用K加密HTTP数据, 连同B一起发送给服务端.</li>
+<li>服务端接收到B后, 根据a,p,B生成与客户端同样的密钥, 再用这密钥解密收到的HTTP数据. 为了进一步的安全(前向安全性), 服务端会更新自己的随机数a和公钥, 在生成新的密钥S, 然后把公钥通过<code>Server Hello</code>发送给客户端. 连同<code>Server Hello</code>消息, 还有HTTP返回数据.</li>
+</ul>
+<h3 id="2-连接迁移"><a href="#2-连接迁移" class="headerlink" title="2. 连接迁移"></a>2. 连接迁移</h3><p>​		TCP连接基于四元组(源IP, 源端口, 目的IP, 目的端口), 切换网络时至少会有一个因素发生变化, 导致连接发送变化. 当连接发生变化时, 如果还是用原来的TCP连接, 则会导致连接失败, 就得等到原来的连接超时后重新建立连接, 所以我们有时候发现切换到一个新的网络时, 即使网络状况良好, 但是内容还是需要加载很久. 如果实现的好, 当检测到网络变化时, 立即建立新的TCP连接, 即使这样, 建立新的连接还是需要几百毫秒时间.</p>
+<p>​		QUIC不受四元组的影响, 当这四个元素发生变化时, 原连接依然维持. 原理如下:QUIC不以四元素作为表示, 而是使用一个64位的随机数, 这个随机数被称为<code>Connection ID</code>, 即使IP或者端口发生变化, 只要Connection ID没有变化, 那么连接依然可以维持.</p>
+<h3 id="3-队头阻塞-x2F-多路复用"><a href="#3-队头阻塞-x2F-多路复用" class="headerlink" title="3. 队头阻塞&#x2F;多路复用"></a>3. 队头阻塞&#x2F;多路复用</h3><p>​		TCP是个面向连接的协议, 即发送请求后需要收到<code>ACK</code>消息, 以确认对象已接受数据. 如果每次请求都要在收到上次请求的<code>ACK</code>消息后再请求, 那么效率无疑很低. HTTP1.1中的解决办法：提出了<code>Pipeline</code>技术, 允许一个TCP连接同时发送多个请求. </p>
+<p>​		<strong>问题：</strong>在这样的背景下, 队头阻塞发生了. 比如, 一个TCP连接同时传输10个请求, 其中1,2,3个请求给客户端接收, 但是第四个请求丢失, 那么后面第5-10个请求都被阻塞. 需要等第四个请求处理完毕后才能被处理. 这样就浪费了带宽资源.</p>
+<p>​		<strong>HTTP2</strong>使用多路复用解决了上述问题。在HTTP2中，每个请求都被拆分为多个帧，通过一个TCP连接同时被传输，这样即使一个请求被阻塞，也不会影响其他请求。虽然HTTP2可以解决<code>请求</code>粒度下的阻塞，但是没能从根本解决问题。因为HTTP2中，每个请求会被拆分成多个帧<code>(frame)</code>，<strong>不同请求的帧组合成一个流<code>(stream)</code>，</strong>流是TCP上的逻辑传输单元。</p>
+<p>​		如下所示，stream1已正确送达，stream2中的frame丢失了一个，TCP处理数据是有严格的先后顺序，先发送的frame要先被处理，这样就会要求发送方发送第三个frame，stream3和stream4虽然已经到达但却不能被处理，那么这条链路就会被阻塞。</p>
+<p>​	<strong>QUIC</strong>是如何解决队头阻塞的问题的? 主要有两点:</p>
+<ul>
+<li>QUIC的传输单位是Packet, 加密单元也是Packet, 整个加密, 传输, 解密都基于Packet, 这就能避免TLS的阻塞问题.</li>
+<li>QUIC基于UDP, UDP的数据包在接收端没有处理顺序, 即使中间丢失一个包, 也不会阻塞整条连接. 其他的资源会被正常处理.</li>
+</ul>
+<p>​		UDP 本身没有建立连接这个概念，并且 QUIC 使用的 stream 之间是相互隔离的，不会阻塞其他 stream 数据的处理，所以使用 UDP 并不会造成队头阻塞。</p>
+<h3 id="4-拥塞控制"><a href="#4-拥塞控制" class="headerlink" title="4. 拥塞控制"></a>4. 拥塞控制</h3><p>​		拥塞控制的目的是避免过多的数据一下子涌入网络, 导致网络超出最大负荷.</p>
+<p>​		QUIC重新实现了TCP协议中的Cubic算法进行拥塞控制, 下面是QUIC改进的拥塞控制的特性:</p>
+<p>1） 热插拔</p>
+<p>​		TCP中如果要修改拥塞控制策略, 需要在系统层面操作, QUIC修改拥塞控制策略只需要在应用层操作, 并且QUIC会根据不同的网络环境,、用户来动态选择拥塞控制算法.</p>
+<p>2）前向纠错</p>
+<p>​		QUIC使用前向纠错(FEC, Forword Error Correction)技术增加协议的容错性. 一段数据被切分为10个包后, 一次对每个包进行异或运算, 运算结果会作为FEC包与数据包一起被传输, 如果传输过程中有一个数据包丢失, 那么就可以根据剩余9个包以及FEC包推算出丢失的那个包的数据, 这样就大大增加了协议的容错性.</p>
+<p>​		这是符合现阶段网络传输技术的一种方案, <strong>现阶段带宽已经不是网络传输的瓶颈, 往返时间才是,</strong> 所以新的网络传输协议可以适当增加数据冗余, 减少重传操作.</p>
+<p>3）单调递增的Packet Number</p>
+<p>​		TCP为了保证可靠性, 使用<code>Sequence Number</code>和ACK来确认消息是否有序到达, 但这样的设计存在缺陷.超时发生后客户端发起重传, 后来接受到了ACK确认消息, 但因为原始请求和重传请求接受到的ACK消息一样, 所以客户端就不知道这个ACK对应的是原始请求还是重传请求,这就会造成歧义，从而导致计算得到的RTT可能会出现偏大(认为是原始的ACK)或偏小(认为是重传的ACK)的情况。</p>
+<p>​		QUCI解决了上面的的歧义问题, 与<code>Sequence Number</code>不同, <code>Packet Number</code>严格单调递增, 如果<code>Packet N</code>丢失了, 那么重传时Packet的标识就不会是N, 而是比N大的数字, 比如N+M, 这样发送方接收到确认消息时, 就能方便的知道ACK对应的原始请求还是重传请求.</p>
+<p>4）流量控制</p>
+<p>​		TCP 会对每个TCP连接进行流量控制, 流量控制的意思是让发送方不要发送太快, 要让接收方来得及接受, 不然会导致数据溢出而丢失, TCP的流量控制主要通过滑动窗口来实现的. 可以看到, 拥塞控制主要是控制发送方的发送策略, 但没有考虑接收方的接收能力.</p>
+<p>​		QUIC只需要建立一条连接, 在这条连接上同时传输多条<code>Stream</code>, 好比有一条道路, 量都分别有一个仓库, 道路中有很多车辆运送物资. QUIC的流量控制有两个级别: 连接级别(Connection Level)和Stream 级别(Stream Level).</p>
+<p>​		对于单条的Stream的流量控制: Stream还没传输数据时, 接收窗口(flow control recevice window)就是最大接收窗口, 随着接收方接收到数据后, 接收窗口不断缩小. 随着数据不断被处理, 接收方就有能力处理更多数据. 当满足<code>(flow control receivce offset - consumed bytes) &lt; (max receive window/2)</code>时, 接收方会发送<code>WINDOW_UPDATE frame</code>告诉发送方你可以再多发送数据, 这时候<code>flow control receive offset</code>就会偏移, 接收窗口增大, 发送方可以发送更多数据到接收方.</p>
+<p>​		Stream级别对防止接收端接收过多数据作用有限, 更需要借助<code>Connection</code>级别的流量控制. 理解了<code>Stream</code>流量那么也很好理解<code>Connection</code>的流控. Stream中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码接收窗口=最大接受窗口 - 已接收数据</span><br></pre></td></tr></table></figure>
+
+<p>而对于Connection来说:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">复制代码接收窗口 = Stream1 接收窗口 + Stream2 接收窗口 + ... + StreamN 接收窗口</span><br></pre></td></tr></table></figure>
+
+<h2 id="QUIC到底快在哪里呢？（连接建立快）"><a href="#QUIC到底快在哪里呢？（连接建立快）" class="headerlink" title="QUIC到底快在哪里呢？（连接建立快）"></a>QUIC到底快在哪里呢？（连接建立快）</h2><p>​		HTTP 协议在传输层是使用了 TCP 进行报文传输，而且 HTTPS 、HTTP&#x2F;2.0 还采用了 TLS 协议进行加密，这样就会导致三次握手的连接延迟：即 TCP 三次握手（一次）和 TLS 握手（两次），如下图所示。</p>
+<p><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/http-tcp/http_handshake.png" alt="tcp握手+TLS握手"></p>
+<p>​		相比之下，QUIC 的握手连接更快，因为它使用了 UDP 作为传输层协议，这样能够减少三次握手的时间延迟。而且 QUIC 的加密协议采用了 TLS 协议的最新版本 <em>TLS 1.3</em>，相对之前的 <em>TLS 1.1-1.2</em>，TLS1.3 允许客户端无需等待 TLS 握手完成就开始发送应用程序数据的操作，可以支持1 RTT 和 0 RTT，从而达到<strong>快速建立连接</strong>的效果。</p>
+<h2 id="QUIC数据重传"><a href="#QUIC数据重传" class="headerlink" title="QUIC数据重传"></a>QUIC数据重传</h2><p>​		QUIC将上层数据包，比如HTTP3数据包，分成多个帧，然后组装成一个Packet 发送。每个帧都会有一个定时器，如果在规定时间内收不到对应的ack，就重传对应的帧，还是通过packet，如果有其他帧一块，就凑成一个packet，如果没有，就自己用一个packet。</p>
+<h2 id="QUIC场景的应用场景"><a href="#QUIC场景的应用场景" class="headerlink" title="QUIC场景的应用场景"></a>QUIC场景的应用场景</h2><p>主要用于<strong>低延迟和可靠</strong>的场景</p>
+<ul>
+<li>实时web和移动应用</li>
+<li>车联网和网联汽车</li>
+<li>云计算</li>
+<li>支付和电商应用</li>
+</ul>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io">Cheyennee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io/2023/09/08/HTTP-TCP/">http://cheyennee.github.io/2023/09/08/HTTP-TCP/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cheyennee.github.io" target="_blank">Cheyennee</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/http/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/09/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/"><img class="prev-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/js/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">垃圾回收</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/07/indexdb/"><img class="next-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/html/pic3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">indexdb</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Cheyennee</div><div class="author-info__description">生而为人，还请努力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cheyennee"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">在路上</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.</span> <span class="toc-text">请求类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#GET%E5%92%8CPOST%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">2.</span> <span class="toc-text">GET和POST的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PUT%E5%92%8CPOST%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">3.</span> <span class="toc-text">PUT和POST的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PUT%E5%92%8CPATCH%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.</span> <span class="toc-text">PUT和PATCH的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP-Keep-Alive"><span class="toc-number">5.</span> <span class="toc-text">HTTP Keep-Alive</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#keep-alive%E7%9A%84%E4%BC%98%E7%82%B9%EF%BC%9A"><span class="toc-number">5.1.</span> <span class="toc-text">keep-alive的优点：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE"><span class="toc-number">5.2.</span> <span class="toc-text">配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP-Keep-Alive%E4%B8%8EHTTP-Keep-Alive%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">6.</span> <span class="toc-text">TCP Keep Alive与HTTP Keep Alive的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%A1%E7%BA%BF%E5%8C%96-%E4%B8%BA%E4%BB%80%E4%B9%88%E6%97%A0%E9%9C%80%E7%AD%89%E5%BE%85%E8%AF%B7%E6%B1%82%E5%93%8D%E5%BA%94%E5%B0%B1%E8%83%BD%E5%8F%91%E9%80%81%E4%B8%8B%E4%B8%80%E4%B8%AA%E8%AF%B7%E6%B1%82"><span class="toc-number">7.</span> <span class="toc-text">管线化(为什么无需等待请求响应就能发送下一个请求)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87"><span class="toc-number">8.</span> <span class="toc-text">HTTP请求报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87"><span class="toc-number">9.</span> <span class="toc-text">HTTP响应报文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E7%BC%96%E7%A0%81"><span class="toc-number">10.</span> <span class="toc-text">内容编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%9D%97%E4%BC%A0%E8%BE%93%E7%BC%96%E7%A0%81"><span class="toc-number">11.</span> <span class="toc-text">分块传输编码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E5%93%8D%E5%BA%94%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">12.</span> <span class="toc-text">HTTP响应状态码</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2XX-%E6%88%90%E5%8A%9F%EF%BC%9A"><span class="toc-number">12.0.0.1.</span> <span class="toc-text">2XX 成功：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3XX-%E9%87%8D%E5%AE%9A%E5%90%91%EF%BC%9A"><span class="toc-number">12.0.0.2.</span> <span class="toc-text">3XX 重定向：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4XX-%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%94%99%E8%AF%AF%EF%BC%9A"><span class="toc-number">12.0.0.3.</span> <span class="toc-text">4XX 客户端错误：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5XX-%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%94%99%E8%AF%AF%EF%BC%9A"><span class="toc-number">12.0.0.4.</span> <span class="toc-text">5XX 服务器错误：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#302%EF%BC%8C303%EF%BC%8C307%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">12.0.0.5.</span> <span class="toc-text">302，303，307的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#301%E4%B8%8E302%E5%AF%B9%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E7%9A%84%E5%BD%B1%E5%93%8D"><span class="toc-number">12.0.0.6.</span> <span class="toc-text">301与302对搜索引擎的影响</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5"><span class="toc-number">13.</span> <span class="toc-text">HTTP首部字段</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">13.1.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5%EF%BC%88%E8%AF%B7%E6%B1%82%E6%8A%A5%E6%96%87%E5%92%8C%E5%93%8D%E5%BA%94%E6%8A%A5%E6%96%87%E9%83%BD%E6%9C%89%E7%9A%84%EF%BC%89"><span class="toc-number">13.2.</span> <span class="toc-text">通用首部字段（请求报文和响应报文都有的）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%A4%B4%E9%83%A8%E5%AD%97%E6%AE%B5"><span class="toc-number">13.3.</span> <span class="toc-text">请求头部字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%93%8D%E5%BA%94%E9%A6%96%E9%83%A8%E5%AD%97%E6%AE%B5"><span class="toc-number">13.4.</span> <span class="toc-text">响应首部字段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP1-1%E7%BC%BA%E7%82%B9"><span class="toc-number">14.</span> <span class="toc-text">HTTP1.1缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP2%E7%BC%BA%E7%82%B9"><span class="toc-number">15.</span> <span class="toc-text">HTTP2缺点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP3"><span class="toc-number">16.</span> <span class="toc-text">HTTP3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%89%E5%85%A8%E6%80%A7-TLS%EF%BC%88%E4%B8%8Ehttps%E4%B8%ADSSL-x2F-TLS%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5%E7%9A%84%E8%BF%87%E7%A8%8B%E6%98%AF%E4%B8%80%E8%87%B4%E7%9A%84%EF%BC%89"><span class="toc-number">16.1.</span> <span class="toc-text">1. 安全性-TLS（与https中SSL&#x2F;TLS建立连接的过程是一致的）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%BF%9E%E6%8E%A5%E8%BF%81%E7%A7%BB"><span class="toc-number">16.2.</span> <span class="toc-text">2. 连接迁移</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E9%98%9F%E5%A4%B4%E9%98%BB%E5%A1%9E-x2F-%E5%A4%9A%E8%B7%AF%E5%A4%8D%E7%94%A8"><span class="toc-number">16.3.</span> <span class="toc-text">3. 队头阻塞&#x2F;多路复用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%8B%A5%E5%A1%9E%E6%8E%A7%E5%88%B6"><span class="toc-number">16.4.</span> <span class="toc-text">4. 拥塞控制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QUIC%E5%88%B0%E5%BA%95%E5%BF%AB%E5%9C%A8%E5%93%AA%E9%87%8C%E5%91%A2%EF%BC%9F%EF%BC%88%E8%BF%9E%E6%8E%A5%E5%BB%BA%E7%AB%8B%E5%BF%AB%EF%BC%89"><span class="toc-number">17.</span> <span class="toc-text">QUIC到底快在哪里呢？（连接建立快）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QUIC%E6%95%B0%E6%8D%AE%E9%87%8D%E4%BC%A0"><span class="toc-number">18.</span> <span class="toc-text">QUIC数据重传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#QUIC%E5%9C%BA%E6%99%AF%E7%9A%84%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-number">19.</span> <span class="toc-text">QUIC场景的应用场景</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/09/10/%E5%9F%8B%E7%82%B9/" title="埋点"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/interview/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="埋点"/></a><div class="content"><a class="title" href="/2023/09/10/%E5%9F%8B%E7%82%B9/" title="埋点">埋点</a><time datetime="2023-09-10T09:45:12.000Z" title="发表于 2023-09-10 17:45:12">2023-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/09/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="性能优化"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/flatlist/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="性能优化"/></a><div class="content"><a class="title" href="/2023/09/09/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="性能优化">性能优化</a><time datetime="2023-09-09T12:54:23.000Z" title="发表于 2023-09-09 20:54:23">2023-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/09/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" title="垃圾回收"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/js/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="垃圾回收"/></a><div class="content"><a class="title" href="/2023/09/09/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" title="垃圾回收">垃圾回收</a><time datetime="2023-09-09T06:01:32.000Z" title="发表于 2023-09-09 14:01:32">2023-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/08/HTTP-TCP/" title="HTTP-TCP"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/http/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTTP-TCP"/></a><div class="content"><a class="title" href="/2023/09/08/HTTP-TCP/" title="HTTP-TCP">HTTP-TCP</a><time datetime="2023-09-08T01:35:27.000Z" title="发表于 2023-09-08 09:35:27">2023-09-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/07/indexdb/" title="indexdb"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/html/pic3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="indexdb"/></a><div class="content"><a class="title" href="/2023/09/07/indexdb/" title="indexdb">indexdb</a><time datetime="2023-09-07T11:27:23.000Z" title="发表于 2023-09-07 19:27:23">2023-09-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Cheyennee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>性能优化 | Cheyennee</title><meta name="keywords" content="optimization"><meta name="author" content="Cheyennee,714851125@qq.com"><meta name="copyright" content="Cheyennee"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="性能优化的目的​		希望页面展示更快、交互响应快、页面无卡顿情况。更详细的说，就是指，在用户输入url到站点完整把整个页面展示出来的过程中，通过各种优化策略和方法，让页面加载更快；在用户使用过程中，让用户的操作响应更及时，有更好的用户体验。 常规性能优化1. JS优化 防抖和节流 使用事件委托 复杂计算开启webworker进行计算 计算结果缓存，减少运算次数 不要覆盖原生方法：无论你的 Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="性能优化">
+<meta property="og:url" content="http://cheyennee.github.io/2023/09/09/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/index.html">
+<meta property="og:site_name" content="Cheyennee">
+<meta property="og:description" content="性能优化的目的​		希望页面展示更快、交互响应快、页面无卡顿情况。更详细的说，就是指，在用户输入url到站点完整把整个页面展示出来的过程中，通过各种优化策略和方法，让页面加载更快；在用户使用过程中，让用户的操作响应更及时，有更好的用户体验。 常规性能优化1. JS优化 防抖和节流 使用事件委托 复杂计算开启webworker进行计算 计算结果缓存，减少运算次数 不要覆盖原生方法：无论你的 Java">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/flatlist/cover.jpg">
+<meta property="article:published_time" content="2023-09-09T12:54:23.000Z">
+<meta property="article:modified_time" content="2023-09-10T09:22:17.364Z">
+<meta property="article:author" content="Cheyennee">
+<meta property="article:tag" content="optimization">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/flatlist/cover.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://cheyennee.github.io/2023/09/09/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '性能优化',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-10 17:22:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><hr/></div></div><div class="post" id="body-wrap"><header class="not-top-img" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Cheyennee</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div id="post"><div id="post-info"><h1 class="post-title">性能优化</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-09-09T12:54:23.000Z" title="发表于 2023-09-09 20:54:23">2023-09-09</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-10T09:22:17.364Z" title="更新于 2023-09-10 17:22:17">2023-09-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="性能优化"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div><article class="post-content" id="article-container"><h2 id="性能优化的目的"><a href="#性能优化的目的" class="headerlink" title="性能优化的目的"></a>性能优化的目的</h2><p>​		希望页面<strong>展示更快</strong>、<strong>交互响应快</strong>、<strong>页面无卡顿情况。</strong>更详细的说，就是指，在用户输入url到站点完整把整个页面展示出来的过程中，通过各种优化策略和方法，让页面加载更快；在用户使用过程中，让用户的操作响应更及时，有更好的用户体验。</p>
+<h2 id="常规性能优化"><a href="#常规性能优化" class="headerlink" title="常规性能优化"></a>常规性能优化</h2><h3 id="1-JS优化"><a href="#1-JS优化" class="headerlink" title="1. JS优化"></a>1. JS优化</h3><ul>
+<li>防抖和节流</li>
+<li>使用事件委托</li>
+<li>复杂计算开启webworker进行计算</li>
+<li>计算结果缓存，减少运算次数</li>
+<li>不要覆盖原生方法：无论你的 JavaScript 代码如何优化，都比不上原生方法。因为原生方法是用低级语言写的（C&#x2F;C++），并且被编译成机器码，成为浏览器的一部分。当原生方法可用时，尽量使用它们，特别是数学运算和 DOM 操作。</li>
+</ul>
+<h3 id="2-图片优化"><a href="#2-图片优化" class="headerlink" title="2. 图片优化"></a>2. 图片优化</h3><ul>
+<li><p>雪碧图：减少http请求次数</p>
+</li>
+<li><p>图片懒加载：当图片进入可视区的时候进行加载</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法一：intersectionObserver</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// html</span></span><br><span class="line">&lt;img data-src=<span class="string">&quot;http://example.com&quot;</span> /&gt;;</span><br><span class="line"><span class="comment">// js</span></span><br><span class="line"><span class="keyword">const</span> lazyLoadIntersection = <span class="keyword">new</span> <span class="title class_">IntersectionObserver</span>(<span class="function">(<span class="params">entries</span>) =&gt;</span> &#123;</span><br><span class="line">  entries.<span class="title function_">forEach</span>(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (item.<span class="property">isIntersecting</span>) &#123;</span><br><span class="line">      item.<span class="property">target</span>.<span class="property">src</span> = item.<span class="property">target</span>.<span class="property">dataset</span>.<span class="property">src</span>;</span><br><span class="line">      lazyLoadIntersection.<span class="title function_">unobserve</span>(item.<span class="property">target</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> imgList = <span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&quot;.img-list img&quot;</span>);</span><br><span class="line"><span class="title class_">Array</span>.<span class="title function_">from</span>(imgList).<span class="title function_">forEach</span>(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">  lazyLoadIntersection.<span class="title function_">observe</span>(item);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 方法二：getBoundClientRect()</span></span><br><span class="line"><span class="keyword">const</span> &#123; top, left, height, width &#125; = el.<span class="title function_">getBoundingClientRect</span>();</span><br><span class="line"><span class="keyword">if</span> (top &lt; clientHeight &amp;&amp; left &lt; clientWidth) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>小图片Base64编码</p>
+</li>
+<li><p>使用webg格式的图片，体积比png和jpg小</p>
+</li>
+</ul>
+<h3 id="3-CSS优化"><a href="#3-CSS优化" class="headerlink" title="3. CSS优化"></a>3. CSS优化</h3><ul>
+<li><p>CSS放头部：CSS影响渲染树的构建，会阻塞页面的渲染，因此应该尽早尽快将CSS资源加载</p>
+</li>
+<li><p>降低CSS选择器的复杂度：减少嵌套次数。CSS选择器对性能的影响源于浏览器匹配选择器和文档元素时所消耗的时间。CSS选择器是从右往左进行规则匹配的。所以嵌套越多寻找越费劲。后代选择器开销也是高的，因为其需要遍历所有目标元素还需向上遍历直到根节点。</p>
+</li>
+<li><p>使用外链式的JS和CSS：使用外部文件时， JavaScript 和 CSS 有机会被浏览器缓存起来。对于内联的情况，由于 HTML 文档通常不会被配置为可以进行缓存的，所以每次请求 HTML 文档都要下载 JavaScript 和 CSS。所以，如果 JavaScript 和 CSS 在外部文件中，浏览器可以缓存它们，HTML 文档的大小会被减少而不必增加 HTTP 请求数量。</p>
+</li>
+<li><p>首屏加载优化：使用骨架屏或者动画优化用户体验；资源按需加载，首页不需要的资源延迟加载。</p>
+</li>
+</ul>
+<h4 id="减少重绘重排"><a href="#减少重绘重排" class="headerlink" title="减少重绘重排"></a>减少重绘重排</h4><ul>
+<li>增加多个节点使用documentFragment：不是真实dom的部分，不会引起重绘和回流</li>
+<li>用 translate 代替 top ，因为 top 会触发回流，但是translate不会。所以translate会比top节省了一个layout的时间</li>
+<li>使用 visibility 替换 display: none ，因为前者只会引起重绘，后者会引发回流（改变了布局）；opacity 代替 visiability，visiability会触发重绘（paint），但opacity不会。</li>
+<li>把 DOM 离线后修改，比如：先把 DOM 给 display:none (有一次 Reflow)，然后你修改 100 次，然后再把它显示出来</li>
+<li>尽量少用table布局，table布局的话，每次有单元格布局改变，都会进行整个tabel回流重绘；</li>
+<li>最好别频繁去操作DOM节点，最好把需要操作的样式，提前写成class，之后需要修改。只需要修改一次，需要修改的时候，直接修改className，做成一次性更新多条css DOM属性，一次回流重绘总比多次回流重绘要付出的成本低得多；</li>
+<li>动画实现的速度的选择，动画速度越快，回流次数越多，也可以选择使用 requestAnimationFrame</li>
+<li>每次访问DOM的偏移量属性的时候，例如获取一个元素的scrollTop、scrollLeft、scrollWidth、offsetTop、offsetLeft、offsetWidth、offsetHeight之类的属性，浏览器为了保证值的正确也会回流取得最新的值，所以如果你要多次操作，最好取完做个缓存。</li>
+<li>将频繁运行的动画变为图层，图层能够阻止该节点回流影响别的元素。比如对于 video 标签，浏览器会自动将该节点变为图层。</li>
+</ul>
+<h3 id="4-webpack打包优化"><a href="#4-webpack打包优化" class="headerlink" title="4. webpack打包优化"></a>4. webpack打包优化</h3><h4 id="⭐-缩小loader匹配范围"><a href="#⭐-缩小loader匹配范围" class="headerlink" title="⭐ 缩小loader匹配范围"></a>⭐ 缩小loader匹配范围</h4><ul>
+<li>OneOf</li>
+<li>include &#x2F; exclude</li>
+</ul>
+<h4 id="⭐-代码压缩"><a href="#⭐-代码压缩" class="headerlink" title="⭐ 代码压缩"></a>⭐ 代码压缩</h4><ul>
+<li>JS代码压缩：terser-webpack-plugin</li>
+<li>css代码压缩：css-minimizer-webpack-plugin</li>
+<li>html压缩：html-minifier-terser</li>
+<li>文件压缩</li>
+<li>图片压缩</li>
+</ul>
+<h4 id="⭐-Tree-Shaking（去除JS中没有使用上的代码，默认开启）"><a href="#⭐-Tree-Shaking（去除JS中没有使用上的代码，默认开启）" class="headerlink" title="⭐ Tree Shaking（去除JS中没有使用上的代码，默认开启）"></a>⭐ Tree Shaking（去除JS中没有使用上的代码，默认开启）</h4><p>​		依赖于ES Module。因为ES模块中引入了静态分析，在编译的时候可以判断加载了哪些模块。</p>
+<p>​		webpack中tree shaking有两种方案：</p>
+<ul>
+<li>usedExports：通过标记某些函数是否被使用，之后通过Terser来进行优化的</li>
+<li>sideEffects：跳过整个模块&#x2F;文件，直接查看该文件是否有副作用</li>
+</ul>
+<h4 id="⭐babel-plugin-transform-runtime"><a href="#⭐babel-plugin-transform-runtime" class="headerlink" title="⭐babel-plugin-transform-runtime"></a>⭐babel-plugin-transform-runtime</h4><h4 id="⭐code-split-代码分割，按需加载"><a href="#⭐code-split-代码分割，按需加载" class="headerlink" title="⭐code split(代码分割，按需加载)"></a>⭐code split(代码分割，按需加载)</h4><p>​		所有的JavaScript代码（业务代码、第三方依赖、暂时没有用到的模块）在首页全部都加载，就会影响首页的加载速度。</p>
+<p>​		通过<code>splitChunksPlugin</code>来实现，该插件webpack已经默认安装和集成，只需要配置即可。</p>
+<h4 id="⭐多线程打包提升打包速度"><a href="#⭐多线程打包提升打包速度" class="headerlink" title="⭐多线程打包提升打包速度"></a>⭐多线程打包提升打包速度</h4><h3 id="5-网络优化"><a href="#5-网络优化" class="headerlink" title="5. 网络优化"></a>5. 网络优化</h3><ul>
+<li>使用缓存</li>
+<li>使用CDN</li>
+<li>使用多个域名：现代化浏览器，都会有同域名限制并发下载数的情况，不同的浏览器及版本都不一样，使用不同的域名可以最大化下载线程，但注意保持在 2~4 个域名内，以避免 DNS 查询损耗。</li>
+</ul>
+<h3 id="6-react优化"><a href="#6-react优化" class="headerlink" title="6. react优化"></a>6. react优化</h3><ul>
+<li>map循环展示添加key</li>
+<li>路由懒加载</li>
+<li>第三方插件按需引入</li>
+<li>使用memo或者pureComponent避免不必要的渲染</li>
+<li>合理使用useMemo、memo、useCallback他们三个的应用场景都是缓存结果，当依赖值没有改变时避免不必要的计算或者渲染。</li>
+</ul>
+<ol>
+<li>useCallback 是针对<strong>函数</strong>进行“记忆”的，当它依赖项没有发生改变时，那么该函数的引用并不会随着组件的刷新而被重新赋值。当我们觉得一个函数不需要随着组件的更新而更新引用地址的时候，我们就可以使用 useCallback 去修饰它。</li>
+<li>React.memo 是对<strong>组件</strong>进行 “记忆”，当它接收的 props 没有发生改变的时候，那么它将返回上次渲染的结果，不会重新执行函数返回新的渲染结果。</li>
+<li>React.useMemo是针对 <strong>值计算</strong> 的一种“记忆“，当依赖项没有发生改变时，那么无需再去计算，直接使用之前的值，对于组件而言，这带来的一个好处就是，可以减少一些计算，避免一些多余的渲染。当我们遇到一些数据需要在组件内部进行计算的时候，可以考虑一下 React.useMemo</li>
+</ol>
+<h3 id="7-angular优化"><a href="#7-angular优化" class="headerlink" title="7. angular优化"></a>7. angular优化</h3><p><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/angular/angular_process.png" alt="angular事件响应过程"></p>
+<p>​		如果考虑优化页面响应的速度，可以从各个阶段入手：</p>
+<p>（1）对于触发事件阶段，可以减少事件的触发，来减少整体的变更检测次数和重新渲染</p>
+<p>（2）对于 Event Handler 执行逻辑阶段，可以通过优化复杂代码逻辑来减少执行时间</p>
+<p>（3）对于 Change Detection 检测数据绑定并更新 DOM 阶段，可以减少变更检测和模板数据的计算次数来减少渲染时间</p>
+<p>（4）对于浏览器渲染阶段，则可能需要考虑使用不同浏览器或从硬件配置上进行提升</p>
+<h4 id="优化方案"><a href="#优化方案" class="headerlink" title="优化方案"></a>优化方案</h4><h5 id="（1）针对异步任务-——减少变更检测的次数"><a href="#（1）针对异步任务-——减少变更检测的次数" class="headerlink" title="（1）针对异步任务 ——减少变更检测的次数"></a>（1）针对异步任务 ——减少变更检测的次数</h5><ul>
+<li>使用 NgZone 的 runOutsideAngular 方法执行异步接口</li>
+<li>手动触发 Angular 的变更检测</li>
+</ul>
+<h5 id="（2）针对-Event-Task-——-减少变更检测的次数"><a href="#（2）针对-Event-Task-——-减少变更检测的次数" class="headerlink" title="（2）针对 Event Task —— 减少变更检测的次数"></a>（2）针对 Event Task —— 减少变更检测的次数</h5><ul>
+<li>将 input 之类的事件换成触发频率更低的事件</li>
+<li>对 input valueChanges 事件做的防抖动处理，并不能减少变更检测的次数</li>
+</ul>
+<h5 id="（3）针对组件-——减少不必要的变更检测"><a href="#（3）针对组件-——减少不必要的变更检测" class="headerlink" title="（3）针对组件 ——减少不必要的变更检测"></a>（3）针对组件 ——减少不必要的变更检测</h5><ul>
+<li>组件使用 onPush 模式<ul>
+<li>只有输入属性改变或组件或者其子组件中的 DOM 事件触发时，该组件才会检测</li>
+<li>非 DOM 事件的其他异步事件，只能手动触发检测</li>
+<li>声明了 onPush 的子组件，如果输入属性未变化，就不会去做计算和更新</li>
+</ul>
+</li>
+</ul>
+<h5 id="（4）针对模板-——减少不必要的计算和渲染"><a href="#（4）针对模板-——减少不必要的计算和渲染" class="headerlink" title="（4）针对模板 ——减少不必要的计算和渲染"></a>（4）针对模板 ——减少不必要的计算和渲染</h5><ul>
+<li>列表的循环渲染使用 trackBy</li>
+</ul>
+<h5 id="（5）unsubscribe"><a href="#（5）unsubscribe" class="headerlink" title="（5）unsubscribe"></a>（5）unsubscribe</h5><h2 id="性能指标-FCP-LCP-TTI-CLS"><a href="#性能指标-FCP-LCP-TTI-CLS" class="headerlink" title="性能指标(FCP LCP TTI CLS)"></a>性能指标(FCP LCP TTI CLS)</h2><h3 id="Largest-Contentful-Paint最大内容绘制-LCP"><a href="#Largest-Contentful-Paint最大内容绘制-LCP" class="headerlink" title="Largest Contentful Paint最大内容绘制(LCP)"></a>Largest Contentful Paint最大内容绘制(LCP)</h3><h4 id="是什么？"><a href="#是什么？" class="headerlink" title="是什么？"></a>是什么？</h4><p>​		用于记录视窗内最大的元素绘制的时间，该时间会随着页面渲染变化而变化，因为页面中的最大元素在渲染过程中可能会发生改变，另外该指标会在用户第一次交互后停止记录。官方推荐的时间区间，在 2.5 秒内表示体验优秀.</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><p>​		一是指标实时更新，数据更精确；二是代表着页面最大元素的渲染时间，通常来说页面中最大元素的快速载入能让用户感觉性能还挺好。</p>
+<h4 id="哪些元素可以被定义为最大元素呢？"><a href="#哪些元素可以被定义为最大元素呢？" class="headerlink" title="哪些元素可以被定义为最大元素呢？"></a>哪些元素可以被定义为最大元素呢？</h4><ul>
+<li>img标签</li>
+<li>在svg中的image标签</li>
+<li>video标签</li>
+<li>css background url()加载的图片</li>
+<li>包含内联或文本的块级元素</li>
+</ul>
+<h4 id="使用原生js测量"><a href="#使用原生js测量" class="headerlink" title="使用原生js测量"></a>使用原生js测量</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">PerformanceObserver</span>(<span class="function">(<span class="params">entryList</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> entry <span class="keyword">of</span> entryList.<span class="title function_">getEntries</span>()) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;LCP candidate:&#x27;</span>, entry.<span class="property">startTime</span>, entry);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">observe</span>(&#123;<span class="attr">type</span>: <span class="string">&#x27;largest-contentful-paint&#x27;</span>, <span class="attr">buffered</span>: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="可能影响LCP的因素"><a href="#可能影响LCP的因素" class="headerlink" title="可能影响LCP的因素"></a>可能影响LCP的因素</h4><ul>
+<li>服务端响应时间</li>
+<li>Javascript和CSS引起的渲染卡顿</li>
+<li>资源加载时间</li>
+<li>客户端渲染</li>
+</ul>
+<h3 id="First-Input-Delay-FID"><a href="#First-Input-Delay-FID" class="headerlink" title="First Input Delay (FID)"></a>First Input Delay (FID)</h3><h4 id="是什么？-1"><a href="#是什么？-1" class="headerlink" title="是什么？"></a>是什么？</h4><p>​		用户交互事件触发到页面响应中间耗时多少。推荐响应用户交互在 100ms 以内.</p>
+<h4 id="使用原生js测量-1"><a href="#使用原生js测量-1" class="headerlink" title="使用原生js测量"></a>使用原生js测量</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="title class_">PerformanceObserver</span>(<span class="function">(<span class="params">entryList</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> entry <span class="keyword">of</span> entryList.<span class="title function_">getEntries</span>()) &#123;</span><br><span class="line">    <span class="keyword">const</span> delay = entry.<span class="property">processingStart</span> - entry.<span class="property">startTime</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;FID candidate:&#x27;</span>, delay, entry);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">observe</span>(&#123;<span class="attr">type</span>: <span class="string">&#x27;first-input&#x27;</span>, <span class="attr">buffered</span>: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="优化FID"><a href="#优化FID" class="headerlink" title="优化FID"></a>优化FID</h4><ul>
+<li>减少第三方代码的影响</li>
+<li>减少Javascript的执行时间</li>
+<li>最小化主线程工作</li>
+<li>减少请求数量和请求文件大小</li>
+</ul>
+<h3 id="Cumulative-Layout-Shift-CLS"><a href="#Cumulative-Layout-Shift-CLS" class="headerlink" title="Cumulative Layout Shift(CLS)"></a>Cumulative Layout Shift(CLS)</h3><p>​		<code>CLS</code> 代表了页面的稳定指标，它能衡量页面是否排版稳定。尤其在手机上这个指标更为重要，因为手机屏幕挺小，<code>CLS</code>值一大的话会让用户觉得页面体验做的很差。CLS的分数在0.1或以下，则为Good。浏览器会监控两桢之间发生移动的不稳定元素。布局移动分数由2个元素决定：<code>impact fraction</code>和<code>distance fraction</code>。</p>
+<p>​		<strong>但是要注意的是，并不是所有的布局移动都是不好的，很多web网站都会改变元素的开始位置。只有当布局移动是非用户预期的，才是不好的</strong>。</p>
+<p>​		换句话说，当用户点击了按钮，布局进行了改动，这是ok的，CLS的JS API中有一个字段hadRecentInput，用来标识500ms内是否有用户数据，视情况而定，可以忽略这个计算。</p>
+<h4 id="使用原生js测量-2"><a href="#使用原生js测量-2" class="headerlink" title="使用原生js测量"></a>使用原生js测量</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> cls = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">new</span> <span class="title class_">PerformanceObserver</span>(<span class="function">(<span class="params">entryList</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">const</span> entry <span class="keyword">of</span> entryList.<span class="title function_">getEntries</span>()) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!entry.<span class="property">hadRecentInput</span>) &#123;</span><br><span class="line">      cls += entry.<span class="property">value</span>;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(‘<span class="title class_">Current</span> <span class="variable constant_">CLS</span> <span class="attr">value</span>:’, cls, entry);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;).<span class="title function_">observe</span>(&#123;<span class="attr">type</span>: ‘layout-shift’, <span class="attr">buffered</span>: <span class="literal">true</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+<h4 id="优化CLS"><a href="#优化CLS" class="headerlink" title="优化CLS"></a>优化CLS</h4><ul>
+<li>图片或视频元素有大小属性，或者给他们保留一个空间大小，设置width、height，或者使用 <a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=XoC+dhTyxLDDOvtrBfsOzw==.+hPfY7Bhvoe6gkn67JzAGcnCd68ajWFnd+Q+NelHWIXD44X0qWL13oAlRjOk8wwE1fRBqjAxwOLUPzzuilTxTeqdtd/6MWLjYBcqZWz8tZDou/1V1F1EaHQlgeXF9yynLqxjrXNHeerbGDm2EwgM5e4BsCUrIGCzy8nOkiGUZHyMKX68/6T/3D4y+saUqF3e">unsized-media feature policy</a> 。布局不稳定是加剧 Web 体验的现有问题之一。例如，当未指定元素的大小时，将导致元素周围的内容跳来跳去。这是因为渲染器不知道在加载图像之前为图像保留多少空间，并且一旦知道图像大小，渲染器将不得不重新布局所有内容，从而导致内容在网页上移动。<code>unsized-media feature policy</code>旨在通过要求所有媒体元素提供大小来解决此问题;如果没有，将选择默认值，以便图像在加载后不会更改大小。</li>
+<li>不要在一个已存在的元素上面插入内容，除了相应用户输入。</li>
+<li>使用animation或transition而不是直接触发布局改变。</li>
+</ul>
+<h2 id="性能检测工具"><a href="#性能检测工具" class="headerlink" title="性能检测工具"></a>性能检测工具</h2><ul>
+<li>Lighthouse(关注了上述几个指标，并且给出了优化建议)</li>
+<li>Chrome DevTools</li>
+</ul>
+<h2 id="性能优化具体案例"><a href="#性能优化具体案例" class="headerlink" title="性能优化具体案例"></a>性能优化具体案例</h2><h3 id="1-长列表性能优化"><a href="#1-长列表性能优化" class="headerlink" title="1. 长列表性能优化"></a>1. 长列表性能优化</h3><ul>
+<li>分页</li>
+<li>懒加载：一次只渲染一部分数据，等渲染数据即将滚动完成再去渲染下面的数据</li>
+<li>虚拟列表：可视区域渲染，只渲染页面可视区域的列表项，在滚动列表时动态更新可视的列表项。当然，为了防止快速滚动导致页面来不及渲染新列表而产生白屏，虚拟列表也会对非可视区域的数据进行不完全渲染，就是先预加载可视区域上下一定数量的列表。（参见：<a target="_blank" rel="noopener" href="https://cheyennee.cn/2022/12/07/%E8%99%9A%E6%8B%9F%E5%88%97%E8%A1%A8%E5%AE%9E%E7%8E%B0%E5%8E%9F%E7%90%86/">虚拟列表实现原理</a>）</li>
+</ul>
+<h4 id="不使用虚拟列表的情况下，渲染10w个节点："><a href="#不使用虚拟列表的情况下，渲染10w个节点：" class="headerlink" title="不使用虚拟列表的情况下，渲染10w个节点："></a>不使用虚拟列表的情况下，渲染10w个节点：</h4><p><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/optimization/exp-1.png" alt="不使用虚拟列表"></p>
+<h4 id="使用虚拟列表的情况下，渲染10w个节点："><a href="#使用虚拟列表的情况下，渲染10w个节点：" class="headerlink" title="使用虚拟列表的情况下，渲染10w个节点："></a>使用虚拟列表的情况下，渲染10w个节点：</h4><p><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/optimization/exp-2.png" alt="使用虚拟列表"></p>
+<h3 id="2-CDN"><a href="#2-CDN" class="headerlink" title="2. CDN"></a>2. CDN</h3><h4 id="⭐用户访问CDN节点的过程"><a href="#⭐用户访问CDN节点的过程" class="headerlink" title="⭐用户访问CDN节点的过程"></a>⭐用户访问CDN节点的过程</h4><ul>
+<li><p>用户在浏览器地址栏键入网站IP&#x2F;域名</p>
+</li>
+<li><p>浏览器查DNS缓存看能否获取目标网站对应的IP地址</p>
+</li>
+<li><p>如果键入的是域名，浏览器先查询浏览器本地DNS缓存获取目标网站对应的IP地址（chrome可访问chrome:&#x2F;&#x2F;net-internals&#x2F;#dns查看），没有对该域名缓存，则进行下 一步</p>
+</li>
+<li><p>查询本地操作系统的DNS缓存（host文件），没有对该域名缓存，则进行下一步</p>
+</li>
+<li><p>查询与本地直接相连的路由器中是否有对应的DNS缓存</p>
+</li>
+<li><p>当没能从DNS缓存中获取到目录网站IP，浏览器调用域名解析程序以递归查询的方式，向本地DNS服务器查询。本地DNS服务器查询该域名是否包含在本地配置区域资源中，有则返回对应IP，无则进行下一步</p>
+</li>
+<li><p>本地DNS服务器如果有设置转发器，则向上一级发起查询，直到查询到目标网站IP或返回查询失败结果</p>
+</li>
+<li><p>本地DNS服务器如果没有设置转发器，本地DNS服务器以迭代查询的方式依次向根域名服务器、 顶级域名服务器、权威DNS服务器发起查询请求：</p>
+</li>
+<li><p>根域名服务器(.)返回一条NS记录，让本地DNS服务器转到对应的顶级域名(.com)服务器查询</p>
+</li>
+<li><p>顶级域名服务器接收到本地DNS服务器请求，返回一条NS记录，让本地DNS服务器转到xisenbao.com对应的权威域名服务器进行查询</p>
+</li>
+<li><p>权威域名服务器查询到<a target="_blank" rel="noopener" href="http://www.xisenbao.com对应的cname并返回给本地域名服务器(注意如果链路较长的时候这一步可能重复多次,依次查询到多个cname)/">www.xisenbao.com对应的CNAME并返回给本地域名服务器（注意如果链路较长的时候这一步可能重复多次，依次查询到多个CNAME）</a></p>
+</li>
+<li><p>本地域名服务器向CDN专用的域名解析服务器发起域名解析，CDN专用的域名解析服务器返回CDN全局负载均衡系统的IP地址给本地域名服务器</p>
+</li>
+<li><p>本地域名服务器将全局负载均衡系统的IP地址返回给浏览器</p>
+</li>
+<li><p>浏览器访问全局负载均衡系统的IP地址</p>
+</li>
+<li><p>全局负载均衡系统的IP地址根据浏览器所在机器的IP地址判断请求来源于哪个区域，返回对应区域的本地负载均衡服务器的IP地址给浏览器</p>
+</li>
+<li><p>本地负载均衡服务器根据</p>
+</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a. 用户IP地址，判断哪一台服务器距用户最近；</span><br><span class="line">b. 用户所请求的URL中携带的内容，判断哪一台CDN节点上有用户所需内容；</span><br><span class="line">c. 查询各个节点当前的负载情况，判断哪一台服务器尚有服务能力来选择最合适的CDN 服务器返回对应的IP地址给浏览器  </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>浏览器拿到IP地址向CDN节点获取数据(如果CDN节点有命中缓存直接返回用户所需数据，如果对应节点中没有缓存用户所需要数据，该CDN节点则需要去找到源站获取数据并缓存下来，下一次有用户访问同样的数据直接返回)。</p>
+</li>
+<li><p>三次握手建立TCP连接</p>
+</li>
+<li><p>浏览器发送HTTP请求，等待服务器应答</p>
+</li>
+<li><p>服务器响应请求返回数据</p>
+</li>
+<li><p>浏览器得到数据开始进行页面渲染</p>
+</li>
+<li><p>四次挥手断开TCP连接等</p>
+</li>
+</ul>
+<h4 id="⭐CDN接入前端的方案"><a href="#⭐CDN接入前端的方案" class="headerlink" title="⭐CDN接入前端的方案"></a>⭐CDN接入前端的方案</h4><p>​		假设这里的 CDN 域名是 <a target="_blank" rel="noopener" href="http://cdn.example.com,源站(主站)域名是/">http://cdn.example.com，源站（主站）域名是</a> <a href="http://www.[example](https://www.zhihu.com/search?q=example&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A683562496}).com。">http://www.[example](https://www.zhihu.com/search?q=example&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A683562496}).com。</a></p>
+<ol>
+<li>单独搭建一个静态资源服务作为 CDN 源站，在源站下划分一个路由例如 <code>/static</code>，LB 层将主站域名 <code>/static</code> 路由解析到静态资源服务即 CDN 源站上，CDN 配置成只有 <code>/static</code> 路由下的资源指向源站回源。</li>
+<li>在 Webpack 生产构建配置中为所有资源文件中加上 hash，并设置 <code>publicPath</code> 为  <code>//cdn.example.com/static/path/to/dist</code>。</li>
+<li>在构建流水线中于 Webpack 构建完成后加一步增量上传产物文件夹下的内容到静态资源服务源站上的步骤，并将 html 文件存起来记上版本号。</li>
+<li>主站用 Nginx &#x2F; Apache 等静态资源服务器或者用 Node.js 写个简单的服务在对应的访问路由返回步骤 3 中构建产物的 html 文件。</li>
+<li>主站对 html 配置无缓存（某些情况下也可以加上协商缓存），CDN 则可以把缓存时间设置的尽可能的长。</li>
+</ol>
+<h3 id="3-Web-Worker优化长任务"><a href="#3-Web-Worker优化长任务" class="headerlink" title="3. Web Worker优化长任务"></a>3. Web Worker优化长任务</h3><p>​		由于浏览器 <strong>GUI 渲染线程与 JS 引擎线程</strong>是互斥的关系，当页面中有很多长任务（执行时间超过50ms的任务）时，会造成页面 UI 阻塞，出现界面卡顿、掉帧等情况。</p>
+<p>​		如果直接把下面这段代码直接丢到主线程中，计算过程中页面一直处于卡死状态，无法操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">js复制代码<span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">200000</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123;</span><br><span class="line">      sum += <span class="title class_">Math</span>.<span class="title function_">random</span>()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>​		使用 Web Worker 执行上述代码时，计算过程中页面正常可操作、无卡顿。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">js复制代码<span class="comment">// worker.js</span></span><br><span class="line">onmessage = <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="comment">// onmessage获取传入的初始值</span></span><br><span class="line">  <span class="keyword">let</span> sum = e.<span class="property">data</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">200000</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">10000</span>; i++) &#123;</span><br><span class="line">      sum += <span class="title class_">Math</span>.<span class="title function_">random</span>()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 将计算的结果传递出去</span></span><br><span class="line">  <span class="title function_">postMessage</span>(sum);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="web-worker通信时长"><a href="#web-worker通信时长" class="headerlink" title="web worker通信时长"></a>web worker通信时长</h4><p>​		并不是执行时间超过 50ms 的任务，就可以使用 Web Worker，还要<strong>先考虑<code>通信时长</code>的</strong>问题。</p>
+<p>​		假如一个运算执行时长为 100ms，但是通信时长为 300ms， 用了 Web Worker可能会更慢。比如新建一个 web worker, 浏览器会加载对应的 worker.js 资源，下图中的 Time 是这个资源的通信时长（也叫加载时长）。</p>
+<p><img src="https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/3b3f1e0b00b34a35813dd06f1354ee18~tplv-k3u1fbpfcp-zoom-in-crop-mark:1512:0:0:0.awebp" alt="load.png"></p>
+<p>​		<strong>当任务的运算时长 - 通信时长 &gt; 50ms，推荐使用Web Worker</strong></p>
+<h4 id="web-worker概述"><a href="#web-worker概述" class="headerlink" title="web worker概述"></a>web worker概述</h4><p>​		JavaScript 语言采用的是单线程模型，也就是说，所有任务只能在一个线程上完成，一次只能做一件事。前面的任务没做完，后面的任务只能等着。随着电脑计算能力的增强，尤其是多核 CPU 的出现，单线程带来很大的不便，无法充分发挥计算机的计算能力。</p>
+<p>​		Web Worker 的作用，就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。在主线程运行的同时，Worker 线程在后台运行，两者互不干扰。等到 Worker 线程完成计算任务，再把结果返回给主线程。这样的好处是，一些计算密集型或高延迟的任务，被 Worker 线程负担了，主线程（通常负责 UI 交互）就会很流畅，不会被阻塞或拖慢。</p>
+<h4 id="webworker使用注意点"><a href="#webworker使用注意点" class="headerlink" title="webworker使用注意点"></a>webworker使用注意点</h4><p>（1）<strong>同源限制</strong></p>
+<p>​		分配给 Worker 线程运行的脚本文件，必须与主线程的脚本文件同源。</p>
+<p>（2）<strong>DOM 限制</strong></p>
+<p>​		Worker 线程所在的全局对象，与主线程不一样，无法读取主线程所在网页的 DOM 对象，也无法使用<code>document</code>、<code>window</code>、<code>parent</code>这些对象。但是，Worker 线程可以<code>navigator</code>对象和<code>location</code>对象。</p>
+<p>（3）<strong>通信联系</strong></p>
+<p>​		Worker 线程和主线程不在同一个上下文环境，它们不能直接通信，必须通过消息完成。</p>
+<p>（4）<strong>脚本限制</strong></p>
+<p>​		Worker 线程不能执行<code>alert()</code>方法和<code>confirm()</code>方法，但可以使用 XMLHttpRequest 对象发出 AJAX 请求。</p>
+<p>（5）<strong>文件限制</strong></p>
+<p>​		Worker 线程无法读取本地文件，即不能打开本机的文件系统（<code>file://</code>），它所加载的脚本，必须来自网络。</p>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><h5 id="主线程用法-worker线程和主线程的数据不是被共享的，而是被复制的"><a href="#主线程用法-worker线程和主线程的数据不是被共享的，而是被复制的" class="headerlink" title="主线程用法(worker线程和主线程的数据不是被共享的，而是被复制的)"></a>主线程用法(worker线程和主线程的数据不是被共享的，而是被复制的)</h5><p>​		主线程采用<code>new</code>命令，调用<code>Worker()</code>构造函数，新建一个 Worker 线程。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> worker = <span class="keyword">new</span> <span class="title class_">Worker</span>(<span class="string">&#x27;work.js&#x27;</span>);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​		<code>Worker()</code>构造函数的参数是一个脚本文件，该文件就是 Worker 线程所要执行的任务。由于 Worker 不能读取本地文件，所以<strong>这个脚本必须来自网络</strong>。如果下载没有成功（比如404错误），Worker 就会默默地失败。</p>
+<p>​		然后，主线程调用<code>worker.postMessage()</code>方法，向 Worker 发消息。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">worker.<span class="title function_">postMessage</span>(<span class="string">&#x27;Hello World&#x27;</span>);</span><br><span class="line">worker.<span class="title function_">postMessage</span>(&#123;<span class="attr">method</span>: <span class="string">&#x27;echo&#x27;</span>, <span class="attr">args</span>: [<span class="string">&#x27;Work&#x27;</span>]&#125;);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​		<code>worker.postMessage()</code>方法的参数，就是主线程传给 Worker 的数据。它可以是各种数据类型，包括二进制数据。</p>
+<p>​		接着，主线程通过<code>worker.onmessage</code>指定监听函数，接收子线程发回来的消息。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">worker.<span class="property">onmessage</span> = <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;Received message &#x27;</span> + event.<span class="property">data</span>);</span><br><span class="line">  <span class="title function_">doSomething</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">doSomething</span>(<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// 执行任务</span></span><br><span class="line">  worker.<span class="title function_">postMessage</span>(<span class="string">&#x27;Work done!&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​		上面代码中，事件对象的<code>data</code>属性可以获取 Worker 发来的数据。</p>
+<p>​		Worker 完成任务以后，主线程就可以把它关掉。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">worker.<span class="title function_">terminate</span>();</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="worker线程用法"><a href="#worker线程用法" class="headerlink" title="worker线程用法"></a>worker线程用法</h5><p>​		监听主线程传来的消息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">this</span>.<span class="title function_">addEventListener</span>(<span class="string">&#x27;message&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">    <span class="comment">// data属性包含主线程发来的数据</span></span><br><span class="line">  <span class="variable language_">this</span>.<span class="title function_">postMessage</span>(<span class="string">&#x27;You said: &#x27;</span> + e.<span class="property">data</span>);</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+
+<p>​		根据主线程发来的数据，Worker 线程可以调用不同的方法，下面是一个例子。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">self.<span class="title function_">addEventListener</span>(<span class="string">&#x27;message&#x27;</span>, <span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> data = e.<span class="property">data</span>;</span><br><span class="line">  <span class="keyword">switch</span> (data.<span class="property">cmd</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;start&#x27;</span>:</span><br><span class="line">      self.<span class="title function_">postMessage</span>(<span class="string">&#x27;WORKER STARTED: &#x27;</span> + data.<span class="property">msg</span>);</span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">&#x27;stop&#x27;</span>:</span><br><span class="line">      self.<span class="title function_">postMessage</span>(<span class="string">&#x27;WORKER STOPPED: &#x27;</span> + data.<span class="property">msg</span>);</span><br><span class="line">      self.<span class="title function_">close</span>(); <span class="comment">// Terminates the worker.</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="attr">default</span>:</span><br><span class="line">      self.<span class="title function_">postMessage</span>(<span class="string">&#x27;Unknown command: &#x27;</span> + data.<span class="property">msg</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h5 id="错误处理"><a href="#错误处理" class="headerlink" title="错误处理"></a>错误处理</h5><p>​		主线程可以监听 Worker 是否发生错误。如果发生错误，Worker 会触发主线程的<code>error</code>事件。</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">worker.<span class="title function_">onerror</span>(<span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>([</span><br><span class="line">    <span class="string">&#x27;ERROR: Line &#x27;</span>, e.<span class="property">lineno</span>, <span class="string">&#x27; in &#x27;</span>, e.<span class="property">filename</span>, <span class="string">&#x27;: &#x27;</span>, e.<span class="property">message</span></span><br><span class="line">  ].<span class="title function_">join</span>(<span class="string">&#x27;&#x27;</span>));</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 或者</span></span><br><span class="line">worker.<span class="title function_">addEventListener</span>(<span class="string">&#x27;error&#x27;</span>, <span class="keyword">function</span> (<span class="params">event</span>) &#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>​		Worker 内部也可以监听<code>error</code>事件。</p>
+<h5 id="webworker实例：完成轮询"><a href="#webworker实例：完成轮询" class="headerlink" title="webworker实例：完成轮询"></a>webworker实例：完成轮询</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">createWorker</span>(<span class="params">f</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> blob = <span class="keyword">new</span> <span class="title class_">Blob</span>([<span class="string">&#x27;(&#x27;</span> + f.<span class="title function_">toString</span>() +<span class="string">&#x27;)()&#x27;</span>]);</span><br><span class="line">  <span class="keyword">var</span> url = <span class="variable language_">window</span>.<span class="property">URL</span>.<span class="title function_">createObjectURL</span>(blob);</span><br><span class="line">  <span class="keyword">var</span> worker = <span class="keyword">new</span> <span class="title class_">Worker</span>(url);</span><br><span class="line">  <span class="keyword">return</span> worker;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> pollingWorker = <span class="title function_">createWorker</span>(<span class="keyword">function</span> (<span class="params">e</span>) &#123;</span><br><span class="line">  <span class="keyword">var</span> cache;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">compare</span>(<span class="params"><span class="keyword">new</span>, old</span>) &#123; ... &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="title function_">fetch</span>(<span class="string">&#x27;/my-api-endpoint&#x27;</span>).<span class="title function_">then</span>(<span class="keyword">function</span> (<span class="params">res</span>) &#123;</span><br><span class="line">      <span class="keyword">var</span> data = res.<span class="title function_">json</span>();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!<span class="title function_">compare</span>(data, cache)) &#123;</span><br><span class="line">        cache = data;</span><br><span class="line">        self.<span class="title function_">postMessage</span>(data);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">pollingWorker.<span class="property">onmessage</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">  <span class="comment">// render data</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">pollingWorker.<span class="title function_">postMessage</span>(<span class="string">&#x27;init&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<p>​		上面代码中，Worker 每秒钟轮询一次数据，然后跟缓存做比较。如果不一致，就说明服务端有了新的变化，因此就要通知主线程。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io">Cheyennee</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://cheyennee.github.io/2023/09/09/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/">http://cheyennee.github.io/2023/09/09/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://cheyennee.github.io" target="_blank">Cheyennee</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/optimization/">optimization</a></div><div class="post_share"><div class="social-share" data-image="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/flatlist/cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/09/10/%E5%9F%8B%E7%82%B9/"><img class="prev-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/interview/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">埋点</div></div></a></div><div class="next-post pull-right"><a href="/2023/09/09/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/"><img class="next-cover" src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/js/cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">垃圾回收</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Cheyennee</div><div class="author-info__description">生而为人，还请努力</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">50</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">19</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/cheyennee"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">在路上</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="toc-number">1.</span> <span class="toc-text">性能优化的目的</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">2.</span> <span class="toc-text">常规性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-JS%E4%BC%98%E5%8C%96"><span class="toc-number">2.1.</span> <span class="toc-text">1. JS优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%BE%E7%89%87%E4%BC%98%E5%8C%96"><span class="toc-number">2.2.</span> <span class="toc-text">2. 图片优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-CSS%E4%BC%98%E5%8C%96"><span class="toc-number">2.3.</span> <span class="toc-text">3. CSS优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%8F%E5%B0%91%E9%87%8D%E7%BB%98%E9%87%8D%E6%8E%92"><span class="toc-number">2.3.1.</span> <span class="toc-text">减少重绘重排</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-webpack%E6%89%93%E5%8C%85%E4%BC%98%E5%8C%96"><span class="toc-number">2.4.</span> <span class="toc-text">4. webpack打包优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90-%E7%BC%A9%E5%B0%8Floader%E5%8C%B9%E9%85%8D%E8%8C%83%E5%9B%B4"><span class="toc-number">2.4.1.</span> <span class="toc-text">⭐ 缩小loader匹配范围</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90-%E4%BB%A3%E7%A0%81%E5%8E%8B%E7%BC%A9"><span class="toc-number">2.4.2.</span> <span class="toc-text">⭐ 代码压缩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90-Tree-Shaking%EF%BC%88%E5%8E%BB%E9%99%A4JS%E4%B8%AD%E6%B2%A1%E6%9C%89%E4%BD%BF%E7%94%A8%E4%B8%8A%E7%9A%84%E4%BB%A3%E7%A0%81%EF%BC%8C%E9%BB%98%E8%AE%A4%E5%BC%80%E5%90%AF%EF%BC%89"><span class="toc-number">2.4.3.</span> <span class="toc-text">⭐ Tree Shaking（去除JS中没有使用上的代码，默认开启）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90babel-plugin-transform-runtime"><span class="toc-number">2.4.4.</span> <span class="toc-text">⭐babel-plugin-transform-runtime</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90code-split-%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2%EF%BC%8C%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD"><span class="toc-number">2.4.5.</span> <span class="toc-text">⭐code split(代码分割，按需加载)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90%E5%A4%9A%E7%BA%BF%E7%A8%8B%E6%89%93%E5%8C%85%E6%8F%90%E5%8D%87%E6%89%93%E5%8C%85%E9%80%9F%E5%BA%A6"><span class="toc-number">2.4.6.</span> <span class="toc-text">⭐多线程打包提升打包速度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E7%BD%91%E7%BB%9C%E4%BC%98%E5%8C%96"><span class="toc-number">2.5.</span> <span class="toc-text">5. 网络优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-react%E4%BC%98%E5%8C%96"><span class="toc-number">2.6.</span> <span class="toc-text">6. react优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-angular%E4%BC%98%E5%8C%96"><span class="toc-number">2.7.</span> <span class="toc-text">7. angular优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88"><span class="toc-number">2.7.1.</span> <span class="toc-text">优化方案</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E9%92%88%E5%AF%B9%E5%BC%82%E6%AD%A5%E4%BB%BB%E5%8A%A1-%E2%80%94%E2%80%94%E5%87%8F%E5%B0%91%E5%8F%98%E6%9B%B4%E6%A3%80%E6%B5%8B%E7%9A%84%E6%AC%A1%E6%95%B0"><span class="toc-number">2.7.1.1.</span> <span class="toc-text">（1）针对异步任务 ——减少变更检测的次数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E9%92%88%E5%AF%B9-Event-Task-%E2%80%94%E2%80%94-%E5%87%8F%E5%B0%91%E5%8F%98%E6%9B%B4%E6%A3%80%E6%B5%8B%E7%9A%84%E6%AC%A1%E6%95%B0"><span class="toc-number">2.7.1.2.</span> <span class="toc-text">（2）针对 Event Task —— 减少变更检测的次数</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E9%92%88%E5%AF%B9%E7%BB%84%E4%BB%B6-%E2%80%94%E2%80%94%E5%87%8F%E5%B0%91%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E5%8F%98%E6%9B%B4%E6%A3%80%E6%B5%8B"><span class="toc-number">2.7.1.3.</span> <span class="toc-text">（3）针对组件 ——减少不必要的变更检测</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%884%EF%BC%89%E9%92%88%E5%AF%B9%E6%A8%A1%E6%9D%BF-%E2%80%94%E2%80%94%E5%87%8F%E5%B0%91%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E8%AE%A1%E7%AE%97%E5%92%8C%E6%B8%B2%E6%9F%93"><span class="toc-number">2.7.1.4.</span> <span class="toc-text">（4）针对模板 ——减少不必要的计算和渲染</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%EF%BC%885%EF%BC%89unsubscribe"><span class="toc-number">2.7.1.5.</span> <span class="toc-text">（5）unsubscribe</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87-FCP-LCP-TTI-CLS"><span class="toc-number">3.</span> <span class="toc-text">性能指标(FCP LCP TTI CLS)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Largest-Contentful-Paint%E6%9C%80%E5%A4%A7%E5%86%85%E5%AE%B9%E7%BB%98%E5%88%B6-LCP"><span class="toc-number">3.1.</span> <span class="toc-text">Largest Contentful Paint最大内容绘制(LCP)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">3.1.1.</span> <span class="toc-text">是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">3.1.2.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%93%AA%E4%BA%9B%E5%85%83%E7%B4%A0%E5%8F%AF%E4%BB%A5%E8%A2%AB%E5%AE%9A%E4%B9%89%E4%B8%BA%E6%9C%80%E5%A4%A7%E5%85%83%E7%B4%A0%E5%91%A2%EF%BC%9F"><span class="toc-number">3.1.3.</span> <span class="toc-text">哪些元素可以被定义为最大元素呢？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%94%9Fjs%E6%B5%8B%E9%87%8F"><span class="toc-number">3.1.4.</span> <span class="toc-text">使用原生js测量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E5%BD%B1%E5%93%8DLCP%E7%9A%84%E5%9B%A0%E7%B4%A0"><span class="toc-number">3.1.5.</span> <span class="toc-text">可能影响LCP的因素</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#First-Input-Delay-FID"><span class="toc-number">3.2.</span> <span class="toc-text">First Input Delay (FID)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F-1"><span class="toc-number">3.2.1.</span> <span class="toc-text">是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%94%9Fjs%E6%B5%8B%E9%87%8F-1"><span class="toc-number">3.2.2.</span> <span class="toc-text">使用原生js测量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%8C%96FID"><span class="toc-number">3.2.3.</span> <span class="toc-text">优化FID</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Cumulative-Layout-Shift-CLS"><span class="toc-number">3.3.</span> <span class="toc-text">Cumulative Layout Shift(CLS)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%8E%9F%E7%94%9Fjs%E6%B5%8B%E9%87%8F-2"><span class="toc-number">3.3.1.</span> <span class="toc-text">使用原生js测量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E5%8C%96CLS"><span class="toc-number">3.3.2.</span> <span class="toc-text">优化CLS</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%A3%80%E6%B5%8B%E5%B7%A5%E5%85%B7"><span class="toc-number">4.</span> <span class="toc-text">性能检测工具</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E5%85%B7%E4%BD%93%E6%A1%88%E4%BE%8B"><span class="toc-number">5.</span> <span class="toc-text">性能优化具体案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%95%BF%E5%88%97%E8%A1%A8%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">5.1.</span> <span class="toc-text">1. 长列表性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E4%BD%BF%E7%94%A8%E8%99%9A%E6%8B%9F%E5%88%97%E8%A1%A8%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E6%B8%B2%E6%9F%9310w%E4%B8%AA%E8%8A%82%E7%82%B9%EF%BC%9A"><span class="toc-number">5.1.1.</span> <span class="toc-text">不使用虚拟列表的情况下，渲染10w个节点：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E8%99%9A%E6%8B%9F%E5%88%97%E8%A1%A8%E7%9A%84%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E6%B8%B2%E6%9F%9310w%E4%B8%AA%E8%8A%82%E7%82%B9%EF%BC%9A"><span class="toc-number">5.1.2.</span> <span class="toc-text">使用虚拟列表的情况下，渲染10w个节点：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-CDN"><span class="toc-number">5.2.</span> <span class="toc-text">2. CDN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90%E7%94%A8%E6%88%B7%E8%AE%BF%E9%97%AECDN%E8%8A%82%E7%82%B9%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-number">5.2.1.</span> <span class="toc-text">⭐用户访问CDN节点的过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90CDN%E6%8E%A5%E5%85%A5%E5%89%8D%E7%AB%AF%E7%9A%84%E6%96%B9%E6%A1%88"><span class="toc-number">5.2.2.</span> <span class="toc-text">⭐CDN接入前端的方案</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Web-Worker%E4%BC%98%E5%8C%96%E9%95%BF%E4%BB%BB%E5%8A%A1"><span class="toc-number">5.3.</span> <span class="toc-text">3. Web Worker优化长任务</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#web-worker%E9%80%9A%E4%BF%A1%E6%97%B6%E9%95%BF"><span class="toc-number">5.3.1.</span> <span class="toc-text">web worker通信时长</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#web-worker%E6%A6%82%E8%BF%B0"><span class="toc-number">5.3.2.</span> <span class="toc-text">web worker概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#webworker%E4%BD%BF%E7%94%A8%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="toc-number">5.3.3.</span> <span class="toc-text">webworker使用注意点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="toc-number">5.3.4.</span> <span class="toc-text">基本用法</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%BB%E7%BA%BF%E7%A8%8B%E7%94%A8%E6%B3%95-worker%E7%BA%BF%E7%A8%8B%E5%92%8C%E4%B8%BB%E7%BA%BF%E7%A8%8B%E7%9A%84%E6%95%B0%E6%8D%AE%E4%B8%8D%E6%98%AF%E8%A2%AB%E5%85%B1%E4%BA%AB%E7%9A%84%EF%BC%8C%E8%80%8C%E6%98%AF%E8%A2%AB%E5%A4%8D%E5%88%B6%E7%9A%84"><span class="toc-number">5.3.4.1.</span> <span class="toc-text">主线程用法(worker线程和主线程的数据不是被共享的，而是被复制的)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#worker%E7%BA%BF%E7%A8%8B%E7%94%A8%E6%B3%95"><span class="toc-number">5.3.4.2.</span> <span class="toc-text">worker线程用法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%94%99%E8%AF%AF%E5%A4%84%E7%90%86"><span class="toc-number">5.3.4.3.</span> <span class="toc-text">错误处理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#webworker%E5%AE%9E%E4%BE%8B%EF%BC%9A%E5%AE%8C%E6%88%90%E8%BD%AE%E8%AF%A2"><span class="toc-number">5.3.4.4.</span> <span class="toc-text">webworker实例：完成轮询</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/09/10/%E5%9F%8B%E7%82%B9/" title="埋点"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/interview/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="埋点"/></a><div class="content"><a class="title" href="/2023/09/10/%E5%9F%8B%E7%82%B9/" title="埋点">埋点</a><time datetime="2023-09-10T09:45:12.000Z" title="发表于 2023-09-10 17:45:12">2023-09-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/09/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="性能优化"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/flatlist/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="性能优化"/></a><div class="content"><a class="title" href="/2023/09/09/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/" title="性能优化">性能优化</a><time datetime="2023-09-09T12:54:23.000Z" title="发表于 2023-09-09 20:54:23">2023-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/09/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" title="垃圾回收"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/js/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="垃圾回收"/></a><div class="content"><a class="title" href="/2023/09/09/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/" title="垃圾回收">垃圾回收</a><time datetime="2023-09-09T06:01:32.000Z" title="发表于 2023-09-09 14:01:32">2023-09-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/08/HTTP-TCP/" title="HTTP-TCP"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/http/cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="HTTP-TCP"/></a><div class="content"><a class="title" href="/2023/09/08/HTTP-TCP/" title="HTTP-TCP">HTTP-TCP</a><time datetime="2023-09-08T01:35:27.000Z" title="发表于 2023-09-08 09:35:27">2023-09-08</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/09/07/indexdb/" title="indexdb"><img src="https://cheyennee-blog.oss-cn-hangzhou.aliyuncs.com/images/html/pic3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="indexdb"/></a><div class="content"><a class="title" href="/2023/09/07/indexdb/" title="indexdb">indexdb</a><time datetime="2023-09-07T11:27:23.000Z" title="发表于 2023-09-07 19:27:23">2023-09-07</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Cheyennee</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
